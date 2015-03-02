@@ -18,7 +18,7 @@ import static java.lang.System.*;
  * @author Ioannis Papakostas
  */
 public class Registration_Test {
-    
+     
     @BeforeClass
     public static void setUpClass() {
     }
@@ -31,38 +31,27 @@ public class Registration_Test {
     public void setUp() {
     }
     
+     
+        
+    
     @After
     public void tearDown() {
     }
 
  @Test
 	public void create_registration_test() {
-		
-            
-        Scanner input = new Scanner(System.in);
-        
-	User Papakwstas = new User();
-        out.println("Give role");
-        Papakwstas.role = input.next();
-        out.println("Give name");
-        Papakwstas.name = input.next();
-        out.println("Give surname");
-        Papakwstas.surname = input.next();
-        out.println("Give username");
-        Papakwstas.username = input.next();
-        out.println("Give password");
-        Papakwstas.password = input.next();
-        
-        input.close();
-	
-		assertEquals("A",Papakwstas.getrole());
-		assertEquals("Ioannis",Papakwstas.getname());
-                assertEquals("Papakostas",Papakwstas.getsurname());
-                assertEquals("johnnyaoua",Papakwstas.getusername());
-                assertEquals("12345",Papakwstas.getpassword());
-		
-		
-		
+		/*User paparis = new User();
+                paparis.role = "A";
+                paparis.name = "Ioannis";
+                paparis.surname = "Papakostas";
+                paparis.username = "johnnyaoua";
+                paparis.password = "12345";*/
+                User paparis = new User("A", "Ioannis", "Papakostas", "johnnyaoua", "12345");
+		assertEquals("A",paparis.getrole());
+		assertEquals("Ioannis",paparis.getname());
+                assertEquals("Papakostas",paparis.getsurname());
+                assertEquals("johnnyaoua",paparis.getusername());
+                assertEquals("12345",paparis.getpassword());	
 	}
 
 }
