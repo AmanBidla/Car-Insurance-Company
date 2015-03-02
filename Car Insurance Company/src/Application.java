@@ -16,7 +16,7 @@ public class Application {
         
         boolean value=false;       
     
-        User user1 = new User("customer","Charlie","13579");
+        User user1 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
         
         while (value==false){
         System.out.println("Give username");
@@ -36,3 +36,4 @@ public class Application {
     }
     
 }
+
