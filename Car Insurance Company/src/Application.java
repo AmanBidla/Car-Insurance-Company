@@ -1,4 +1,5 @@
 
+import static java.lang.System.out;
 import java.util.Scanner;
 
 /*
@@ -14,7 +15,23 @@ import java.util.Scanner;
 public class Application {
     public static void main (String[] args){
         
-        boolean value=false;       
+        boolean value=false;    
+        
+         Scanner input = new Scanner(System.in);
+        
+	User Papakwstas = new User();
+        out.println("Give role");
+        Papakwstas.role = input.next();
+        out.println("Give name");
+        Papakwstas.name = input.next();
+        out.println("Give surname");
+        Papakwstas.surname = input.next();
+        out.println("Give username");
+        Papakwstas.username = input.next();
+        out.println("Give password");
+        Papakwstas.password = input.next();
+        
+        input.close();
     
         User user1 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
         

@@ -1,4 +1,8 @@
 
+import static java.lang.System.out;
+import java.util.Scanner;
+
+
 
 public class User {
 	String role;
@@ -50,6 +54,23 @@ public class User {
                 System.out.println("Login failed!");
             return val;
         }
-
+        
+        public void register(){
+        
+        Scanner input = new Scanner(System.in);
+        
+	//User Papakwstas = new User();
+        out.println("Give role");
+        this.role = input.next();
+        out.println("Give name");
+        this.name = input.next();
+        out.println("Give surname");
+        this.surname = input.next();
+        out.println("Give username");
+        this.username = input.next();
+        out.println("Give password");
+        this.password = input.next();
+        
+        input.close();
 }
-
+}
