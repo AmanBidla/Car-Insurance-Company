@@ -6,6 +6,7 @@ public class User {
 	String surname;
 	String username;
 	String password;
+        boolean val;
 	
         /*
 	public User(String role, String name, String surname, String username, String password){
@@ -40,6 +41,15 @@ public class User {
 	public String getpassword(){
 		return this.password;
 	}
+        
+        public boolean login(String username, String password) {
+            val= (this.username==username) && (this.password==password);
+            if (val)
+                System.out.println("Login successful!");
+            else
+                System.out.println("Login failed!");
+            return val;
+        }
 
 }
 
