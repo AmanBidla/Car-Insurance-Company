@@ -39,17 +39,33 @@ public class Registration {
 
  @Test
 	public void create_registration_test() {
-		
-                User paparis = new User();
-                paparis.role = "claimant";
-                if (paparis.role.equals("claimant")){
-                    
-                Claimant a =new Claimant("Ioannis","Papakostas","johnnyaoua", "12345");
+            
+                
+                Claimant a = new Claimant("Ioannis","Papakostas","johnnyaoua", "12345");
 		assertEquals("Ioannis",a.getname());
                 assertEquals("Papakostas",a.getsurname());
                 assertEquals("johnnyaoua",a.getusername());
                 assertEquals("12345",a.getpassword());	
+                
+                EmployeeOfDeptCD b = new EmployeeOfDeptCD("Ioannis","Papakostas","johnnyaoua", "12345");
+                assertEquals("Ioannis",b.getname());
+                assertEquals("Papakostas",b.getsurname());
+                assertEquals("johnnyaoua",b.getusername());
+                assertEquals("12345",b.getpassword());
+                
+                ClaimHandlerA c = new ClaimHandlerA("Ioannis","Papakostas","johnnyaoua", "12345");
+                assertEquals("Ioannis",c.getname());
+                assertEquals("Papakostas",c.getsurname());
+                assertEquals("johnnyaoua",c.getusername());
+                assertEquals("12345",c.getpassword());
+                
+                GarageOwner d = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
+                assertEquals("Ioannis",d.getname());
+                assertEquals("Papakostas",d.getsurname());
+                assertEquals("johnnyaoua",d.getusername());
+                assertEquals("12345",d.getpassword());
 	}
-                else if (paparis.role.equals("claimant"))
+        
+                
 
 }
