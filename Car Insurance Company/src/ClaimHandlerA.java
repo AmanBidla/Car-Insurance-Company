@@ -11,6 +11,10 @@
 public class ClaimHandlerA extends EmployeeOfDeptCD{
     
     public void mark_claim(){
+        if (claim.checkInsurance is ok && claim.checkDMGHistory is ok && claim.phoneGarage is ok)
+        return true;
+        else 
+        return false;
         
     }
     

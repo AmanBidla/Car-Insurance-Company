@@ -41,6 +41,12 @@ public class Mark_Claim {
     //
     @Test
         public void mark_claim_as_positive_test(){
-            
+            boolean check;
+            check = mark_claim();
+            if (check == true){
+                assertTrue(checkInsurance);
+                assertTrue(DmgHistory);
+                assertTrue(phoneGarage);
+            }
         }
 }
