@@ -42,7 +42,7 @@ public class CheckDamageHistory {
      @Test
         public void check_dmg_history_test(){
             
-            EmployeeOfDeptCD a = new EmployeeOfDeptCD();
+            Claim a = new Claim();
             assertTrue(a.CheckDmgHistory());
         }
 }

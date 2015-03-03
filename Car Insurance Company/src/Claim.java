@@ -48,5 +48,15 @@ public class Claim {
     
     }
     
-    
+    public boolean CheckDmgHistory(){            
+            return true;
+        }
+ 
+    public boolean PhoneGarage(){
+        return true;
+    }
+        
+    public boolean CheckInsurance(){
+        return true;
+    }
 }

@@ -40,13 +40,25 @@ public class Mark_Claim {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-        public void mark_claim_as_positive_test(){
-            boolean check;
-            check = mark_claim();
-            if (check == true){
-                assertTrue(checkInsurance);
-                assertTrue(DmgHistory);
-                assertTrue(phoneGarage);
+        public void mark_claim_as_positive_or_negative_test(){
+            
+            Claim a = new Claim();
+            a.setClaimDecision("positive");
+            
+            for(int i=0;i<2;i++){
+            
+            if (a.getClaimDecision().equals("positive")){
+              assertTrue(a.CheckInsurance());
+              assertTrue(a.CheckInsurance());
+              assertTrue(a.CheckInsurance());
+                          
             }
-        }
+            else if (a.getClaimDecision().equals("negative"))
+            {
+            assertTrue((a.CheckInsurance()== false) || (a.CheckDmgHistory()== false) || (a.PhoneGarage())==false);
+            }
+            a.setClaimDecision("negative");
+        
+}
+}
 }

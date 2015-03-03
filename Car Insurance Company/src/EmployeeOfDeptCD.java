@@ -19,9 +19,6 @@ public class EmployeeOfDeptCD extends User{
 		this.password = password;
     }
         
-        public boolean CheckDmgHistory(){
-            
-            return true;
-        }
+        
     }
 
