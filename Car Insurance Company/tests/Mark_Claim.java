@@ -49,8 +49,8 @@ public class Mark_Claim {
             
             if (a.getClaimDecision().equals("positive")){
               assertTrue(a.CheckInsurance());
-              assertTrue(a.CheckInsurance());
-              assertTrue(a.CheckInsurance());
+              assertTrue(a.CheckDmgHistory());
+              assertTrue(a.PhoneGarage());
                           
             }
             else if (a.getClaimDecision().equals("negative"))
