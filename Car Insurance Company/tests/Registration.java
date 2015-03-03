@@ -10,14 +10,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.util.Scanner;
-import static java.lang.System.*;
+
 
 /**
  *
  * @author Ioannis Papakostas
  */
-public class Registration_Test {
+public class Registration {
      
     @BeforeClass
     public static void setUpClass() {

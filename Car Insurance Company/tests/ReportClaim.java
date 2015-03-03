@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author george
  */
-public class Login_Test {
+public class ReportClaim {
     
-    public Login_Test() {
+    public ReportClaim() {
     }
     
     @BeforeClass
@@ -30,7 +30,6 @@ public class Login_Test {
     
     @Before
     public void setUp() {
-        
     }
     
     @After
@@ -40,17 +39,6 @@ public class Login_Test {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
-     public void login_successful_test() {
-         
-            String username= "IamCharlie";
-            String password="13579";
-            
-            User user2 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
-            
-            assertEquals(user2.username,username);
-            assertEquals(user2.password,password);
-        
-        }
-
+    // @Test
+    // public void hello() {}
 }
