@@ -17,8 +17,13 @@ public class Application {
         
         boolean value=false;    
         
+        /*administrator created */
+        User admin = new User();
+        admin.username = "admin";
+        admin.password = "admin";
          
-    
+        admin.register();
+        
         User user1 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
         
         while (value==false){

@@ -13,13 +13,13 @@ public class User {
         
 	
         
-	/*public User(String role, String name, String surname, String username, String password){
+	public User(String role, String name, String surname, String username, String password){
 		this.role = role;
                 this.name = name;
                 this.surname = surname;
 		this.username = username;
 		this.password = password;
-	}*/
+	}
         
         
         public User(){
