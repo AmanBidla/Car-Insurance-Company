@@ -10,12 +10,27 @@
  */
 public class ClaimHandlerA extends EmployeeOfDeptCD{
     
-    public void mark_claim(){
+    public ClaimHandlerA(){}
+    
+    public ClaimHandlerA(String name, String surname, String username, String password){
+                this.name = name;
+                this.surname = surname;
+		this.username = username;
+		this.password = password;
+    }
+    
+    public boolean mark_claim(){
+        
+    
         if (claim.checkInsurance is ok && claim.checkDMGHistory is ok && claim.phoneGarage is ok)
+        {
         return true;
-        else 
+        }
+        else    
+        { 
         return false;
         
     }
     
+}
 }

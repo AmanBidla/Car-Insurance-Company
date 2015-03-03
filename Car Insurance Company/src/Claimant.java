@@ -8,15 +8,14 @@
  *
  * @author Ioannis Papakostas
  */
-public class EmployeeOfDeptCD extends User{
+public class Claimant extends User{
     
-        public EmployeeOfDeptCD(){}
-        
-        public EmployeeOfDeptCD(String name, String surname, String username, String password){
+    public Claimant(){}
+    
+    public Claimant(String name, String surname, String username, String password){
                 this.name = name;
                 this.surname = surname;
 		this.username = username;
 		this.password = password;
     }
-    }
-
+}

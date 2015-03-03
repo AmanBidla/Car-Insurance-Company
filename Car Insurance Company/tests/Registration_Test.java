@@ -40,18 +40,17 @@ public class Registration_Test {
 
  @Test
 	public void create_registration_test() {
-		/*User paparis = new User();
-                paparis.role = "A";
-                paparis.name = "Ioannis";
-                paparis.surname = "Papakostas";
-                paparis.username = "johnnyaoua";
-                paparis.password = "12345";*/
-                User paparis = new User("A", "Ioannis", "Papakostas", "johnnyaoua", "12345");
-		assertEquals("A",paparis.getrole());
-		assertEquals("Ioannis",paparis.getname());
-                assertEquals("Papakostas",paparis.getsurname());
-                assertEquals("johnnyaoua",paparis.getusername());
-                assertEquals("12345",paparis.getpassword());	
+		
+                User paparis = new User();
+                paparis.role = "claimant";
+                if (paparis.role.equals("claimant")){
+                    
+                Claimant a =new Claimant("Ioannis","Papakostas","johnnyaoua", "12345");
+		assertEquals("Ioannis",a.getname());
+                assertEquals("Papakostas",a.getsurname());
+                assertEquals("johnnyaoua",a.getusername());
+                assertEquals("12345",a.getpassword());	
 	}
+                else if (paparis.role.equals("claimant"))
 
 }
