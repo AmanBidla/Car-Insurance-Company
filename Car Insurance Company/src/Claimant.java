@@ -18,4 +18,8 @@ public class Claimant extends User{
 		this.username = username;
 		this.password = password;
     }
+    
+    
+
+
 }

@@ -52,15 +52,5 @@ public class Login {
         
         }
     
-    @Test
-    public void login_failed_test(){
-            
-            String username= "Charlie";
-            String password="12345";
-            
-            User user2 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
-            
-            assertFalse(user2.username.equals(username) || user2.password.equals(password));
-           
-    }
+    
 }

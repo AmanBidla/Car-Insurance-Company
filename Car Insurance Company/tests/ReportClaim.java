@@ -39,6 +39,21 @@ public class ReportClaim {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    // @Test
-    // public void hello() {}
+     @Test
+    public void reportClaim_test() {
+        
+        
+        
+        Claim claim1 = new Claim();
+        claim1.claimantName= "Charlie";
+        claim1.claimantSurname="Hebdo";
+        claim1.claimantLocation="Kungsgatan 17,Stockholm";
+        
+        claim1.setClaimStatus("Reported");
+       
+        
+        assertEquals(claim1.getClaimStatus(),"Reported");
+        
+    
+    }
 }
