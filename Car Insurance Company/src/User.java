@@ -46,6 +46,7 @@ public class User {
 		return this.password;
 	}
         
+        /* method which enables the user to login to the system */
         public boolean login(String username, String password) {
             boolean val= (this.username.equals(username)) && (this.password.equals(password));
             if (val)
@@ -55,11 +56,11 @@ public class User {
             return val;
         }
         
+        /*method for the registration of users byy the admin */
         public void register(){
         
         Scanner input = new Scanner(System.in);
         
-	//User Papakwstas = new User();
         out.println("Give role");
         this.role = input.next();
         out.println("Give name");
