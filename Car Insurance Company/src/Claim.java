@@ -8,6 +8,9 @@
  *
  * @author george
  */
+import java.util.ArrayList;
+import java.util.*;
+
 public class Claim {
     
     String claimantName;
@@ -18,6 +21,7 @@ public class Claim {
     String claimStatus;
     String formType;
     String formStatus;
+    
     
     public Claim(){}
     
@@ -50,15 +54,41 @@ public class Claim {
     
     }
     
-    public boolean CheckDmgHistory(){            
-            return true;
+   
+    
+    public boolean CheckDmgHistory(Claimant a){  
+            //printing the the lists for Damage History
+         for(String s:a.Date){
+            System.out.println(s);
+         }
+         
+          for(String s:a.Time){
+            System.out.println(s);
+         }
+          
+           for(String s:a.Location){
+            System.out.println(s);
+         }
+           
+            for(String s:a.Damage){
+            System.out.println(s);
+         }
+            
+             for(String s:a.Cost){
+            System.out.println(s);
+         }
+            
+         // Validation process for Damage History starts here
+        
+         return true;
+         
         }
  
-    public boolean PhoneGarage(){
+    public boolean PhoneGarage(GarageOwner a){
         return true;
     }
         
-    public boolean CheckInsurance(){
+    public boolean CheckInsurance(Claimant a){
         return true;
     }
 }

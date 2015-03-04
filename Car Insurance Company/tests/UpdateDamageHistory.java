@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author Ioannis Papakostas
  */
-public class Mark_Claim {
+public class UpdateDamageHistory {
     
-    public Mark_Claim() {
+    public UpdateDamageHistory() {
     }
     
     @BeforeClass
@@ -39,26 +39,38 @@ public class Mark_Claim {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    @Test
-        public void mark_claim_as_positive_or_negative_test(){
+     @Test
+        public void update_dmg_history_test(){
             
             Claim a = new Claim();
-            ClaimHandlerA handler = new ClaimHandlerA();
             Claimant b = new Claimant();
-            GarageOwner c = new GarageOwner();
-            handler.mark_claim(a,b,c);
             
-            //a.setClaimDecision("positive");
+            b.Date.add(new String("04/03/2015")); 
+            b.Time.add(new String("20:55")); 
+            b.Location.add(new String("Stockholm"));
+            b.Damage.add(new String("Right Door"));
+            b.Cost.add(new String("$2000")); 
             
-            
-            
+            for(String s:b.Date){
+            assertEquals(s,"04/03/2015");
+         }
+         
+          for(String s:b.Time){
+            assertEquals(s,"20:55");
+         }
+          
+           for(String s:b.Location){
+            assertEquals(s,"Stockholm");
+         }
            
-              assertTrue(a.CheckInsurance(b));
-              assertTrue(a.CheckDmgHistory(b));
-              assertTrue(a.PhoneGarage(c));
-                          
- 
-           
-        
-}
+            for(String s:b.Damage){
+            assertEquals(s,"Right Door");
+         }
+            
+             for(String s:b.Cost){
+            assertEquals(s,"$2000");
+         }
+            
+
+        }
 }
