@@ -24,12 +24,13 @@ public class Claimant extends User{
     }
     
     
-    
+    //Accident History
     List<String> AccidentDate = new ArrayList<String>();
     List<String> AccidentTime = new ArrayList<String>();
     List<String> AccidentLocation = new ArrayList<String>();
     List<String> AccidentDamage = new ArrayList<String>();
     List<String> AccidentCost = new ArrayList<String>();
+    //Insurance Details
     List<String> InsuranceExpiration = new ArrayList<String>();
     List<String> InsuranceCost = new ArrayList<String>();
     
