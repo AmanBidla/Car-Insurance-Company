@@ -41,22 +41,26 @@ public class ClaimForm {
     //
     @Test
     public void createClaimForm_test() {
-        Claim claim1 = new Claim();
+       
+        Claim claim1 =new Claim();
+        Form form1 =new Form();
+        
         claim1.claimCategory="Complex";
         
-        String claimCategory= claim1.getClaimCategory();
-        if (claimCategory.equals("Simple")){
-            claim1.formType ="Simple Form";
+        if (claim1.claimCategory.equals("Simple")){
+            form1.formType ="Simple Form";
+            form1.formStatus ="Created";
                        
         }
-        else if (claimCategory.equals("Complex")){
-            claim1.formType= "Complex Form";
+        else if (claim1.claimCategory.equals("Complex")){
+            form1.formType= "Complex Form";
+            form1.formStatus ="Created";
                     
         }
-        claim1.formStatus ="Created";
         
-        assertFalse(claim1.formType.equals("Not decided"));
-        assertEquals(claim1.formStatus,"Created");
+        
+        assertFalse(form1.formType.equals("Complex"));
+        assertEquals(form1.formStatus,"Created");
         
             
          
