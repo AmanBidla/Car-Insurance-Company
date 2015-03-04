@@ -8,7 +8,12 @@
  *
  * @author Ioannis Papakostas
  */
+import java.util.*;
 public class EmployeeOfDeptCD extends User{
+    
+        //scanner for the update method 
+        //might delete after the GUI implementation
+    Scanner scanner = new Scanner(System.in);
     
         public EmployeeOfDeptCD(){}
         
@@ -18,7 +23,30 @@ public class EmployeeOfDeptCD extends User{
 		this.username = username;
 		this.password = password;
     }
+        public void UpdateDamageHistory(Claimant a){
+            
+            a.AccidentDate.add(new String(scanner.next())); 
+            a.AccidentTime.add(new String(scanner.next())); 
+            a.AccidentLocation.add(new String(scanner.next()));
+            a.AccidentDamage.add(new String(scanner.next()));
+            a.AccidentCost.add(new String(scanner.next())); 
+            
+        }
         
+         
+        public boolean PhoneGarage(Claimant a, GarageOwner b){
+             return true;
+    }
         
+        public boolean CheckInsurance(Claimant a){
+            a.GetInsurance();
+            return true;
+    }
+     
+        public boolean CheckDmgHistory(Claimant a){
+            a.GetDmgHistory();
+            return true;
+    }
+    
     }
 

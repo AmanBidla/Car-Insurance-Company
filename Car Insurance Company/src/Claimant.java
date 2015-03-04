@@ -13,7 +13,6 @@ import java.util.*;
 
 public class Claimant extends User{
     
-    String string;
     
     public Claimant(){}
     
@@ -24,18 +23,48 @@ public class Claimant extends User{
 		this.password = password;
     }
     
-     public String getString() {
-        return string;
-    }
-    
-    List<String> Date = new ArrayList<String>();
-    List<String> Time = new ArrayList<String>();
-    List<String> Location = new ArrayList<String>();
-    List<String> Damage = new ArrayList<String>();
-    List<String> Cost = new ArrayList<String>();
     
     
+    List<String> AccidentDate = new ArrayList<String>();
+    List<String> AccidentTime = new ArrayList<String>();
+    List<String> AccidentLocation = new ArrayList<String>();
+    List<String> AccidentDamage = new ArrayList<String>();
+    List<String> AccidentCost = new ArrayList<String>();
+    List<String> InsuranceExpiration = new ArrayList<String>();
+    List<String> InsuranceCost = new ArrayList<String>();
     
-
+    
+     public void GetDmgHistory(){  
+            //printing the the lists for Damage History
+         for(String s:this.AccidentDate){
+            System.out.println(s);
+         }
+         
+          for(String s:this.AccidentTime){
+            System.out.println(s);
+         }
+          
+           for(String s:this.AccidentLocation){
+            System.out.println(s);
+         }
+           
+            for(String s:this.AccidentDamage){
+            System.out.println(s);
+         }
+            
+             for(String s:this.AccidentCost){
+            System.out.println(s);
+         }
+         
+        }
+    
+     public void GetInsurance(){
+         for(String s:this.InsuranceExpiration){
+            System.out.println(s);
+         }
+         for(String s:this.InsuranceCost){
+            System.out.println(s);
+         }
+     }
 
 }

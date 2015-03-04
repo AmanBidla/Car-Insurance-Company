@@ -19,10 +19,11 @@ public class ClaimHandlerA extends EmployeeOfDeptCD{
 		this.password = password;
     }
     
+  
     public void mark_claim(Claim a, Claimant b, GarageOwner c){
         
     
-        if ((a.CheckInsurance(b) == true) && (a.CheckDmgHistory(b) == true) && (a.PhoneGarage(c) == true))
+        if ((CheckInsurance(b) == true) && (CheckDmgHistory(b) == true) && (PhoneGarage(b,c) == true))
         {
         a.setClaimDecision("positive");
         }

@@ -42,32 +42,32 @@ public class UpdateDamageHistory {
      @Test
         public void update_dmg_history_test(){
             
-            Claim a = new Claim();
+            
             Claimant b = new Claimant();
             
-            b.Date.add(new String("04/03/2015")); 
-            b.Time.add(new String("20:55")); 
-            b.Location.add(new String("Stockholm"));
-            b.Damage.add(new String("Right Door"));
-            b.Cost.add(new String("$2000")); 
+            b.AccidentDate.add(new String("04/03/2015")); 
+            b.AccidentTime.add(new String("20:55")); 
+            b.AccidentLocation.add(new String("Stockholm"));
+            b.AccidentDamage.add(new String("Right Door"));
+            b.AccidentCost.add(new String("$2000")); 
             
-            for(String s:b.Date){
+            for(String s:b.AccidentDate){
             assertEquals(s,"04/03/2015");
          }
          
-          for(String s:b.Time){
+          for(String s:b.AccidentTime){
             assertEquals(s,"20:55");
          }
           
-           for(String s:b.Location){
+           for(String s:b.AccidentLocation){
             assertEquals(s,"Stockholm");
          }
            
-            for(String s:b.Damage){
+            for(String s:b.AccidentDamage){
             assertEquals(s,"Right Door");
          }
             
-             for(String s:b.Cost){
+             for(String s:b.AccidentCost){
             assertEquals(s,"$2000");
          }
             

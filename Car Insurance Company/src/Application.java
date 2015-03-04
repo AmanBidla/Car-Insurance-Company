@@ -19,18 +19,12 @@ public class Application {
         boolean value=false; 
         
         //apo dw kai meta testarw
-        Claim claim = new Claim();
-        Claimant a = new Claimant();
         
-         
-        value = claim.CheckDmgHistory(a);
         
-        assertTrue("everything is ok",value);
-        
-        // edw teleiwneit to test space mou
+        // edw teleiwnei to test space mou
         
         /*administrator created */
-       /* User admin = new User();
+        User admin = new User();
         admin.username = "admin";
         admin.password = "admin";
          
@@ -51,7 +45,7 @@ public class Application {
         value= user1.login(user, pass);
         }
         
-        */
+        
                 
     }
     
