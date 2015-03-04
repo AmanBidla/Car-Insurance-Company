@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author george
  */
-public class ReportClaim {
+public class ClaimForm {
     
-    public ReportClaim() {
+    public ClaimForm() {
     }
     
     @BeforeClass
@@ -39,21 +39,27 @@ public class ReportClaim {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
-     public void reportClaim_test() {
-        
-        
-        
+    @Test
+    public void createClaimForm_test() {
         Claim claim1 = new Claim();
-        claim1.claimantName= "Charlie";
-        claim1.claimantSurname="Hebdo";
-        claim1.claimantLocation="Kungsgatan 17,Stockholm";
+        claim1.claimCategory="Complex";
         
-        claim1.setClaimStatus("Reported");
+        String claimCategory= claim1.getClaimCategory();
+        if (claimCategory.equals("Simple")){
+            claim1.formType ="Simple Form";
+                       
+        }
+        else if (claimCategory.equals("Complex")){
+            claim1.formType= "Complex Form";
+                    
+        }
+        claim1.formStatus ="Created";
+        
+        assertFalse(claim1.formType.equals("Not decided"));
+        assertEquals(claim1.formStatus,"Created");
+        
+            
+         
+        }
        
-        
-        assertEquals(claim1.getClaimStatus(),"Reported");
-        
-    
-    }
 }

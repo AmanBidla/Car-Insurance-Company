@@ -16,6 +16,8 @@ public class Claim {
     String claimCategory;
     String claimDecision;
     String claimStatus;
+    String formType;
+    String formStatus;
     
     public Claim(){}
     
