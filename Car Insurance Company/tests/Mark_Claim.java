@@ -43,22 +43,19 @@ public class Mark_Claim {
         public void mark_claim_as_positive_or_negative_test(){
             
             Claim a = new Claim();
-            a.setClaimDecision("positive");
+            ClaimHandlerA handler = new ClaimHandlerA();
+            handler.mark_claim(a);
+            //a.setClaimDecision("positive");
             
-            for(int i=0;i<2;i++){
             
-            if (a.getClaimDecision().equals("positive")){
+            
+           
               assertTrue(a.CheckInsurance());
               assertTrue(a.CheckDmgHistory());
               assertTrue(a.PhoneGarage());
                           
-            }
-            else if (a.getClaimDecision().equals("negative"))
-            {
-            assertTrue((a.CheckInsurance()== false) || (a.CheckDmgHistory()== false) || (a.PhoneGarage())==false);
-            }
-            a.setClaimDecision("negative");
+ 
+           
         
-}
 }
 }
