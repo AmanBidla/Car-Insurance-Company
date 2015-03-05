@@ -56,22 +56,6 @@ public class User {
             return val;
         }
         
-        /*method for the registration of users byy the admin */
-        public void register(){
         
-        Scanner input = new Scanner(System.in);
         
-        out.println("Give role");
-        this.role = input.next();
-        out.println("Give name");
-        this.name = input.next();
-        out.println("Give surname");
-        this.surname = input.next();
-        out.println("Give username");
-        this.username = input.next();
-        out.println("Give password");
-        this.password = input.next();
-        
-        input.close();
-}
 }

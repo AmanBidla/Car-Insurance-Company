@@ -23,6 +23,12 @@ public class Claimant extends User{
 		this.password = password;
     }
     
+    //Insurance details
+    float costOfInsurance;
+    String expiringDateOfInsurance;
+    String plateNumber;
+    float priceOfCar;
+    
     
     //Accident History
     List<String> AccidentDate = new ArrayList<String>();
@@ -30,9 +36,7 @@ public class Claimant extends User{
     List<String> AccidentLocation = new ArrayList<String>();
     List<String> AccidentDamage = new ArrayList<String>();
     List<String> AccidentCost = new ArrayList<String>();
-    //Insurance Details
-    List<String> InsuranceExpiration = new ArrayList<String>();
-    List<String> InsuranceCost = new ArrayList<String>();
+    
     
     
      public void GetDmgHistory(){  
@@ -59,13 +63,20 @@ public class Claimant extends User{
          
         }
     
-     public void GetInsurance(){
-         for(String s:this.InsuranceExpiration){
-            System.out.println(s);
+     public String getExpiringDateOfInsurance(){
+         return this.expiringDateOfInsurance;
+            
          }
-         for(String s:this.InsuranceCost){
-            System.out.println(s);
+     public float getCostOfInsurance() {
+            return this.costOfInsurance;
          }
+     public String getPlateNumber(){
+         return this.plateNumber;
+      }
+     public float getPriceOfCar(){
+         return this.priceOfCar;
      }
+     
+     
 
 }

@@ -48,7 +48,7 @@ public class FillinForm {
         if ((form1.formStatus.equals("Created!") || form1.formStatus.equals("Not filled correctly!"))&& form1.formType.equals("Simple Form")){
             form1.formName= "Name1";
             form1.formSurname="Surname1";
-            form1.formDateofAccident="Date1";
+            form1.formDateOfAccident="Date1";
             form1.formInsuranceExpiringDate="ExpiringDate1";
             form1.formInsuredPersonPlate = "InsuredPlate1";
             form1.formPersonInvolvedInTheAccidentPlate = "InvolvedPlate1";
@@ -59,7 +59,7 @@ public class FillinForm {
         else if ((form1.formStatus.equals("Created!") || form1.formStatus.equals("Not filled correctly!"))&& form1.formType.equals("Complex Form")){
             form1.formName= "Name2";
             form1.formSurname="Surname2";
-            form1.formDateofAccident="Date2";
+            form1.formDateOfAccident="Date2";
             form1.formInsuranceExpiringDate="ExpiringDate2";
             form1.formInsuredPersonPlate = "InsuredPlate2";
             form1.formPersonInvolvedInTheAccidentPlate = "InvolvedPlate2";

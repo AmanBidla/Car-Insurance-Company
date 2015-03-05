@@ -23,7 +23,7 @@ public class EmployeeOfDeptCD extends User{
 		this.username = username;
 		this.password = password;
     }
-        public void UpdateDamageHistory(Claimant a){
+        public void updateDamageHistory(Claimant a){
             
             a.AccidentDate.add(new String(scanner.next())); 
             a.AccidentTime.add(new String(scanner.next())); 
@@ -33,17 +33,25 @@ public class EmployeeOfDeptCD extends User{
             
         }
         
+        public void updateInsuranceDetails(Claimant a){
+            a.costOfInsurance=scanner.nextFloat();
+            a.expiringDateOfInsurance=scanner.next();
+            a.plateNumber=scanner.next();
+            a.priceOfCar=scanner.nextFloat();
+        
+        
+        }
          
-        public boolean PhoneGarage(Claimant a, GarageOwner b){
+        public boolean phoneGarage(Claimant a, GarageOwner b){
              return true;
     }
         
-        public boolean CheckInsurance(Claimant a){
+        public boolean checkInsurance(Claimant a){
             a.GetInsurance();
             return true;
     }
      
-        public boolean CheckDmgHistory(Claimant a){
+        public boolean checkDmgHistory(Claimant a){
             a.GetDmgHistory();
             return true;
     }

@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author george
  */
-public class ClaimForm {
+public class CreateForm {
     
-    public ClaimForm() {
+    public CreateForm() {
     }
     
     @BeforeClass

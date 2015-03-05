@@ -16,6 +16,7 @@ public class Claim {
     String claimantName;
     String claimantSurname;
     String claimantLocation;
+    String claimDate;
     String claimCategory;
     String claimDecision;
     String claimStatus;

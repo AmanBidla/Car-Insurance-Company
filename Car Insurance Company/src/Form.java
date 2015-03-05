@@ -14,7 +14,7 @@ public class Form {
     String formStatus;
     String formName;
     String formSurname;
-    String formDateofAccident;
+    String formDateOfAccident;
     String formInsuranceExpiringDate;
     String formInsuredPersonPlate;
     String formPersonInvolvedInTheAccidentPlate;
