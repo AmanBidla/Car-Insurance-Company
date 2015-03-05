@@ -20,7 +20,7 @@ public class Claim {
     String claimDecision;
     String claimStatus;
     Boolean payment;
-    double amount_of_payment = 0.0;
+    int amount_of_payment = 0;
     
     
     

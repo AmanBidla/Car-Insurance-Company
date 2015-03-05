@@ -29,7 +29,7 @@ public class EmployeeOfFinancialDept extends User {
     List<String> Date = new ArrayList<String>();
     
     //method for issuing a payment for a claim "a"
-    public void IssuePaymentOrder(Claim a, Claimant b){
+    public void IssuePaymentOrder(Claim a){
         
        // a.amount_of_payment = b.AccidentCost.get(b.AccidentCost.size()-1);
         a.payment = true;
