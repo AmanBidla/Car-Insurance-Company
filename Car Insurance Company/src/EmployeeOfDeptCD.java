@@ -29,12 +29,13 @@ public class EmployeeOfDeptCD extends User{
             a.AccidentTime.add(new String(scanner.next())); 
             a.AccidentLocation.add(new String(scanner.next()));
             a.AccidentDamage.add(new String(scanner.next()));
-            a.AccidentCost.add(new String(scanner.next())); 
+            a.AccidentCost.add(scanner.nextInt()); 
             
         }
         
          
         public boolean PhoneGarage(Claimant a, GarageOwner b){
+            
              return true;
     }
         

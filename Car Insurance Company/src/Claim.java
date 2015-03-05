@@ -19,6 +19,8 @@ public class Claim {
     String claimCategory;
     String claimDecision;
     String claimStatus;
+    Boolean payment;
+    double amount_of_payment = 0.0;
     
     
     
@@ -50,44 +52,6 @@ public class Claim {
     public String getClaimStatus (){
         return this.claimStatus;
     
-    
-    }
-    
-   
-    
-    public boolean CheckDmgHistory(Claimant a){  
-            //printing the the lists for Damage History
-         for(String s:a.Date){
-            System.out.println(s);
-         }
-         
-          for(String s:a.Time){
-            System.out.println(s);
-         }
-          
-           for(String s:a.Location){
-            System.out.println(s);
-         }
-           
-            for(String s:a.Damage){
-            System.out.println(s);
-         }
-            
-             for(String s:a.Cost){
-            System.out.println(s);
-         }
-            
-         // Validation process for Damage History starts here
-        
-         return true;
-         
-        }
- 
-    public boolean PhoneGarage(GarageOwner a){
-        return true;
     }
         
-    public boolean CheckInsurance(Claimant a){
-        return true;
-    }
 }
