@@ -67,8 +67,9 @@ public class UpdateDamageHistory {
             assertEquals(s,"Right Door");
          }
             
-             for(String s:b.AccidentCost){
-            assertEquals(s,"$2000");
+              for(int s=0; s < b.AccidentCost.size(); s++)
+             {
+            System.out.println(b.AccidentCost.get(s));
          }
             
 

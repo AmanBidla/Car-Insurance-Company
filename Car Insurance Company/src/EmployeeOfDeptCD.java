@@ -29,7 +29,7 @@ public class EmployeeOfDeptCD extends User{
             a.AccidentTime.add(new String(scanner.next())); 
             a.AccidentLocation.add(new String(scanner.next()));
             a.AccidentDamage.add(new String(scanner.next()));
-            a.AccidentCost.add(new String(scanner.next())); 
+            a.AccidentCost.add(scanner.nextInt()); 
             
         }
         
@@ -42,7 +42,12 @@ public class EmployeeOfDeptCD extends User{
         
         }
          
+<<<<<<< HEAD
         public boolean phoneGarage(Claimant a, GarageOwner b){
+=======
+        public boolean PhoneGarage(Claimant a, GarageOwner b){
+            
+>>>>>>> 4185ae3b72154515ef7207ccb353c852fe619fe4
              return true;
     }
         
