@@ -36,10 +36,10 @@ public class EmployeeOfDeptCD extends User{
         }
         
         public void updateInsuranceDetails(Claimant a){
-            a.costOfInsurance=scanner.nextFloat();
+            a.costOfInsurance=scanner.nextInt();
             a.expiringDateOfInsurance=scanner.next();
             a.plateNumber=scanner.next();
-            a.priceOfCar=scanner.nextFloat();
+            a.priceOfCar=scanner.nextInt();
         
         
         }

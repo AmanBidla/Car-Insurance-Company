@@ -26,10 +26,10 @@ public class Claimant extends User{
     }
     
     //Insurance details
-    public float costOfInsurance;
+    public int costOfInsurance;
     public String expiringDateOfInsurance;
     public String plateNumber;
-    public float priceOfCar;
+    public int priceOfCar;
     
     
     //Accident History
@@ -71,13 +71,13 @@ public class Claimant extends User{
          return this.expiringDateOfInsurance;
             
          }
-     public float getCostOfInsurance() {
+     public int getCostOfInsurance() {
             return this.costOfInsurance;
          }
      public String getPlateNumber(){
          return this.plateNumber;
       }
-     public float getPriceOfCar(){
+     public int getPriceOfCar(){
          return this.priceOfCar;
      }
      

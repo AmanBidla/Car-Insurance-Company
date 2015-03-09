@@ -1,3 +1,5 @@
+package cicSrc;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,8 @@ public class Records {
     public Records(){}
     
     //Records Of Payments
-    List<String> Name = new ArrayList<String>();
-    List<String> Surname = new ArrayList<String>();
-    List AmountOfPayment = new ArrayList();
-    List<String> Date = new ArrayList<String>();
+    public List<String> Name = new ArrayList<String>();
+    public List<String> Surname = new ArrayList<String>();
+    public List AmountOfPayment = new ArrayList();
+    public List<String> Date = new ArrayList<String>();
 }
