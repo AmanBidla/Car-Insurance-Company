@@ -51,8 +51,7 @@ public class Application {
         
         value= claimant1.login(user, pass);
         }
-        ReportClaim reportClaim = new ReportClaim();
-        claimant1.reportClaim_test();
+        
         
         
         

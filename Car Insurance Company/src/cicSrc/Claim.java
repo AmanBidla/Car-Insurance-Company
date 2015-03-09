@@ -15,15 +15,15 @@ import java.util.*;
 
 public class Claim {
     
-    String claimantName;
-    String claimantSurname;
-    String claimantLocation;
-    String claimDate;
-    String claimCategory;
-    String claimDecision;
-    String claimStatus;
-    Boolean payment;
-    int amount_of_payment = 0;
+    public String claimantName;
+    public String claimantSurname;
+    public String claimantLocation;
+    public String claimDate;
+    public String claimCategory;
+    public String claimDecision;
+    public String claimStatus;
+    public Boolean payment;
+    public int amount_of_payment = 0;
     
     
     

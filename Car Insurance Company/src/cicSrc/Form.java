@@ -12,15 +12,15 @@ package cicSrc;
  */
 public class Form {
     
-    String formType;
-    String formStatus;
-    String formName;
-    String formSurname;
-    String formDateOfAccident;
-    String formInsuranceExpiringDate;
-    String formInsuredPersonPlate;
-    String formPersonInvolvedInTheAccidentPlate;
-    String formAgreementOnIncreaseInPremiums;
+    public String formType;
+    public String formStatus;
+    public String formName;
+    public String formSurname;
+    public String formDateOfAccident;
+    public String formInsuranceExpiringDate;
+    public String formInsuredPersonPlate;
+    public String formPersonInvolvedInTheAccidentPlate;
+    public String formAgreementOnIncreaseInPremiums;
     
     public Form(){}
     

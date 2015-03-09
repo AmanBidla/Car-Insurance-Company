@@ -7,11 +7,12 @@ import java.util.Scanner;
 
 
 public class User {
-	String role;
-	String name;
-	String surname;
-	String username;
-	String password;
+	
+        public String role;
+	public String name;
+	public String surname;
+	public String username;
+	public String password;
         
 	
         

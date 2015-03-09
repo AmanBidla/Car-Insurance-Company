@@ -26,18 +26,18 @@ public class Claimant extends User{
     }
     
     //Insurance details
-    float costOfInsurance;
-    String expiringDateOfInsurance;
-    String plateNumber;
-    float priceOfCar;
+    public float costOfInsurance;
+    public String expiringDateOfInsurance;
+    public String plateNumber;
+    public float priceOfCar;
     
     
     //Accident History
-    List<String> AccidentDate = new ArrayList<String>();
-    List<String> AccidentTime = new ArrayList<String>();
-    List<String> AccidentLocation = new ArrayList<String>();
-    List<String> AccidentDamage = new ArrayList<String>();
-    List AccidentCost = new ArrayList();
+    public List<String> AccidentDate = new ArrayList<String>();
+    public List<String> AccidentTime = new ArrayList<String>();
+    public List<String> AccidentLocation = new ArrayList<String>();
+    public List<String> AccidentDamage = new ArrayList<String>();
+    public List AccidentCost = new ArrayList();
     
 
     
