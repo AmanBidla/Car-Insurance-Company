@@ -5,6 +5,9 @@ import cicSrc.Admin;
 import static java.lang.System.out;
 import java.util.Scanner;
 import static org.junit.Assert.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,7 +26,10 @@ public class Application {
         
         //apo dw kai meta testarw
         
-        Claimant a = new Claimant();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	   //get current date time with Date()
+	   Date date = new Date();
+	   System.out.println(dateFormat.format(date));
         
         // edw teleiwnei to test space mou
         

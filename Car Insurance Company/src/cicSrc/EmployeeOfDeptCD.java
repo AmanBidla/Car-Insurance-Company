@@ -11,11 +11,18 @@ package cicSrc;
  * @author Ioannis Papakostas
  */
 import java.util.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 public class EmployeeOfDeptCD extends User{
     
         //scanner for the update method 
         //might delete after the GUI implementation
     Scanner scanner = new Scanner(System.in);
+    
+        // new instance of Date class
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
     
         public EmployeeOfDeptCD(){}
         
@@ -49,10 +56,14 @@ public class EmployeeOfDeptCD extends User{
              return true;
     }
         
+        //Checking if the expiration date exceeds today's date
         public boolean checkInsurance(Claimant a){
-            System.out.println(a.getExpiringDateOfInsurance());
-            
-            return true;
+            if ((a.getExpiringDateOfInsurance().compareTo(dateFormat.format(date))) > 0)
+            {
+                return true;
+            }
+           else
+                return false;
     }
      
         public boolean checkDmgHistory(Claimant a){
@@ -60,5 +71,17 @@ public class EmployeeOfDeptCD extends User{
             return true;
     }
     
+        public void informClaimant(Claimant a){
+            if (checkInsurance(a)== true)
+                    {
+                //TODO
+                        //inform Claimant that his claim has been accepted.
+                    }
+            else
+            {
+            //TODO
+                //inform Claimant that his claim must be rejected
+            }
+        }
     }
 
