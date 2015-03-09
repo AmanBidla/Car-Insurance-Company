@@ -23,7 +23,7 @@ public class ClaimHandlerA extends EmployeeOfDeptCD{
     public void mark_claim(Claim a, Claimant b, GarageOwner c){
         
     
-        if ((CheckInsurance(b) == true) && (CheckDmgHistory(b) == true) && (PhoneGarage(b,c) == true))
+        if ((checkInsurance(b) == true) && (checkDmgHistory(b) == true) && (phoneGarage(b,c) == true))
         {
         a.setClaimDecision("positive");
         }

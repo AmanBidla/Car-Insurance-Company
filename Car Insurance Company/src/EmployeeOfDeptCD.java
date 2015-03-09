@@ -42,17 +42,14 @@ public class EmployeeOfDeptCD extends User{
         
         }
          
-<<<<<<< HEAD
         public boolean phoneGarage(Claimant a, GarageOwner b){
-=======
-        public boolean PhoneGarage(Claimant a, GarageOwner b){
             
->>>>>>> 4185ae3b72154515ef7207ccb353c852fe619fe4
              return true;
     }
         
         public boolean checkInsurance(Claimant a){
-            a.GetInsurance();
+            String s = a.getExpiringDateOfInsurance();
+            System.out.println(s);
             return true;
     }
      

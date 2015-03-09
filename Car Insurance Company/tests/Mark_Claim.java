@@ -53,9 +53,9 @@ public class Mark_Claim {
             
             
            
-              assertTrue(handler.CheckInsurance(b));
-              assertTrue(handler.CheckDmgHistory(b));
-              assertTrue(handler.PhoneGarage(b,c));
+              assertTrue(handler.checkInsurance(b));
+              assertTrue(handler.checkDmgHistory(b));
+              assertTrue(handler.phoneGarage(b,c));
                           
  
            

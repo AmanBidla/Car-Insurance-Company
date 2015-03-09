@@ -35,15 +35,9 @@ public class Claimant extends User{
     List<String> AccidentTime = new ArrayList<String>();
     List<String> AccidentLocation = new ArrayList<String>();
     List<String> AccidentDamage = new ArrayList<String>();
-<<<<<<< HEAD
-    List<String> AccidentCost = new ArrayList<String>();
-    
-=======
     List AccidentCost = new ArrayList();
-    //Insurance Details
-    List<String> InsuranceExpiration = new ArrayList<String>();
-    List<String> InsuranceCost = new ArrayList<String>();
->>>>>>> 4185ae3b72154515ef7207ccb353c852fe619fe4
+    
+
     
     
      public void GetDmgHistory(){  

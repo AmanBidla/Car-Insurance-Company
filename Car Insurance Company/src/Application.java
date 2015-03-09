@@ -24,7 +24,7 @@ public class Application {
         // edw teleiwnei to test space mou
         
         /*administrator created */
-        User admin = new User();
+        Admin admin = new Admin();
         admin.username = "admin";
         admin.password = "admin";
          
