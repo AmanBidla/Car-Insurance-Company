@@ -1,9 +1,12 @@
+package cicTests;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import cicSrc.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,11 +16,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ioannis Papakostas
+ * @author george
  */
-public class IssuePaymentOrder {
+public class Login {
     
-    public IssuePaymentOrder() {
+    public Login() {
     }
     
     @BeforeClass
@@ -39,11 +42,18 @@ public class IssuePaymentOrder {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
-        public void issue_payment_order_test(){
-            Claim a = new Claim();
-            EmployeeOfFinancialDept b = new EmployeeOfFinancialDept();
-            b.IssuePaymentOrder(a);
-            assertTrue(a.payment);
+    @Test
+    public void login_successful_test() {
+         
+            String username= "IamCharlie";
+            String password="13579";
+            
+            User user2 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
+            
+            assertEquals(user2.username,username);
+            assertEquals(user2.password,password);
+        
         }
+    
+    
 }

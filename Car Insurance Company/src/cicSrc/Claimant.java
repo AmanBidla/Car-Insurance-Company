@@ -1,3 +1,5 @@
+package cicSrc;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,7 +42,7 @@ public class Claimant extends User{
 
     
     
-     public void GetDmgHistory(){  
+     public void getDmgHistory(){  
             //printing the the lists for Damage History
          for(String s:this.AccidentDate){
             System.out.println(s);

@@ -1,4 +1,7 @@
+package cicSrc;
 
+
+import cicSrc.Admin;
 import static java.lang.System.out;
 import java.util.Scanner;
 import static org.junit.Assert.*;
@@ -28,9 +31,10 @@ public class Application {
         admin.username = "admin";
         admin.password = "admin";
          
-        admin.register();
+        //admin.register();
         
-        User user1 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
+        Claimant claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
+        //ClaimHandlerA claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
         
         while (value==false){
         System.out.println("Give username");
@@ -42,8 +46,13 @@ public class Application {
         String pass=password.next();
         
         
-        value= user1.login(user, pass);
+        value= claimant1.login(user, pass);
         }
+        ReportClaim reportClaim = new ReportClaim();
+        claimant1.reportClaim_test();
+        
+        
+        
         
         
                 
