@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author Ioannis Papakostas
  */
-public class UpdateDamageHistory {
+public class KeepRecordsOfPAyments {
     
-    public UpdateDamageHistory() {
+    public KeepRecordsOfPAyments() {
     }
     
     @BeforeClass
@@ -40,38 +40,22 @@ public class UpdateDamageHistory {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-        public void update_dmg_history_test(){
-            
-            
-            Claimant b = new Claimant();
-            
-            b.AccidentDate.add(new String("04/03/2015")); 
-            b.AccidentTime.add(new String("20:55")); 
-            b.AccidentLocation.add(new String("Stockholm"));
-            b.AccidentDamage.add(new String("Right Door"));
-            b.AccidentCost.add(2000); 
-            
-            for(String s:b.AccidentDate){
+        public void keep_records_of_payments(Records a){
+             for(String s:a.Name){
             assertEquals(s,"04/03/2015");
          }
          
-          for(String s:b.AccidentTime){
+          for(String s:a.Surname){
             assertEquals(s,"20:55");
          }
           
-           for(String s:b.AccidentLocation){
+           for(String s:a.Date){
             assertEquals(s,"Stockholm");
          }
            
-            for(String s:b.AccidentDamage){
-            assertEquals(s,"Right Door");
-         }
-            
-              for(int s=0; s < b.AccidentCost.size(); s++)
+           for(int s=0; s < a.AmountOfPayment.size(); s++)
              {
-            System.out.println(b.AccidentCost.get(s));
+            System.out.println(a.AmountOfPayment.get(s));
          }
-            
-
         }
 }

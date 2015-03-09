@@ -22,11 +22,7 @@ public class EmployeeOfFinancialDept extends User {
 		this.username = username;
 		this.password = password;
     }
-    //Records Of Payments
-    List<String> Name = new ArrayList<String>();
-    List<String> Surname = new ArrayList<String>();
-    List AmountOfPayment = new ArrayList();
-    List<String> Date = new ArrayList<String>();
+    
     
     //method for issuing a payment for a claim "a"
     public void IssuePaymentOrder(Claim a){
@@ -35,12 +31,12 @@ public class EmployeeOfFinancialDept extends User {
         a.payment = true;
     }
     
-    protected void AddPaymentToRecordsOfPayments(Claim a, Claimant b){
+    protected void AddPaymentToRecordsOfPayments(Claim a, Claimant b, Records c){
         
-        this.Name.add(new String(b.name));
-        this.Surname.add(new String(b.surname));
-        this.AmountOfPayment.add(b.AccidentCost.get(b.AccidentCost.size()-1)) ;
-        this.Date.add(b.AccidentDate.get(b.AccidentDate.size() - 1));
+        c.Name.add(new String(b.name));
+        c.Surname.add(new String(b.surname));
+        c.AmountOfPayment.add(b.AccidentCost.get(b.AccidentCost.size()-1)) ;
+        c.Date.add(b.AccidentDate.get(b.AccidentDate.size() - 1));
         
     }
 }

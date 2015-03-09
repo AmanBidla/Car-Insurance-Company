@@ -40,7 +40,7 @@ public class Claimant extends User{
 
     
     
-     public void GetDmgHistory(){  
+     public void getDmgHistory(){  
             //printing the the lists for Damage History
          for(String s:this.AccidentDate){
             System.out.println(s);

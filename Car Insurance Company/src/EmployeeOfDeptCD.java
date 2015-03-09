@@ -54,7 +54,7 @@ public class EmployeeOfDeptCD extends User{
     }
      
         public boolean checkDmgHistory(Claimant a){
-            a.GetDmgHistory();
+            a.getDmgHistory();
             return true;
     }
     

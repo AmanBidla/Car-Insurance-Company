@@ -20,6 +20,7 @@ public class Application {
         
         //apo dw kai meta testarw
         
+        Claimant a = new Claimant();
         
         // edw teleiwnei to test space mou
         
@@ -27,6 +28,8 @@ public class Application {
         Admin admin = new Admin();
         admin.username = "admin";
         admin.password = "admin";
+        
+        
          
         admin.register();
         
