@@ -19,9 +19,9 @@ public class Claim {
     public String claimantSurname;
     public String claimantLocation;
     public String claimDate;
-    public String claimCategory;
-    public String claimDecision;
-    public String claimStatus;
+    public String claimCategory;//simple, complex
+    public String claimDecision;//positive, negative
+    public String claimStatus; //reported, classified, accepted, rejected, registered, sent for payment
     public Boolean payment;
     public int amount_of_payment = 0;
     

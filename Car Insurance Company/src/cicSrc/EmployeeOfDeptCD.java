@@ -50,8 +50,8 @@ public class EmployeeOfDeptCD extends User{
     }
         
         public boolean checkInsurance(Claimant a){
-            String s = a.getExpiringDateOfInsurance();
-            System.out.println(s);
+            System.out.println(a.getExpiringDateOfInsurance());
+            
             return true;
     }
      

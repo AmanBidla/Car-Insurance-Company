@@ -25,9 +25,13 @@ public class ClaimHandlerA extends EmployeeOfDeptCD{
     public void mark_claim(Claim a, Claimant b, GarageOwner c){
         
     
-        if ((checkInsurance(b) == true) && (checkDmgHistory(b) == true) && (phoneGarage(b,c) == true))
+        if (checkInsurance(b) == true){a.setClaimStatus("accepted");}
+        else {a.setClaimStatus("rejected");}
+        
+        if ((a.getClaimStatus().equals("accepted")) && (checkDmgHistory(b) == true) && (phoneGarage(b,c) == true))
         {
         a.setClaimDecision("positive");
+        
         }
         else{
         a.setClaimDecision("negative");
