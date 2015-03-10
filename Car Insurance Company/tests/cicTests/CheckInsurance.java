@@ -5,8 +5,8 @@
  */
 package cicTests;
 
-import cicSrc.Claimant;
-import cicSrc.EmployeeOfDeptCD;
+import cicSrc.Application;
+import static cicSrc.Application.employeeCD;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -33,6 +33,7 @@ public class CheckInsurance {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -44,9 +45,8 @@ public class CheckInsurance {
     //
      @Test
          public void check_insurance_test() {
-             Claimant a = new Claimant();
-             EmployeeOfDeptCD b = new EmployeeOfDeptCD();
-             a.expiringDateOfInsurance = ("2015/03/11");
-             assertTrue(b.checkInsurance(a));
+            
+             Application.claimant1.expiringDateOfInsurance = "2016/03/11";
+             assertTrue(employeeCD.checkInsurance(Application.claimant1));
          }
 }

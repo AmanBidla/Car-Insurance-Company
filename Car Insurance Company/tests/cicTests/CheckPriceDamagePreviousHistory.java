@@ -6,6 +6,7 @@ package cicTests;
  * and open the template in the editor.
  */
 
+import cicSrc.Application;
 import cicSrc.Claim;
 import cicSrc.Claimant;
 
@@ -35,6 +36,7 @@ public class CheckPriceDamagePreviousHistory {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -45,9 +47,14 @@ public class CheckPriceDamagePreviousHistory {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-     public void check_Price_DmgCost_PreviousHistory(Claimant a,Claim b) {
-         a.getDmgHistory();
-         System.out.println(a.priceOfCar);
-         System.out.println(b.amount_of_payment);
+     public void check_Price_DmgCost_PreviousHistory() {
+        
+         assertEquals(Application.claimant1.AccidentCost.get(0), 1000);
+         assertEquals(Application.claimant1.AccidentDamage.get(0), "right wing");
+         assertEquals(Application.claimant1.AccidentLocation.get(0), "Kungsgatan 17,Stockholm");
+         assertEquals(Application.claimant1.AccidentDate.get(0), "2014/12/11");
+         assertEquals(Application.claimant1.priceOfCar,32000);
+         assertEquals(Application.claim1.claimCostOfDmg, 1000);
+         
      }
 }
