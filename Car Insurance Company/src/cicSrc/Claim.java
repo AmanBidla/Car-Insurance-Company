@@ -24,6 +24,8 @@ public class Claim {
     public String claimStatus; //reported, classified, accepted, rejected, registered, sent for payment
     public Boolean payment;
     public int amount_of_payment = 0;
+    public int costOfDmg;
+   // public int priceOfCar;
     
     
     

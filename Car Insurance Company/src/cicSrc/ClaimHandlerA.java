@@ -38,4 +38,13 @@ public class ClaimHandlerA extends EmployeeOfDeptCD{
                 }
     }
     
+    public void classifyClaim(Claim a){
+        //if ((price of car>30000) || (cost of damage > 5000) || (total number of previous accidents > 3))
+        {
+        a.setClaimCategory("complex");
+    }
+        else{
+                 a.setClaimCategory("simple");
+                }
+    }
 }
