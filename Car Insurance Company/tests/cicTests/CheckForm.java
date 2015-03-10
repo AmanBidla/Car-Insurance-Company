@@ -14,6 +14,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import cicSrc.Application;
+
 
 /**
  *
@@ -34,6 +36,7 @@ public class CheckForm {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -45,20 +48,19 @@ public class CheckForm {
     //
     @Test
     public void checkForm_test() {
-        Form form1 = new Form();
+        
         boolean val;
-        form1.formStatus="Filled in-Needs to be checked!";
-        if (form1.formStatus.equals("Filled in-Needs to be checked!")){
-            val=(form1.formName.equals("Charlie")) && (form1.formSurname.equals("Hebdo")) && (form1.formDateOfAccident.equals("11/12/2014"))
-                    &&(form1.formInsuranceExpiringDate.equals("03/2018")) && (form1.formInsuredPersonPlate.equals("IK 3546"));
+        if (Application.form2.formStatus.equals("Filled in-Needs to be checked!")){
+            val=(Application.form2.formName.equals(Application.claimant2.name)) && (Application.form2.formSurname.equals(Application.claimant2.surname)) && (Application.form2.formDateOfAccident.equals(Application.claim2.claimDate))
+                    &&(Application.form2.formInsuranceExpiringDate.equals(Application.claimant2.expiringDateOfInsurance)) && (Application.form2.formInsuredPersonPlate.equals(Application.claimant2.plateNumber));
             if (val)
-                form1.formStatus= "Filled in correctly!";
+                Application.form2.formStatus= "Filled in correctly!";
             else
-                form1.formStatus= "Not filled in correctly!";
+                Application.form2.formStatus= "Not filled in correctly!";
                      
         }
         
-        assertEquals(form1.formStatus,"Filled in correctly!");
+        assertEquals(Application.form2.formStatus,"Filled in correctly!");
         
     
     

@@ -26,6 +26,7 @@ public class Application {
     public static ClaimHandlerA claimHandlerA;
     public static EmployeeOfDeptCD employeeCD;
     public static Form form1;
+    public static Form form2;
     
     public static void main (String[] args){
         
@@ -85,6 +86,23 @@ public class Application {
         form1= new Form();
         form1.formType="Simple Form";
         form1.formStatus="Created!";
+        
+        form2=new Form();
+        form2.formType="Simple Form";
+        form2.formName="Charles";
+        form2.formSurname="Hebdos";
+        form2.formDateOfAccident="2015/01/05";
+        form2.formInsuranceExpiringDate="2015/04/22";
+        form2.formInsuredPersonPlate="IM 3224";
+        form2.formPersonInvolvedInTheAccidentPlate="LS 8665";
+        
+        form2.formStatus="Filled in-Needs to be checked!";
+        
+        
+        
+        
+        
+        form2.formStatus="Filled in-Needs to be checked!";
 
         
         
