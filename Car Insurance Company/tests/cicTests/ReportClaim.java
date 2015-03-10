@@ -48,17 +48,15 @@ public class ReportClaim {
      @Test
      public void reportClaim_test() {
         
+       
+        Application.claim1.claimantName= Application.claimant1.name;
+        Application.claim1.claimantSurname=Application.claimant1.surname;
+        Application.claim1.claimantLocation=Application.claim1.claimantLocation;
         
-        
-        Claim claim1 = new Claim();
-        claim1.claimantName= Application.claimant1.name;
-        claim1.claimantSurname="Hebdo";
-        claim1.claimantLocation="Kungsgatan 17,Stockholm";
-        
-        claim1.setClaimStatus("Reported");
+        Application.claim1.setClaimStatus("Reported");
        
         
-        assertEquals(claim1.getClaimStatus(),"Reported");
+        assertEquals(Application.claim1.getClaimStatus(),"Reported");
         
     
     }
