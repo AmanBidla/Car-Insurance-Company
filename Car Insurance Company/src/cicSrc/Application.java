@@ -65,7 +65,7 @@ public class Application {
     public static void initialize(){
         
         
-        claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
+        
         employeeCD = new EmployeeOfDeptCD();
         
 

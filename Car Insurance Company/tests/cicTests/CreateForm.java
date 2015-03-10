@@ -15,6 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import cicSrc.Application;
+
 /**
  *
  * @author george
@@ -34,6 +36,7 @@ public class CreateForm {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -46,28 +49,28 @@ public class CreateForm {
     @Test
     public void createClaimForm_test() {
        
-        Claim claim1 =new Claim();
+        
         Form form1 =new Form();
         
-        claim1.claimCategory="Complex";
+        Application.claim1.claimStatus="Claimant Insured";
+        Application.claim1.claimCategory="Complex";
         
-        if (claim1.claimCategory.equals("Simple")){
-            form1.formType ="Simple Form";
+        if (Application.claim1.claimStatus.equals("Claimant Insured") && Application.claim1.claimCategory.equals("Simple")){
             form1.formStatus ="Created";
+            form1.formType ="Simple Form";
+            
                        
         }
-        else if (claim1.claimCategory.equals("Complex")){
-            form1.formType= "Complex Form";
+        else if (Application.claim1.claimStatus.equals("Claimant Insured") && Application.claim1.claimCategory.equals("Complex")){
             form1.formStatus ="Created";
+            form1.formType= "Complex Form";
                     
         }
         
-        
-        assertFalse(form1.formType.equals("Complex"));
         assertEquals(form1.formStatus,"Created");
+        assertTrue(form1.formType.equals("Complex Form"));
         
-            
-         
+        
         }
        
 }
