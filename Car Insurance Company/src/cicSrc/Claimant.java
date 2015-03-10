@@ -15,22 +15,11 @@ import java.util.*;
 
 public class Claimant extends User{
     
-    
-    public Claimant(){}
-    
-    public Claimant(String name, String surname, String username, String password){
-                this.name = name;
-                this.surname = surname;
-		this.username = username;
-		this.password = password;
-    }
-    
     //Insurance details
     public int costOfInsurance;
     public String expiringDateOfInsurance;
     public String plateNumber;
     public int priceOfCar;
-    
     
     //Accident History
     public List<String> AccidentDate = new ArrayList<String>();
@@ -39,7 +28,19 @@ public class Claimant extends User{
     public List<String> AccidentDamage = new ArrayList<String>();
     public List AccidentCost = new ArrayList();
     
-
+    
+    
+    
+    public Claimant(){}
+    
+    public Claimant(String name, String surname, String username, String password,String plate,String expDateOfIns){
+                this.name = name;
+                this.surname = surname;
+		this.username = username;
+		this.password = password;
+                this.plateNumber = plate;
+                this.expiringDateOfInsurance=expDateOfIns;
+    }
     
     
      public void getDmgHistory(){  

@@ -6,13 +6,15 @@ package cicTests;
  * and open the template in the editor.
  */
 
-import cicSrc.Form;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import cicSrc.Application;
 
 /**
  *
@@ -33,6 +35,7 @@ public class FillinForm {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -44,36 +47,35 @@ public class FillinForm {
     //
      @Test
     public void fillinForm_test() {
-        Form form1 = new Form();
-        form1.formType="Simple Form";
-        form1.formStatus="Created!";
         
-        if ((form1.formStatus.equals("Created!") || form1.formStatus.equals("Not filled correctly!"))&& form1.formType.equals("Simple Form")){
-            form1.formName= "Name1";
-            form1.formSurname="Surname1";
-            form1.formDateOfAccident="Date1";
-            form1.formInsuranceExpiringDate="ExpiringDate1";
-            form1.formInsuredPersonPlate = "InsuredPlate1";
-            form1.formPersonInvolvedInTheAccidentPlate = "InvolvedPlate1";
+        
+        
+        if ((Application.form1.formStatus.equals("Created!") || Application.form1.formStatus.equals("Not filled correctly!"))&& Application.form1.formType.equals("Simple Form")){
+            Application.form1.formName= Application.claimant1.name;
+            Application.form1.formSurname=Application.claimant1.surname;
+            Application.form1.formDateOfAccident=Application.claim1.claimDate;
+            Application.form1.formInsuranceExpiringDate=Application.claimant1.expiringDateOfInsurance;
+            Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
+            Application.form1.formPersonInvolvedInTheAccidentPlate = "TX 6567";
             
-            form1.formStatus = "Filled in-Needs to be checked!";
+            Application.form1.formStatus = "Filled in-Needs to be checked!";
             
         }
-        else if ((form1.formStatus.equals("Created!") || form1.formStatus.equals("Not filled correctly!"))&& form1.formType.equals("Complex Form")){
-            form1.formName= "Name2";
-            form1.formSurname="Surname2";
-            form1.formDateOfAccident="Date2";
-            form1.formInsuranceExpiringDate="ExpiringDate2";
-            form1.formInsuredPersonPlate = "InsuredPlate2";
-            form1.formPersonInvolvedInTheAccidentPlate = "InvolvedPlate2";
-            form1.formAgreementOnIncreaseInPremiums = "Agree";
+        else if ((Application.form1.formStatus.equals("Created!") || Application.form1.formStatus.equals("Not filled correctly!"))&& Application.form1.formType.equals("Complex Form")){
+            Application.form1.formName= Application.claimant1.name;
+            Application.form1.formSurname=Application.claimant1.surname;
+            Application.form1.formDateOfAccident=Application.claim1.claimDate;
+            Application.form1.formInsuranceExpiringDate=Application.claimant1.expiringDateOfInsurance;
+            Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
+            Application.form1.formPersonInvolvedInTheAccidentPlate = "RS 2476";
+            Application.form1.formAgreementOnIncreaseInPremiums = "Agree";
             
-            form1.formStatus = "Filled in-Needs to be checked!";
+            Application.form1.formStatus = "Filled in-Needs to be checked!";
             
         
          }
         
-         assertEquals(form1.formStatus, "Filled in-Needs to be checked!");
+         assertEquals(Application.form1.formStatus, "Filled in-Needs to be checked!");
     
     
     
