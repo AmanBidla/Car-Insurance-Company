@@ -80,9 +80,6 @@ public class Claimant extends User{
      public int getPriceOfCar(){
          return this.priceOfCar;
      }
-     
-     //TODO 
-     
-        //we need a report Claim method
+    
 
 }
