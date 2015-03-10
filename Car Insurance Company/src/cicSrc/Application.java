@@ -21,8 +21,8 @@ import java.text.SimpleDateFormat;
  */
 public class Application {
     
-    public static Claimant claimant1;
-    public static Claim claim1;
+    public static Claimant claimant1,claimant2,claimant3;
+    public static Claim claim1,claim2,claim3;
     public static ClaimHandlerA claimHandlerA;
     public static EmployeeOfDeptCD employeeCD;
     
@@ -70,9 +70,15 @@ public class Application {
         
 
         claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
+        claimant1.priceOfCar = 32000;
+        claimant2 = new Claimant("Charles","Hebdos","IamCharles","13579");
+        claimant2.priceOfCar = 23000;
+        claimant3 = new Claimant("Tsoutsounis","Paparopoulos","tsoutsou","megalh");
+        claimant3.priceOfCar = 18000;
         
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
-        
+        claim2 = new Claim ("Charles","Hebdos","Emmyvagen 3,Solna","2015/01/05",6000);
+        claim3 = new Claim ("Tsoutsounis","Paparopoulos","Elvagen 5,Solna","2014/09/07",3000);
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
 
         

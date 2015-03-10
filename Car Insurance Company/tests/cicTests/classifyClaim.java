@@ -48,18 +48,24 @@ public class classifyClaim {
      @Test
          public void classify_claim_test() {
              
-           //  Claim b = Application.claimant1.reportClaim(Application.claimant1);// price of car >30000
+           // price of car >30000
              Application.employeeCD.classifyClaim(Application.claim1,Application.claimant1);
              assertEquals(Application.claim1.getClaimCategory(),"complex");
-            // a.reportClaim(c, a);// where cost of damage >5000
-            Application.employeeCD.classifyClaim(c,Application.claimant1);
-             assertEquals(c.getClaimCategory(),"complex");
-            // a.reportClaim(d, a);//  where total number of accidents >3
-             Application.employeeCD.classifyClaim(d,Application.claimant1);
-             assertEquals(d.getClaimCategory(),"complex");
-           //  a.reportClaim(e, a);// where everything is ok
-             Application.employeeCD.classifyClaim(e,Application.claimant1);
-             assertEquals(e.getClaimCategory(),"simple");
+           // everything is ok
+             Application.employeeCD.classifyClaim(Application.claim3,Application.claimant3);
+             assertEquals(Application.claim3.getClaimCategory(),"simple");
+            // cost of damage >5000
+            Application.employeeCD.classifyClaim(Application.claim2,Application.claimant2);
+             assertEquals(Application.claim2.getClaimCategory(),"complex");
+            // where total number of accidents >3
+             Application.claim2.claimCostOfDmg = 4000;
+             Application.claimant2.AccidentCost.add(1000);
+             Application.claimant2.AccidentCost.add(1000);
+             Application.claimant2.AccidentCost.add(1000);
+             Application.claimant2.AccidentCost.add(1000);
+             Application.employeeCD.classifyClaim(Application.claim2,Application.claimant2);
+             assertEquals(Application.claim2.getClaimCategory(),"complex");
+           
              
          }
 }
