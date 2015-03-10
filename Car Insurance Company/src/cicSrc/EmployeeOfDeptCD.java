@@ -85,7 +85,7 @@ public class EmployeeOfDeptCD extends User{
         }
         
         public void classifyClaim(Claim a, Claimant b){
-        if ((b.priceOfCar > 30000) || (a.costOfDmg > 5000) || (b.AccidentCost.size() > 3))
+        if ((b.priceOfCar > 30000) || (a.claimCostOfDmg > 5000) || (b.AccidentCost.size() > 3))
         {
         a.setClaimCategory("complex");
     }

@@ -19,7 +19,6 @@ public class Claim {
     public String claimantSurname;
     public String claimantLocation;
     public String claimDate;
-    public int claimCostOfDamage;
     public String claimCategory;//simple, complex
     public String claimDecision;//positive, negative
     public String claimStatus; //reported, classified, accepted, rejected, registered, sent for payment
@@ -28,7 +27,7 @@ public class Claim {
     public int claimCostOfDmg;
    // public int priceOfCar;
     
-    
+    //public Claim(){}
     
     public Claim(String name,String surname,String location,String date,int cost){
         this.claimantName=name;

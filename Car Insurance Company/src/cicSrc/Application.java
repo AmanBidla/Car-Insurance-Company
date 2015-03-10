@@ -24,6 +24,7 @@ public class Application {
     public static Claimant claimant1;
     public static Claim claim1;
     public static ClaimHandlerA claimHandlerA;
+    public static EmployeeOfDeptCD employeeCD;
     
     public static void main (String[] args){
         
@@ -31,10 +32,7 @@ public class Application {
         
         //apo dw kai meta testarw
         
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	   //get current date time with Date()
-	   Date date = new Date();
-	   System.out.println(dateFormat.format(date));
+       
         
         // edw teleiwnei to test space mou
         
@@ -66,15 +64,19 @@ public class Application {
     
     public static void initialize(){
     
-        Claimant claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
+      claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
         
-        Claim claim1 =new Claim();
+       // Claim claim1 =new Claim();
         claim1.claimantName= "Charlie";
         claim1.claimantSurname="Hebdo";
         claim1.claimantLocation="Kungsgatan 17,Stockholm";
-        claim1.claimDate= "11/12/2014";
+        claim1.claimDate= "2014/12/11";
+        claim1.claimCostOfDmg = 35000;
         
-        ClaimHandlerA claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
+        
+        claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
+        employeeCD = new EmployeeOfDeptCD();
+        
         
         
     
