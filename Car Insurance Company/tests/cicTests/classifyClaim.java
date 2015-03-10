@@ -46,18 +46,19 @@ public class classifyClaim {
      @Test
          public void classify_claim_test() {
              Claimant a = new Claimant();
+             //Claim b = new Claim();
              EmployeeOfDeptCD f = new EmployeeOfDeptCD();
-             //report claim (Claim b) where price of car > 30000
-             f.classifyClaim(b);
+             a.reportClaim(b, a);// price of car >30000
+             f.classifyClaim(b,a);
              assertEquals(b.getClaimCategory(),"complex");
-             //report claim (CLaim c) where cost of damage >5000
-             f.classifyClaim(c);
+             a.reportClaim(c, a);// where cost of damage >5000
+             f.classifyClaim(c,a);
              assertEquals(c.getClaimCategory(),"complex");
-             //report claim (Claim d) where total number of accidents >3
-             f.classifyClaim(d);
+             a.reportClaim(d, a);//  where total number of accidents >3
+             f.classifyClaim(d,a);
              assertEquals(d.getClaimCategory(),"complex");
-             //report claim where everything is ok
-             f.classifyClaim(e);
+             a.reportClaim(e, a);// where everything is ok
+             f.classifyClaim(e,a);
              assertEquals(e.getClaimCategory(),"simple");
              
          }

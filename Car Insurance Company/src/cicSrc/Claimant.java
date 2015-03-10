@@ -80,9 +80,8 @@ public class Claimant extends User{
      public int getPriceOfCar(){
          return this.priceOfCar;
      }
-<<<<<<< HEAD
+
     
-=======
      
      public void reportClaim(Claim claim,Claimant claimant){
          claim.claimantName=claimant.name;
@@ -100,6 +99,5 @@ public class Claimant extends User{
     }
      
      
->>>>>>> f89e47c3e2dad4b1394c91e4c26339b56ab04432
 
 }
