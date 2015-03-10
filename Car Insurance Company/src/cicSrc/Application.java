@@ -63,20 +63,18 @@ public class Application {
     }    
     
     public static void initialize(){
-    
-      claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
-        
-       // Claim claim1 =new Claim();
-        claim1.claimantName= "Charlie";
-        claim1.claimantSurname="Hebdo";
-        claim1.claimantLocation="Kungsgatan 17,Stockholm";
-        claim1.claimDate= "2014/12/11";
-        claim1.claimCostOfDmg = 35000;
         
         
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
         employeeCD = new EmployeeOfDeptCD();
         
+
+        claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
+        
+        claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
+        
+        claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
+
         
         
     
