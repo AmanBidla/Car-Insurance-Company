@@ -35,6 +35,7 @@ public class ReportClaim {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -50,7 +51,7 @@ public class ReportClaim {
         
         
         Claim claim1 = new Claim();
-        claim1.claimantName= "Charlie";
+        claim1.claimantName= Application.claimant1.name;
         claim1.claimantSurname="Hebdo";
         claim1.claimantLocation="Kungsgatan 17,Stockholm";
         
