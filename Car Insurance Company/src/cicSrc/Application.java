@@ -20,6 +20,11 @@ import java.text.SimpleDateFormat;
  * @author george
  */
 public class Application {
+    
+    public static Claimant claimant1;
+    public static Claim claim1;
+    public static ClaimHandlerA claimHandlerA;
+    
     public static void main (String[] args){
         
         boolean value=false; 
@@ -42,9 +47,9 @@ public class Application {
          
         //admin.register();
         
-        Claimant claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
+        //Claimant claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579");
         //ClaimHandlerA claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
-        
+        /*
         while (value==false){
         System.out.println("Give username");
         Scanner username= new Scanner(System.in);
@@ -56,7 +61,7 @@ public class Application {
         
         
         value= claimant1.login(user, pass);
-        }
+        }*/
     }    
     
     public static void initialize(){
@@ -69,7 +74,7 @@ public class Application {
         claim1.claimantLocation="Kungsgatan 17,Stockholm";
         claim1.claimDate= "11/12/2014";
         
-        ClaimHandlerA claimHandler = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
+        ClaimHandlerA claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
         
         
     

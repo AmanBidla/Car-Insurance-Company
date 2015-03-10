@@ -80,6 +80,26 @@ public class Claimant extends User{
      public int getPriceOfCar(){
          return this.priceOfCar;
      }
+<<<<<<< HEAD
     
+=======
+     
+     public void reportClaim(Claim claim,Claimant claimant){
+         claim.claimantName=claimant.name;
+         claim.claimantSurname=claimant.surname;
+         
+         Scanner location= new Scanner(System.in);
+         claim.claimantLocation=location.next();
+         
+         Scanner date= new Scanner(System.in);
+         claim.claimDate=date.next();
+         
+         claim.claimStatus="Reported";
+         
+         
+    }
+     
+     
+>>>>>>> f89e47c3e2dad4b1394c91e4c26339b56ab04432
 
 }
