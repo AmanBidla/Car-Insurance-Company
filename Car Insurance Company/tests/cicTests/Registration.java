@@ -6,6 +6,7 @@ package cicTests;
  * and open the template in the editor.
  */
 
+import cicSrc.Application;
 import cicSrc.Claimant;
 import cicSrc.EmployeeOfDeptCD;
 import cicSrc.ClaimHandlerA;
@@ -34,10 +35,10 @@ public class Registration {
     
     @Before
     public void setUp() {
-    }
-    
-     
         
+      Application.initialize();
+    }
+                
     
     @After
     public void tearDown() {
@@ -46,30 +47,25 @@ public class Registration {
  @Test
 	public void create_registration_test() {
             
+               	assertEquals("Charlie",Application.claimant1.getname());
+                assertEquals("Hebdo",Application.claimant1.getsurname());
+                assertEquals("IamCharlie",Application.claimant1.getusername());
+                assertEquals("13579",Application.claimant1.getpassword());	
                 
-                Claimant a = new Claimant("Ioannis","Papakostas","johnnyaoua", "12345");
-		assertEquals("Ioannis",a.getname());
-                assertEquals("Papakostas",a.getsurname());
-                assertEquals("johnnyaoua",a.getusername());
-                assertEquals("12345",a.getpassword());	
+                assertEquals("Georgie",Application.employeeCD.getname());
+                assertEquals("The Ge(r)m",Application.employeeCD.getsurname());
+                assertEquals("Billy",Application.employeeCD.getusername());
+                assertEquals("Elliot",Application.employeeCD.getpassword());
                 
-                EmployeeOfDeptCD b = new EmployeeOfDeptCD("Ioannis","Papakostas","johnnyaoua", "12345");
-                assertEquals("Ioannis",b.getname());
-                assertEquals("Papakostas",b.getsurname());
-                assertEquals("johnnyaoua",b.getusername());
-                assertEquals("12345",b.getpassword());
+                assertEquals("Yanni",Application.claimHandlerA.getname());
+                assertEquals("The Pimp",Application.claimHandlerA.getsurname());
+                assertEquals("johnny",Application.claimHandlerA.getusername());
+                assertEquals("aoua",Application.claimHandlerA.getpassword());
                 
-                ClaimHandlerA c = new ClaimHandlerA("Ioannis","Papakostas","johnnyaoua", "12345");
-                assertEquals("Ioannis",c.getname());
-                assertEquals("Papakostas",c.getsurname());
-                assertEquals("johnnyaoua",c.getusername());
-                assertEquals("12345",c.getpassword());
-                
-                GarageOwner d = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
-                assertEquals("Ioannis",d.getname());
-                assertEquals("Papakostas",d.getsurname());
-                assertEquals("johnnyaoua",d.getusername());
-                assertEquals("12345",d.getpassword());
+                assertEquals("Ioannis",Application.garage1.getname());
+                assertEquals("Papakostas",Application.garage1.getsurname());
+                assertEquals("johnnyaoua",Application.garage1.getusername());
+                assertEquals("12345",Application.garage1.getpassword());
 	}
         
                 

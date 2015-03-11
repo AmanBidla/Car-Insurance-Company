@@ -26,8 +26,13 @@ public class Application {
     public static ClaimHandlerA claimHandlerA;
     public static EmployeeOfDeptCD employeeCD;
     public static Form form1;
+
+    public static GarageOwner garage1;
+
     public static Form form2;
+
     public static EmployeeOfFinancialDept financialDeptEmployee;
+
     
     public static void main (String[] args){
         
@@ -69,7 +74,7 @@ public class Application {
         
         
         //empoyee of CD Dept creation
-        employeeCD = new EmployeeOfDeptCD();
+        employeeCD = new EmployeeOfDeptCD("Georgie","The Ge(r)m","Billy","Elliot");
         
         //claimant creation
         claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579","IK 5345","2018/03/12");
@@ -92,8 +97,7 @@ public class Application {
         //form creation - form1 corresponds to claim1,form2 to claim2 etc.
         form1= new Form();
         form1.formType="Simple Form";
-        form1.formStatus="Created!";
-        
+        form1.formStatus="Created!";      
 
         form2=new Form();
         form2.formType="Simple Form";
@@ -102,15 +106,15 @@ public class Application {
         form2.formDateOfAccident="2015/01/05";
         form2.formInsuranceExpiringDate="2015/04/22";
         form2.formInsuredPersonPlate="IM 3224";
-        form2.formPersonInvolvedInTheAccidentPlate="LS 8665";
-        
+        form2.formPersonInvolvedInTheAccidentPlate="LS 8665";   
         form2.formStatus="Filled in-Needs to be checked!";
-        
+
         //claimant records
         claimant1.AccidentDate.add(new String("2014/12/11"));
         claimant1.AccidentDamage.add(new String("right wing"));
         claimant1.AccidentCost.add(claim1.amount_of_payment);
         claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
+
         
         //EmployeeOfFinancialDept
         
@@ -120,7 +124,12 @@ public class Application {
        
 
         
+
+        claimant1.AccidentTime.add(new String("18:55"));
+
         
+        //garage owner creation
+        garage1 = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
     
     
     

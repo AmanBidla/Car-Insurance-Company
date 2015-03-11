@@ -6,6 +6,7 @@ package cicTests;
  * and open the template in the editor.
  */
 
+import cicSrc.Application;
 import cicSrc.Claimant;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,6 +34,7 @@ public class UpdateDamageHistory {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -44,37 +46,26 @@ public class UpdateDamageHistory {
     //
      @Test
         public void update_dmg_history_test(){
-            
-            
-            Claimant b = new Claimant();
-            
-            b.AccidentDate.add(new String("04/03/2015")); 
-            b.AccidentTime.add(new String("20:55")); 
-            b.AccidentLocation.add(new String("Stockholm"));
-            b.AccidentDamage.add(new String("Right Door"));
-            b.AccidentCost.add(2000); 
-            
-            for(String s:b.AccidentDate){
-            assertEquals(s,"04/03/2015");
+                                    
+           for(String s:Application.claimant1.AccidentDate){
+            assertEquals(s,"2014/12/11");
          }
          
-          for(String s:b.AccidentTime){
-            assertEquals(s,"20:55");
+           for(String s:Application.claimant1.AccidentTime){
+            assertEquals(s,"18:55");
          }
           
-           for(String s:b.AccidentLocation){
-            assertEquals(s,"Stockholm");
+           for(String s:Application.claimant1.AccidentLocation){
+            assertEquals(s,"Kungsgatan 17,Stockholm");
          }
            
-            for(String s:b.AccidentDamage){
-            assertEquals(s,"Right Door");
+            for(String s:Application.claimant1.AccidentDamage){
+            assertEquals(s,"right wing");
          }
             
-              for(int s=0; s < b.AccidentCost.size(); s++)
-             {
-            System.out.println(b.AccidentCost.get(s));
+            for(int s=0; s < Application.claimant1.AccidentCost.size(); s++){
+             assertEquals(Application.claimant1.AccidentCost.get(s),1000);
          }
             
-
         }
 }
