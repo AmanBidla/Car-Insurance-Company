@@ -6,6 +6,8 @@ package cicTests;
  * and open the template in the editor.
  */
 
+import cicSrc.Application;
+import static cicSrc.Application.claimHandlerA;
 import cicSrc.Claimant;
 import cicSrc.ClaimHandlerA;
 import cicSrc.Claim;
@@ -36,6 +38,7 @@ public class Mark_Claim {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -48,23 +51,10 @@ public class Mark_Claim {
     @Test
         public void mark_claim_as_positive_or_negative_test(){
             
-            Claim a = new Claim();
-            ClaimHandlerA handler = new ClaimHandlerA();
-            Claimant b = new Claimant();
-            GarageOwner c = new GarageOwner();
-            handler.mark_claim(a,b,c);
-            
-            //a.setClaimDecision("positive");
-            
-            
-            
-           
-              assertTrue(handler.checkInsurance(b));
-              assertTrue(handler.checkDmgHistory(b));
-              assertTrue(handler.phoneGarage(b,c));
-                          
- 
-           
+            Application.claimHandlerA.mark_claim(Application.claim1,Application.claimant1,Application.garage1);
+            assertEquals(Application.claim1.getClaimDecision(), "positive");
+                    
+                
         
 }
 }

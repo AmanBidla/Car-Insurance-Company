@@ -5,6 +5,7 @@
  */
 package cicTests;
 
+import cicSrc.Application;
 import cicSrc.Claim;
 import cicSrc.Claimant;
 import org.junit.After;
@@ -33,6 +34,7 @@ public class informClaimantTest {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -43,9 +45,10 @@ public class informClaimantTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-        public void inform_claimant_test(Claimant a, Claim b) {
+        public void inform_claimant_test() {
             
             //TODO
                 //check if the claimant was informed
+            Claimant a, Claim b;
         }
 }

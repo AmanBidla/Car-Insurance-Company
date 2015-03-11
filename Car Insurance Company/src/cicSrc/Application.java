@@ -26,6 +26,7 @@ public class Application {
     public static ClaimHandlerA claimHandlerA;
     public static EmployeeOfDeptCD employeeCD;
     public static Form form1;
+    public static GarageOwner garage1;
     
     public static void main (String[] args){
         
@@ -67,7 +68,7 @@ public class Application {
         
         
         //empoyee of CD Dept creation
-        employeeCD = new EmployeeOfDeptCD();
+        employeeCD = new EmployeeOfDeptCD("Georgie","The Ge(r)m","Billy","Elliot");
         
         //claimant creation
         claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579","IK 5345","2018/03/12");
@@ -91,11 +92,15 @@ public class Application {
         form1.formType="Simple Form";
         form1.formStatus="Created!";
         
+        //garage owner creation
+        garage1 = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
+        
         //claimant records
         claimant1.AccidentDate.add(new String("2014/12/11"));
         claimant1.AccidentDamage.add(new String("right wing"));
         claimant1.AccidentCost.add(claim1.amount_of_payment);
         claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
+        claimant1.AccidentTime.add(new String("18:55"));
         
         
     

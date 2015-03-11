@@ -47,18 +47,16 @@ public class ReportClaim {
     //
      @Test
      public void reportClaim_test() {
+                   
+        Application.claim1.setClaimStatus("Reported");
         
-       Claim claim = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
-       
-       claim.setClaimStatus("Reported");
+        assertEquals(Application.claim1.claimantName,"Charlie");
+        assertEquals(Application.claim1.claimantSurname,"Hebdo");
+        assertEquals(Application.claim1.claimantLocation,"Kungsgatan 17,Stockholm");
+        assertEquals(Application.claim1.claimDate,"2014/12/11");
+        assertEquals(Application.claim1.claimCostOfDmg,1000);
         
-        assertEquals(claim.claimantName,"Charlie");
-        assertEquals(claim.claimantSurname,"Hebdo");
-        assertEquals(claim.claimantLocation,"Kungsgatan 17,Stockholm");
-        assertEquals(claim.claimDate,"2014/12/11");
-        assertEquals(claim.claimCostOfDmg,1000);
-        
-        assertEquals(claim.getClaimStatus(),"Reported");
+        assertEquals(Application.claim1.getClaimStatus(),"Reported");
         
     
     }
