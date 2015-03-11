@@ -54,9 +54,9 @@ public class FillinForm {
             Application.form1.formName= Application.claimant1.name;
             Application.form1.formSurname=Application.claimant1.surname;
             Application.form1.formDateOfAccident=Application.claim1.claimDate;
-            Application.form1.formInsuranceExpiringDate=Application.claimant1.expiringDateOfInsurance;
+            Application.form1.formLocationOfAccident=Application.claim1.claimantLocation;
             Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
-            Application.form1.formPersonInvolvedInTheAccidentPlate = "TX 6567";
+            
             
             Application.form1.formStatus = "Filled in-Needs to be checked!";
             
@@ -65,9 +65,9 @@ public class FillinForm {
             Application.form1.formName= Application.claimant1.name;
             Application.form1.formSurname=Application.claimant1.surname;
             Application.form1.formDateOfAccident=Application.claim1.claimDate;
-            Application.form1.formInsuranceExpiringDate=Application.claimant1.expiringDateOfInsurance;
+            Application.form1.formLocationOfAccident=Application.claim1.claimantLocation;
             Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
-            Application.form1.formPersonInvolvedInTheAccidentPlate = "RS 2476";
+            
             Application.form1.formAgreementOnIncreaseInPremiums = "Agree";
             
             Application.form1.formStatus = "Filled in-Needs to be checked!";

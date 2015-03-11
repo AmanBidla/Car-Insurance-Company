@@ -88,11 +88,46 @@ public class EmployeeOfDeptCD extends User{
         if ((b.priceOfCar > 30000) || (a.claimCostOfDmg > 5000) || (b.AccidentCost.size() > 3))
         {
         a.setClaimCategory("complex");
-    }
+        }
         else{
                  a.setClaimCategory("simple");
                 }
-    }
+        }
+        
+        public void createForm(Claim a){
+            if (a.claimStatus.equals("Classified") && a.claimCategory.equals("Simple")){
+            Form form1 = new Form();
+            form1.formStatus ="Created";
+            form1.formType ="Simple Form";
+            }
+            else if (a.claimStatus.equals("Classified") && a.claimCategory.equals("Complex")){
+            Form form1 = new Form();
+            form1.formStatus ="Created";
+            form1.formType= "Complex Form";
+                    
+            }
+        }
+        public void checkForm(Claim a,Claimant c,Form f){
+            boolean val;
+        
+        if (f.formStatus.equals("Filled in-Needs to be checked!")){
+            val=(f.formName.equals(a.claimantName)) && (f.formSurname.equals(a.claimantSurname)) && (f.formDateOfAccident.equals(a.claimDate))
+                    &&(f.formLocationOfAccident.equals(a.claimantLocation)) && (f.formInsuredPersonPlate.equals(c.plateNumber));
+            if (val)
+                f.formStatus= "Filled in correctly!";
+            else
+                f.formStatus= "Not filled in correctly!";
+                     
+        }
+            
+            
+        
+        
+        
+        }
+        
+        
+       
         
     }
 

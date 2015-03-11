@@ -50,8 +50,13 @@ public class User {
 	}
         
         /* method which enables the user to login to the system */
-        public boolean login(String username, String password) {
-            boolean val= (this.username.equals(username)) && (this.password.equals(password));
+        public boolean login(User u) {
+            boolean val;
+            Scanner user = new Scanner(System.in);
+            String nameOfUser=user.next();
+            Scanner pass = new Scanner(System.in);
+            String passwordOfUser= pass.next();
+            val= (u.username.equals(nameOfUser)) && (u.password.equals(passwordOfUser));
             if (val)
                 System.out.println("Login successful!");
             else

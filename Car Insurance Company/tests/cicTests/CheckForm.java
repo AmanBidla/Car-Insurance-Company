@@ -53,7 +53,7 @@ public class CheckForm {
         
         if (Application.form2.formStatus.equals("Filled in-Needs to be checked!")){
             val=(Application.form2.formName.equals(Application.claimant2.name)) && (Application.form2.formSurname.equals(Application.claimant2.surname)) && (Application.form2.formDateOfAccident.equals(Application.claim2.claimDate))
-                    &&(Application.form2.formInsuranceExpiringDate.equals(Application.claimant2.expiringDateOfInsurance)) && (Application.form2.formInsuredPersonPlate.equals(Application.claimant2.plateNumber));
+                    &&(Application.form2.formLocationOfAccident.equals(Application.claim2.claimantLocation)) && (Application.form2.formInsuredPersonPlate.equals(Application.claimant2.plateNumber));
             if (val)
                 Application.form2.formStatus= "Filled in correctly!";
             else

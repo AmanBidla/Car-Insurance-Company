@@ -84,6 +84,11 @@ public class Application {
         claimant3 = new Claimant("Tsoutsounis","Paparopoulos","tsoutsou","megalh","ZN 1212","2014/08/31");
         claimant3.priceOfCar = 18000;
         
+        boolean value=false;
+        while (value==false){
+        value=claimant1.login(claimant1);
+        }
+        
         
         //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
@@ -104,9 +109,8 @@ public class Application {
         form2.formName="Charles";
         form2.formSurname="Hebdos";
         form2.formDateOfAccident="2015/01/05";
-        form2.formInsuranceExpiringDate="2015/04/22";
-        form2.formInsuredPersonPlate="IM 3224";
-        form2.formPersonInvolvedInTheAccidentPlate="LS 8665";   
+        form2.formLocationOfAccident="Emmyvagen 3,Solna";
+        form2.formInsuredPersonPlate="IM 3224";  
         form2.formStatus="Filled in-Needs to be checked!";
 
         //claimant records

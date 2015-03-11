@@ -17,9 +17,8 @@ public class Form {
     public String formName;
     public String formSurname;
     public String formDateOfAccident;
-    public String formInsuranceExpiringDate;
+    public String formLocationOfAccident;
     public String formInsuredPersonPlate;
-    public String formPersonInvolvedInTheAccidentPlate;
     public String formAgreementOnIncreaseInPremiums;
     
     public Form(){}

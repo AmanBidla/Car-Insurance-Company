@@ -52,16 +52,16 @@ public class CreateForm {
         
         Form form1 =new Form();
         
-        Application.claim1.claimStatus="Claimant Insured";
+        Application.claim1.claimStatus="Classified";
         Application.claim1.claimCategory="Complex";
         
-        if (Application.claim1.claimStatus.equals("Claimant Insured") && Application.claim1.claimCategory.equals("Simple")){
+        if (Application.claim1.claimStatus.equals("Classified") && Application.claim1.claimCategory.equals("Simple")){
             form1.formStatus ="Created";
             form1.formType ="Simple Form";
             
                        
         }
-        else if (Application.claim1.claimStatus.equals("Claimant Insured") && Application.claim1.claimCategory.equals("Complex")){
+        else if (Application.claim1.claimStatus.equals("Classified") && Application.claim1.claimCategory.equals("Complex")){
             form1.formStatus ="Created";
             form1.formType= "Complex Form";
                     

@@ -14,6 +14,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import cicSrc.Application;
+
 /**
  *
  * @author george
@@ -33,6 +35,7 @@ public class Login {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -47,11 +50,10 @@ public class Login {
          
             String username= "IamCharlie";
             String password="13579";
+          
             
-            User user2 = new User("customer","Charlie","Hebdo","IamCharlie","13579");
-            
-            assertEquals(user2.username,username);
-            assertEquals(user2.password,password);
+            assertEquals(Application.claimant1.username,username);
+            assertEquals(Application.claimant1.password,password);
         
         }
     
