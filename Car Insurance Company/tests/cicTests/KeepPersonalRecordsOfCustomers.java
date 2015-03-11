@@ -13,6 +13,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import cicSrc.Application;
+
 /**
  *
  * @author Ioannis Papakostas
@@ -32,6 +34,7 @@ public class KeepPersonalRecordsOfCustomers {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -42,16 +45,16 @@ public class KeepPersonalRecordsOfCustomers {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-        public void keep_personal_records_of_customers_test(Claimant a) {
-            a.costOfInsurance = 347;
-            a.priceOfCar = 20000;
-            a.plateNumber = "IEA 5839";
-            a.expiringDateOfInsurance = "13/08/2016";
+        public void keep_personal_records_of_customers_test() {
+            Application.claimant1.costOfInsurance = 347;
+            Application.claimant1.priceOfCar = 20000;
+            Application.claimant1.plateNumber = "IEA 5839";
+            Application.claimant1.expiringDateOfInsurance = "13/08/2016";
             
-            System.out.println(a.getExpiringDateOfInsurance());
-            System.out.println(a.getCostOfInsurance());
-            System.out.println(a.getPlateNumber());
-            System.out.println(a.getPriceOfCar());
-            a.getDmgHistory();
+            System.out.println(Application.claimant1.getExpiringDateOfInsurance());
+            System.out.println(Application.claimant1.getCostOfInsurance());
+            System.out.println(Application.claimant1.getPlateNumber());
+            System.out.println(Application.claimant1.getPriceOfCar());
+            Application.claimant1.getDmgHistory();
         }
 }

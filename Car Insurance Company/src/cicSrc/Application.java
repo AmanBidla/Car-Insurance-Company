@@ -27,6 +27,7 @@ public class Application {
     public static EmployeeOfDeptCD employeeCD;
     public static Form form1;
     public static Form form2;
+    public static EmployeeOfFinancialDept financialDeptEmployee;
     
     public static void main (String[] args){
         
@@ -78,7 +79,8 @@ public class Application {
         claimant3 = new Claimant("Tsoutsounis","Paparopoulos","tsoutsou","megalh","ZN 1212","2014/08/31");
         claimant3.priceOfCar = 18000;
         
-        //claim creation
+        
+        //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
         claim1.amount_of_payment = claim1.claimCostOfDmg;
         claim2 = new Claim ("Charles","Hebdos","Emmyvagen 3,Solna","2015/01/05",6000);
@@ -87,7 +89,7 @@ public class Application {
         //claim Handler creation
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
         
-        //form creation
+        //form creation - form1 corresponds to claim1,form2 to claim2 etc.
         form1= new Form();
         form1.formType="Simple Form";
         form1.formStatus="Created!";
@@ -104,18 +106,18 @@ public class Application {
         
         form2.formStatus="Filled in-Needs to be checked!";
         
-        
-        
-        
-        
-        form2.formStatus="Filled in-Needs to be checked!";
-
-
         //claimant records
         claimant1.AccidentDate.add(new String("2014/12/11"));
         claimant1.AccidentDamage.add(new String("right wing"));
         claimant1.AccidentCost.add(claim1.amount_of_payment);
         claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
+        
+        //EmployeeOfFinancialDept
+        
+        financialDeptEmployee=new EmployeeOfFinancialDept();
+        
+
+       
 
         
         

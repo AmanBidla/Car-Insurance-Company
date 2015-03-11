@@ -6,8 +6,9 @@ package cicTests;
  * and open the template in the editor.
  */
 
+import cicSrc.Application;
 import cicSrc.EmployeeOfFinancialDept;
-import cicSrc.Claim;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,6 +35,7 @@ public class IssuePaymentOrder {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -45,9 +47,9 @@ public class IssuePaymentOrder {
     //
      @Test
         public void issue_payment_order_test(){
-            Claim a = new Claim();
-            EmployeeOfFinancialDept b = new EmployeeOfFinancialDept();
-            b.IssuePaymentOrder(a);
-            assertTrue(a.payment);
+            
+            
+            Application.financialDeptEmployee.IssuePaymentOrder(Application.claim1);
+            assertTrue(Application.claim1.payment);
         }
 }

@@ -13,6 +13,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import cicSrc.Application;
+
 /**
  *
  * @author Ioannis Papakostas
@@ -32,6 +34,7 @@ public class GetClaimStatus {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -42,9 +45,9 @@ public class GetClaimStatus {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-         public void get_claim_status_test(Claim a) {
-             a.setClaimStatus("classified");
-             assertEquals(a.getClaimStatus(),"classified");
+         public void get_claim_status_test() {
+             Application.claim1.setClaimStatus("classified");
+             assertEquals(Application.claim1.getClaimStatus(),"classified");
          
          }
 }
