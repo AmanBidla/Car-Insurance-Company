@@ -26,7 +26,11 @@ public class Application {
     public static ClaimHandlerA claimHandlerA;
     public static EmployeeOfDeptCD employeeCD;
     public static Form form1;
+<<<<<<< HEAD
     public static GarageOwner garage1;
+=======
+    public static Form form2;
+>>>>>>> 2cce2cffb373da66b1a157c086c594ebe9285111
     
     public static void main (String[] args){
         
@@ -90,11 +94,18 @@ public class Application {
         //form creation
         form1= new Form();
         form1.formType="Simple Form";
-        form1.formStatus="Created!";
-        
-        //garage owner creation
-        garage1 = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
-        
+        form1.formStatus="Created!";      
+
+        form2=new Form();
+        form2.formType="Simple Form";
+        form2.formName="Charles";
+        form2.formSurname="Hebdos";
+        form2.formDateOfAccident="2015/01/05";
+        form2.formInsuranceExpiringDate="2015/04/22";
+        form2.formInsuredPersonPlate="IM 3224";
+        form2.formPersonInvolvedInTheAccidentPlate="LS 8665";   
+        form2.formStatus="Filled in-Needs to be checked!";
+
         //claimant records
         claimant1.AccidentDate.add(new String("2014/12/11"));
         claimant1.AccidentDamage.add(new String("right wing"));
@@ -102,7 +113,8 @@ public class Application {
         claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
         claimant1.AccidentTime.add(new String("18:55"));
         
-        
+        //garage owner creation
+        garage1 = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
     
     
     
