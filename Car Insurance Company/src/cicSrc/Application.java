@@ -84,10 +84,10 @@ public class Application {
         claimant3 = new Claimant("Tsoutsounis","Paparopoulos","tsoutsou","megalh","ZN 1212","2014/08/31");
         claimant3.priceOfCar = 18000;
         
-        boolean value=false;
+        /*boolean value=false;
         while (value==false){
         value=claimant1.login(claimant1);
-        }
+        }*/
         
         
         //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.

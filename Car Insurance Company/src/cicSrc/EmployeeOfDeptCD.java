@@ -50,6 +50,7 @@ public class EmployeeOfDeptCD extends User{
         
         
         }
+        
          
         public boolean phoneGarage(Claimant a, GarageOwner b){
             
@@ -92,15 +93,17 @@ public class EmployeeOfDeptCD extends User{
         else{
                  a.setClaimCategory("simple");
                 }
+        
+        //here we can add a.setClaimStatus("classified");
         }
         
         public void createForm(Claim a){
-            if (a.claimStatus.equals("Classified") && a.claimCategory.equals("Simple")){
+            if (a.claimCategory.equals("Simple")){
             Form form1 = new Form();
             form1.formStatus ="Created";
             form1.formType ="Simple Form";
             }
-            else if (a.claimStatus.equals("Classified") && a.claimCategory.equals("Complex")){
+            else if (a.claimCategory.equals("Complex")){
             Form form1 = new Form();
             form1.formStatus ="Created";
             form1.formType= "Complex Form";
