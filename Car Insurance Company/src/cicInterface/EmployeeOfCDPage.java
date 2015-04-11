@@ -15,7 +15,22 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
      * Creates new form EmployeeOfCDPage
      */
     public EmployeeOfCDPage() {
+        
         initComponents();
+        LoginPage login=new LoginPage();
+        if (login.handlerA==false){
+            this.MarkClaim_MenuItem.setVisible(false);
+            this.ContactFinanceEmployee_MenuItem.setVisible(false);
+        }
+        else
+        {
+            this.MarkClaim_MenuItem.setVisible(true);
+            this.ContactFinanceEmployee_MenuItem.setVisible(true);
+        }
+        
+       
+        
+        
     }
 
     /**
@@ -28,80 +43,148 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
+        Upate = new javax.swing.JMenu();
+        CheckRecords_MenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        EmployeeCDInbox_MenuItem = new javax.swing.JMenuItem();
+        ContactCustomer_MenuItem = new javax.swing.JMenuItem();
+        ContactGarage_MenuItem = new javax.swing.JMenuItem();
+        ContactFinanceEmployee_MenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        NewClaims_MenuItem = new javax.swing.JMenuItem();
+        ClaimHistory_MenuItem = new javax.swing.JMenuItem();
+        PendingClaims_MenuItem = new javax.swing.JMenuItem();
+        RegisterClaims_MenuItem = new javax.swing.JMenuItem();
+        MarkClaim_MenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        CreateForm_MenuItem = new javax.swing.JMenuItem();
+        CheckForm_MenuItem = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem13 = new javax.swing.JMenuItem();
+        Logout_MenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Customers");
+        Upate.setText("Customers");
 
-        jMenuItem2.setText("UpdateRecords");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        CheckRecords_MenuItem.setText("Check/Update Records");
+        CheckRecords_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                CheckRecords_MenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        Upate.add(CheckRecords_MenuItem);
 
-        jMenuItem3.setText("CheckRecords");
-        jMenu1.add(jMenuItem3);
+        jMenuBar1.add(Upate);
 
-        jMenuItem4.setText("Contact Customer");
-        jMenu1.add(jMenuItem4);
+        jMenu1.setText("Messages");
+
+        EmployeeCDInbox_MenuItem.setText("Inbox");
+        EmployeeCDInbox_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeCDInbox_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(EmployeeCDInbox_MenuItem);
+
+        ContactCustomer_MenuItem.setText("Contact Customer");
+        ContactCustomer_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactCustomer_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ContactCustomer_MenuItem);
+
+        ContactGarage_MenuItem.setText("Contact Garage");
+        ContactGarage_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactGarage_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ContactGarage_MenuItem);
+
+        ContactFinanceEmployee_MenuItem.setText("Contact FinanceDeptEmployee");
+        ContactFinanceEmployee_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactFinanceEmployee_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ContactFinanceEmployee_MenuItem);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Claims");
 
-        jMenuItem5.setText("View Claims");
-        jMenu2.add(jMenuItem5);
+        NewClaims_MenuItem.setText("New Claims");
+        NewClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewClaims_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(NewClaims_MenuItem);
 
-        jMenuItem6.setText("Check Status");
-        jMenu2.add(jMenuItem6);
+        ClaimHistory_MenuItem.setText("Claim History");
+        ClaimHistory_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClaimHistory_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ClaimHistory_MenuItem);
 
-        jMenuItem7.setText("Classify Claims");
-        jMenu2.add(jMenuItem7);
+        PendingClaims_MenuItem.setText("Pending Claims");
+        PendingClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PendingClaims_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(PendingClaims_MenuItem);
 
-        jMenuItem8.setText("Register Claims");
-        jMenu2.add(jMenuItem8);
+        RegisterClaims_MenuItem.setText("Register Claims");
+        RegisterClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterClaims_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(RegisterClaims_MenuItem);
+
+        MarkClaim_MenuItem.setText("Mark Claim");
+        MarkClaim_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarkClaim_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MarkClaim_MenuItem);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Form");
 
-        jMenuItem11.setText("Create Form");
-        jMenu3.add(jMenuItem11);
+        CreateForm_MenuItem.setText("Create Form");
+        CreateForm_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateForm_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu3.add(CreateForm_MenuItem);
 
-        jMenuItem12.setText("Check Form");
-        jMenu3.add(jMenuItem12);
+        CheckForm_MenuItem.setText("Check Form");
+        CheckForm_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckForm_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu3.add(CheckForm_MenuItem);
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Garage");
-
-        jMenuItem10.setText("Contact Garage");
-        jMenu4.add(jMenuItem10);
-
-        jMenuBar1.add(jMenu4);
-
         jMenu5.setText("Logged");
 
-        jMenuItem13.setText("Logout");
-        jMenu5.add(jMenuItem13);
+        Logout_MenuItem.setText("Logout");
+        Logout_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Logout_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu5.add(Logout_MenuItem);
 
         jMenuBar1.add(jMenu5);
 
@@ -121,9 +204,83 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void CheckRecords_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecords_MenuItemActionPerformed
+        CustomerRecordsPage personalPage=new CustomerRecordsPage();
+                personalPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_CheckRecords_MenuItemActionPerformed
+
+    private void EmployeeCDInbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeCDInbox_MenuItemActionPerformed
+        EmployeeCDInboxPage employeeInboxPage=new EmployeeCDInboxPage();
+                employeeInboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_EmployeeCDInbox_MenuItemActionPerformed
+
+    private void ContactCustomer_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactCustomer_MenuItemActionPerformed
+        EmployeeCDOutboxPage employeeOutboxPage=new EmployeeCDOutboxPage();
+                employeeOutboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ContactCustomer_MenuItemActionPerformed
+
+    private void ContactGarage_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactGarage_MenuItemActionPerformed
+        EmployeeCDOutboxPage employeeOutboxPage=new EmployeeCDOutboxPage();
+                employeeOutboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ContactGarage_MenuItemActionPerformed
+
+    private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
+        LoginPage loginPage=new LoginPage();
+                loginPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_Logout_MenuItemActionPerformed
+
+    private void NewClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewClaims_MenuItemActionPerformed
+        NewClaimsPage newClaimsPage=new NewClaimsPage();
+                newClaimsPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_NewClaims_MenuItemActionPerformed
+
+    private void ClaimHistory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHistory_MenuItemActionPerformed
+        ClaimHistoryPage claimHistoryPage=new ClaimHistoryPage();
+                claimHistoryPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ClaimHistory_MenuItemActionPerformed
+
+    private void PendingClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingClaims_MenuItemActionPerformed
+        PendingClaimsPage pendingPage=new PendingClaimsPage();
+                pendingPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
+
+    private void RegisterClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterClaims_MenuItemActionPerformed
+        RegisterClaimsPage registerClaimsPage=new RegisterClaimsPage();
+                registerClaimsPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_RegisterClaims_MenuItemActionPerformed
+
+    private void CreateForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateForm_MenuItemActionPerformed
+        FormPage formPage=new FormPage();
+                formPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_CreateForm_MenuItemActionPerformed
+
+    private void CheckForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckForm_MenuItemActionPerformed
+        FormPage formPage=new FormPage();
+                formPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_CheckForm_MenuItemActionPerformed
+
+    private void MarkClaim_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkClaim_MenuItemActionPerformed
+        MarkClaimsPage markClaimsPage=new MarkClaimsPage();
+                markClaimsPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_MarkClaim_MenuItemActionPerformed
+
+    private void ContactFinanceEmployee_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactFinanceEmployee_MenuItemActionPerformed
+        EmployeeCDOutboxPage employeeOutboxPage=new EmployeeCDOutboxPage();
+                employeeOutboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ContactFinanceEmployee_MenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,22 +318,24 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem CheckForm_MenuItem;
+    private javax.swing.JMenuItem CheckRecords_MenuItem;
+    private javax.swing.JMenuItem ClaimHistory_MenuItem;
+    private javax.swing.JMenuItem ContactCustomer_MenuItem;
+    private javax.swing.JMenuItem ContactFinanceEmployee_MenuItem;
+    private javax.swing.JMenuItem ContactGarage_MenuItem;
+    private javax.swing.JMenuItem CreateForm_MenuItem;
+    private javax.swing.JMenuItem EmployeeCDInbox_MenuItem;
+    private javax.swing.JMenuItem Logout_MenuItem;
+    private javax.swing.JMenuItem MarkClaim_MenuItem;
+    private javax.swing.JMenuItem NewClaims_MenuItem;
+    private javax.swing.JMenuItem PendingClaims_MenuItem;
+    private javax.swing.JMenuItem RegisterClaims_MenuItem;
+    private javax.swing.JMenu Upate;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     // End of variables declaration//GEN-END:variables
 }

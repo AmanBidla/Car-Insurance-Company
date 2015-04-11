@@ -7,6 +7,7 @@ package cicInterface;
 
 import cicSrc.Application;
 
+
 /**
  *
  * @author george
@@ -16,10 +17,13 @@ public class LoginPage extends javax.swing.JFrame {
     /**
      * Creates new form LoginPage
      */
+    public static boolean handlerA=false;
+    
     public LoginPage() {
         initComponents();
         Application.initialize();
         LoginFailed_Label.setVisible(false);
+        
     }
 
     /**
@@ -40,6 +44,7 @@ public class LoginPage extends javax.swing.JFrame {
         ClaimHandlerA_Button = new javax.swing.JButton();
         FinanceEmployee_Button = new javax.swing.JButton();
         Customer_Button = new javax.swing.JButton();
+        Garage_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,32 +95,46 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        Garage_Button.setText("LoginAsGarageOwner");
+        Garage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Garage_ButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(EmployeeOfCD_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ClaimHandlerA_Button)
-                            .addComponent(Customer_Button))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EmployeeOfCD_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FinanceEmployee_Button)
-                            .addComponent(LoginFailed_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(LoginFailed_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Username_label, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(User_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Password_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Username_label, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(User_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Password_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Garage_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ClaimHandlerA_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Customer_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(24, 24, 24)
+                                .addComponent(FinanceEmployee_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(32, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,13 +151,19 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EmployeeOfCD_Button)
                     .addComponent(Customer_Button))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClaimHandlerA_Button)
-                    .addComponent(FinanceEmployee_Button))
-                .addGap(31, 31, 31)
-                .addComponent(LoginFailed_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LoginFailed_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ClaimHandlerA_Button)
+                            .addComponent(FinanceEmployee_Button))
+                        .addGap(18, 18, 18)
+                        .addComponent(Garage_Button)
+                        .addContainerGap(78, Short.MAX_VALUE))))
         );
 
         pack();
@@ -154,7 +179,9 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
             
+            handlerA=false;
             EmployeeOfCDPage cdPage=new EmployeeOfCDPage();
+                
                 cdPage.setVisible(true);
                 this.dispose();
             
@@ -175,7 +202,9 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
             
-            ClaimHandlerAPage handlerAPage=new ClaimHandlerAPage();
+            handlerA=true;
+            EmployeeOfCDPage handlerAPage=new EmployeeOfCDPage();
+                
                 handlerAPage.setVisible(true);
                 this.dispose();
             
@@ -196,7 +225,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
             
-            FinanceEmployeePage financialDeptPage=new FinanceEmployeePage();
+            FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
                 financialDeptPage.setVisible(true);
                 this.dispose();
             
@@ -231,6 +260,27 @@ public class LoginPage extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_Customer_ButtonActionPerformed
+
+    private void Garage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Garage_ButtonActionPerformed
+        String user = User_Text.getText();
+        String pass = Password_Text.getText();
+        
+        if (user.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){
+            
+            GarageOwnerPage garagePage=new GarageOwnerPage();
+                garagePage.setVisible(true);
+                this.dispose();
+            
+            
+        
+        }
+        else{
+            
+            
+            LoginFailed_Label.setVisible(true);
+        
+        }
+    }//GEN-LAST:event_Garage_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,6 +322,7 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JButton Customer_Button;
     private javax.swing.JButton EmployeeOfCD_Button;
     private javax.swing.JButton FinanceEmployee_Button;
+    private javax.swing.JButton Garage_Button;
     private javax.swing.JLabel LoginFailed_Label;
     private javax.swing.JLabel Password_Label;
     private javax.swing.JPasswordField Password_Text;

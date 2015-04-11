@@ -30,9 +30,14 @@ public class ClaimantPage extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         PersonalDetails_Menu = new javax.swing.JMenu();
         CheckRecords_MenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        CustomerInbox_MenuItem = new javax.swing.JMenuItem();
+        ContactCD_MenuItem = new javax.swing.JMenuItem();
+        ContactGarage_MenuItem = new javax.swing.JMenuItem();
         Claim_Menu = new javax.swing.JMenu();
         ReportClaim_MenuItem = new javax.swing.JMenuItem();
-        CheckClaimStatus_MenuItem = new javax.swing.JMenuItem();
+        PendingClaims_MenuItem = new javax.swing.JMenuItem();
+        ClaimHistory = new javax.swing.JMenuItem();
         Form_Menu = new javax.swing.JMenu();
         FillInForm_MenuItem = new javax.swing.JMenuItem();
         Logged_Menu = new javax.swing.JMenu();
@@ -57,7 +62,35 @@ public class ClaimantPage extends javax.swing.JFrame {
 
         jMenuBar1.add(PersonalDetails_Menu);
 
-        Claim_Menu.setText("Claim");
+        jMenu1.setText("Messages");
+
+        CustomerInbox_MenuItem.setText("Inbox");
+        CustomerInbox_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerInbox_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(CustomerInbox_MenuItem);
+
+        ContactCD_MenuItem.setText("Contact CDDept");
+        ContactCD_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactCD_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ContactCD_MenuItem);
+
+        ContactGarage_MenuItem.setText("Contact Garage");
+        ContactGarage_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactGarage_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ContactGarage_MenuItem);
+
+        jMenuBar1.add(jMenu1);
+
+        Claim_Menu.setText("Claims");
         Claim_Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Claim_MenuActionPerformed(evt);
@@ -72,13 +105,21 @@ public class ClaimantPage extends javax.swing.JFrame {
         });
         Claim_Menu.add(ReportClaim_MenuItem);
 
-        CheckClaimStatus_MenuItem.setText("Check Status");
-        CheckClaimStatus_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        PendingClaims_MenuItem.setText("Pending Claims");
+        PendingClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckClaimStatus_MenuItemActionPerformed(evt);
+                PendingClaims_MenuItemActionPerformed(evt);
             }
         });
-        Claim_Menu.add(CheckClaimStatus_MenuItem);
+        Claim_Menu.add(PendingClaims_MenuItem);
+
+        ClaimHistory.setText("Claim History");
+        ClaimHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClaimHistoryActionPerformed(evt);
+            }
+        });
+        Claim_Menu.add(ClaimHistory);
 
         jMenuBar1.add(Claim_Menu);
 
@@ -140,24 +181,58 @@ public class ClaimantPage extends javax.swing.JFrame {
     }//GEN-LAST:event_Form_MenuActionPerformed
 
     private void CheckRecords_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecords_MenuItemActionPerformed
-        // TODO add your handling code here:
+        CustomerRecordsPage personalPage=new CustomerRecordsPage();
+                personalPage.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_CheckRecords_MenuItemActionPerformed
 
-    private void CheckClaimStatus_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClaimStatus_MenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CheckClaimStatus_MenuItemActionPerformed
+    private void PendingClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingClaims_MenuItemActionPerformed
+        PendingClaimsPage pendingPage=new PendingClaimsPage();
+                pendingPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
     private void ReportClaim_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportClaim_MenuItemActionPerformed
-        // TODO add your handling code here:
+        ReportClaimPage reportPage=new ReportClaimPage();
+                reportPage.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_ReportClaim_MenuItemActionPerformed
 
     private void FillInForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FillInForm_MenuItemActionPerformed
-        // TODO add your handling code here:
+        FormPage formPage=new FormPage();
+                formPage.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_FillInForm_MenuItemActionPerformed
 
     private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
-        // TODO add your handling code here:
+        LoginPage loginPage=new LoginPage();
+                loginPage.setVisible(true);
+                this.dispose();
     }//GEN-LAST:event_Logout_MenuItemActionPerformed
+
+    private void ClaimHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHistoryActionPerformed
+        ClaimHistoryPage claimHistoryPage=new ClaimHistoryPage();
+                claimHistoryPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ClaimHistoryActionPerformed
+
+    private void CustomerInbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerInbox_MenuItemActionPerformed
+        CustomerInboxPage customerInboxPage=new CustomerInboxPage();
+                customerInboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_CustomerInbox_MenuItemActionPerformed
+
+    private void ContactCD_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactCD_MenuItemActionPerformed
+        CustomerOutboxPage customerOutboxPage=new CustomerOutboxPage();
+                customerOutboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ContactCD_MenuItemActionPerformed
+
+    private void ContactGarage_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactGarage_MenuItemActionPerformed
+        CustomerOutboxPage customerOutboxPage=new CustomerOutboxPage();
+                customerOutboxPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_ContactGarage_MenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,15 +270,20 @@ public class ClaimantPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem CheckClaimStatus_MenuItem;
     private javax.swing.JMenuItem CheckRecords_MenuItem;
+    private javax.swing.JMenuItem ClaimHistory;
     private javax.swing.JMenu Claim_Menu;
+    private javax.swing.JMenuItem ContactCD_MenuItem;
+    private javax.swing.JMenuItem ContactGarage_MenuItem;
+    private javax.swing.JMenuItem CustomerInbox_MenuItem;
     private javax.swing.JMenuItem FillInForm_MenuItem;
     private javax.swing.JMenu Form_Menu;
     private javax.swing.JMenu Logged_Menu;
     private javax.swing.JMenuItem Logout_MenuItem;
+    private javax.swing.JMenuItem PendingClaims_MenuItem;
     private javax.swing.JMenu PersonalDetails_Menu;
     private javax.swing.JMenuItem ReportClaim_MenuItem;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
