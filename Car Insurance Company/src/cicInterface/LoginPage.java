@@ -19,6 +19,8 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public static boolean handlerA=false;
     
+    public static String role;
+    
     public LoginPage() {
         initComponents();
         Application.initialize();
@@ -180,6 +182,7 @@ public class LoginPage extends javax.swing.JFrame {
         if (user.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
             
             handlerA=false;
+            role="EmployeeOfCD";
             EmployeeOfCDPage cdPage=new EmployeeOfCDPage();
                 
                 cdPage.setVisible(true);
@@ -203,6 +206,7 @@ public class LoginPage extends javax.swing.JFrame {
         if (user.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
             
             handlerA=true;
+            role="ClaimHandlerA";
             EmployeeOfCDPage handlerAPage=new EmployeeOfCDPage();
                 
                 handlerAPage.setVisible(true);
@@ -225,6 +229,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
             
+            role="FinanceDeptEmployee";
             FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
                 financialDeptPage.setVisible(true);
                 this.dispose();
@@ -244,8 +249,10 @@ public class LoginPage extends javax.swing.JFrame {
         String user = User_Text.getText();
         String pass = Password_Text.getText();
         
+        
         if (user.equals(Application.claimant1.username) && pass.equals(Application.claimant1.password)){
             
+            role="Customer";
             ClaimantPage claimantPage=new ClaimantPage();
                 claimantPage.setVisible(true);
                 this.dispose();
@@ -267,6 +274,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){
             
+            role="GarageOwner";
             GarageOwnerPage garagePage=new GarageOwnerPage();
                 garagePage.setVisible(true);
                 this.dispose();

@@ -5,6 +5,8 @@
  */
 package cicInterface;
 
+import cicSrc.Application;
+
 /**
  *
  * @author george
@@ -14,6 +16,11 @@ public class CustomerOutboxPage extends javax.swing.JFrame {
     /**
      * Creates new form CustomerOutboxPage
      */
+    public static String recipientRole;
+    public static String recipientName;
+    public static String senderRole;
+    public static String senderName;
+    
     public CustomerOutboxPage() {
         initComponents();
     }
@@ -27,21 +34,107 @@ public class CustomerOutboxPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        RecipientRole_TextField = new javax.swing.JTextField();
+        MessageToBeSent_TextArea = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        SendMessage_Button = new javax.swing.JButton();
+        BackToPage_Button = new javax.swing.JButton();
+        RecipientName_TextField = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Outbox");
+
+        RecipientRole_TextField.setText("jTextField1");
+        RecipientRole_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RecipientRole_TextFieldActionPerformed(evt);
+            }
+        });
+
+        MessageToBeSent_TextArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MessageToBeSent_TextAreaActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("To");
+
+        SendMessage_Button.setText("Send Message");
+        SendMessage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendMessage_ButtonActionPerformed(evt);
+            }
+        });
+
+        BackToPage_Button.setText("Back To Page");
+
+        RecipientName_TextField.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BackToPage_Button)
+                .addGap(47, 47, 47))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RecipientRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RecipientName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SendMessage_Button)
+                            .addComponent(MessageToBeSent_TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 180, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(RecipientRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RecipientName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(MessageToBeSent_TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SendMessage_Button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(BackToPage_Button)
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
+
+    private void RecipientRole_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientRole_TextFieldActionPerformed
+         recipientRole=RecipientRole_TextField.getText();
+    }//GEN-LAST:event_RecipientRole_TextFieldActionPerformed
+
+    private void SendMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessage_ButtonActionPerformed
+        // TODO add your handling code here:
+        senderName=Application.claimant1.name + Application.claimant1.surname;
+    }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +172,12 @@ public class CustomerOutboxPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToPage_Button;
+    private javax.swing.JTextField MessageToBeSent_TextArea;
+    private javax.swing.JTextField RecipientName_TextField;
+    private javax.swing.JTextField RecipientRole_TextField;
+    private javax.swing.JButton SendMessage_Button;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

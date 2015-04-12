@@ -27,21 +27,110 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        NewMessage_Label = new javax.swing.JLabel();
+        NoNewMessages_Label = new javax.swing.JLabel();
+        ReadMessage_Button = new javax.swing.JButton();
+        ReceivedMessage_TextArea = new javax.swing.JTextField();
+        SenderRole_TextField = new javax.swing.JTextField();
+        BackToPage_Button = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        SenderName_TextField = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Inbox");
+
+        NewMessage_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NewMessage_Label.setText("You have a new message!");
+
+        NoNewMessages_Label.setForeground(new java.awt.Color(255, 0, 0));
+        NoNewMessages_Label.setText("There are no new messages!");
+
+        ReadMessage_Button.setText("Read Message");
+        ReadMessage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReadMessage_ButtonActionPerformed(evt);
+            }
+        });
+
+        ReceivedMessage_TextArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReceivedMessage_TextAreaActionPerformed(evt);
+            }
+        });
+
+        SenderRole_TextField.setText("jTextField1");
+
+        BackToPage_Button.setText("Back To Page");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("From");
+
+        SenderName_TextField.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BackToPage_Button)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(NewMessage_Label)
+                                    .addGap(39, 39, 39)
+                                    .addComponent(NoNewMessages_Label))
+                                .addComponent(jLabel1)
+                                .addComponent(ReceivedMessage_TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ReadMessage_Button)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 2, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SenderRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SenderName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(219, 219, 219))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NewMessage_Label)
+                    .addComponent(NoNewMessages_Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ReadMessage_Button)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SenderRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(SenderName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ReceivedMessage_TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(BackToPage_Button)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
+
+    private void ReadMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadMessage_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReadMessage_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +168,14 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToPage_Button;
+    private javax.swing.JLabel NewMessage_Label;
+    private javax.swing.JLabel NoNewMessages_Label;
+    private javax.swing.JButton ReadMessage_Button;
+    private javax.swing.JTextField ReceivedMessage_TextArea;
+    private javax.swing.JTextField SenderName_TextField;
+    private javax.swing.JTextField SenderRole_TextField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
