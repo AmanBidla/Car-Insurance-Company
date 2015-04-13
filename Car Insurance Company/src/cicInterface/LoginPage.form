@@ -106,9 +106,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="User_Text">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Username"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="User_TextActionPerformed"/>
       </Events>
@@ -130,9 +127,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="Password_Text">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="EmployeeOfCD_Button">
       <Properties>

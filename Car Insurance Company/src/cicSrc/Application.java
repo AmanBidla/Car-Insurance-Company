@@ -43,6 +43,10 @@ public class Application {
     public static int MessageFromClaimant=0;
     public static int MessageFromFinanceDeptEmployee=0;
     public static int MessageFromGarage=0;
+    
+    public static int NewClaims=0;
+    
+    
 
     
     public static void main (String[] args){

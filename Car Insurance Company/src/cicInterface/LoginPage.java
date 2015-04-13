@@ -50,7 +50,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        User_Text.setText("Username");
         User_Text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 User_TextActionPerformed(evt);
@@ -62,8 +61,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         Password_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Password_Label.setText("Password");
-
-        Password_Text.setText("jPasswordField1");
 
         EmployeeOfCD_Button.setText("LoginAsEmployeeOfCD");
         EmployeeOfCD_Button.addActionListener(new java.awt.event.ActionListener() {

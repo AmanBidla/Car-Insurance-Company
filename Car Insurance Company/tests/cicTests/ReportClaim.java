@@ -48,15 +48,21 @@ public class ReportClaim {
      @Test
      public void reportClaim_test() {
                    
-        Application.claim1.setClaimStatus("Reported");
+        String name="x";
+        String surname="y";
+        String location ="a";
+        String date="2/3";
+        int cost=3;
         
-        assertEquals(Application.claim1.claimantName,"Charlie");
-        assertEquals(Application.claim1.claimantSurname,"Hebdo");
-        assertEquals(Application.claim1.claimantLocation,"Kungsgatan 17,Stockholm");
-        assertEquals(Application.claim1.claimDate,"2014/12/11");
-        assertEquals(Application.claim1.claimCostOfDmg,1000);
+        Claim claim = new Claim(name,surname,location,date,cost);
+        claim.setClaimStatus("Reported");
         
-        assertEquals(Application.claim1.getClaimStatus(),"Reported");
+        assertEquals(claim.claimantName,name);
+        assertEquals(claim.claimantSurname,surname);
+        assertEquals(claim.claimantLocation,location);
+        assertEquals(claim.claimDate,date);
+        assertEquals(claim.claimCostOfDmg,cost);
+        assertEquals(claim.getClaimStatus(),"Reported");
         
     
     }

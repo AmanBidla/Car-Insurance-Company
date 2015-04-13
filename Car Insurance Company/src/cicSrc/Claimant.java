@@ -82,16 +82,11 @@ public class Claimant extends User{
          return this.priceOfCar;
      }
      
-     public Claim reportClaim(Claimant claimant){
+     public Claim reportClaim(String name,String surname,String location,String date,int cost){
          
-         Scanner location= new Scanner(System.in);
-         String claimLoc=location.next();
-         Scanner date= new Scanner(System.in);
-         String claimDate=date.next();
-         Scanner cost= new Scanner(System.in);
-         int claimCost=cost.nextInt();
          
-         Claim claim=new Claim(claimant.name,claimant.surname,claimLoc,claimDate,claimCost);
+         
+         Claim claim=new Claim(name,surname,location,date,cost);
          
          claim.claimStatus="Reported";
          
