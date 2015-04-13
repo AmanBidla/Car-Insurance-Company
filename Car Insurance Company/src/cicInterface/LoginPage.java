@@ -19,7 +19,7 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public static boolean handlerA=false;
     
-    public static String role;
+    public static String userRole;
     
     public LoginPage() {
         initComponents();
@@ -50,7 +50,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        User_Text.setText("jTextField1");
+        User_Text.setText("Username");
         User_Text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 User_TextActionPerformed(evt);
@@ -182,7 +182,7 @@ public class LoginPage extends javax.swing.JFrame {
         if (user.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
             
             handlerA=false;
-            role="EmployeeOfCD";
+            userRole="EmployeeOfCD";
             EmployeeOfCDPage cdPage=new EmployeeOfCDPage();
                 
                 cdPage.setVisible(true);
@@ -206,7 +206,7 @@ public class LoginPage extends javax.swing.JFrame {
         if (user.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
             
             handlerA=true;
-            role="ClaimHandlerA";
+            userRole="ClaimHandlerA";
             EmployeeOfCDPage handlerAPage=new EmployeeOfCDPage();
                 
                 handlerAPage.setVisible(true);
@@ -229,7 +229,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
             
-            role="FinanceDeptEmployee";
+            userRole="FinanceDeptEmployee";
             FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
                 financialDeptPage.setVisible(true);
                 this.dispose();
@@ -252,7 +252,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.claimant1.username) && pass.equals(Application.claimant1.password)){
             
-            role="Customer";
+            userRole="Claimant";
             ClaimantPage claimantPage=new ClaimantPage();
                 claimantPage.setVisible(true);
                 this.dispose();
@@ -274,7 +274,7 @@ public class LoginPage extends javax.swing.JFrame {
         
         if (user.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){
             
-            role="GarageOwner";
+            userRole="GarageOwner";
             GarageOwnerPage garagePage=new GarageOwnerPage();
                 garagePage.setVisible(true);
                 this.dispose();

@@ -32,8 +32,7 @@ public class FinanceDeptEmployeePage extends javax.swing.JFrame {
         PaymentRecords_MenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         Inbox_MenuItem = new javax.swing.JMenuItem();
-        ContactCDEmployee_MenuItem = new javax.swing.JMenuItem();
-        ContactGarage_MenuItem = new javax.swing.JMenuItem();
+        Outbox_MenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
         ApprovedForPayment_MenuItem = new javax.swing.JMenuItem();
@@ -64,21 +63,13 @@ public class FinanceDeptEmployeePage extends javax.swing.JFrame {
         });
         jMenu3.add(Inbox_MenuItem);
 
-        ContactCDEmployee_MenuItem.setText("Contact EmployeeOfCD");
-        ContactCDEmployee_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        Outbox_MenuItem.setText("Outbox");
+        Outbox_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContactCDEmployee_MenuItemActionPerformed(evt);
+                Outbox_MenuItemActionPerformed(evt);
             }
         });
-        jMenu3.add(ContactCDEmployee_MenuItem);
-
-        ContactGarage_MenuItem.setText("Contact GarageOwner");
-        ContactGarage_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContactGarage_MenuItemActionPerformed(evt);
-            }
-        });
-        jMenu3.add(ContactGarage_MenuItem);
+        jMenu3.add(Outbox_MenuItem);
 
         jMenuBar1.add(jMenu3);
 
@@ -142,24 +133,6 @@ public class FinanceDeptEmployeePage extends javax.swing.JFrame {
                 this.dispose();
     }//GEN-LAST:event_PaymentRecords_MenuItemActionPerformed
 
-    private void Inbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inbox_MenuItemActionPerformed
-        FinanceDeptEmployeeInboxPage financeEmployeeInboxPage=new FinanceDeptEmployeeInboxPage();
-                financeEmployeeInboxPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_Inbox_MenuItemActionPerformed
-
-    private void ContactCDEmployee_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactCDEmployee_MenuItemActionPerformed
-        FinanceDeptEmployeeOutboxPage financeEmployeeOutboxPage=new FinanceDeptEmployeeOutboxPage();
-                financeEmployeeOutboxPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_ContactCDEmployee_MenuItemActionPerformed
-
-    private void ContactGarage_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactGarage_MenuItemActionPerformed
-        FinanceDeptEmployeeOutboxPage financeEmployeeOutboxPage=new FinanceDeptEmployeeOutboxPage();
-                financeEmployeeOutboxPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_ContactGarage_MenuItemActionPerformed
-
     private void ApprovedForPayment_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApprovedForPayment_MenuItemActionPerformed
         ClaimsApprovedForPaymentPage approvedClaimsPage=new ClaimsApprovedForPaymentPage();
                 approvedClaimsPage.setVisible(true);
@@ -171,6 +144,18 @@ public class FinanceDeptEmployeePage extends javax.swing.JFrame {
                 loginPage.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_Logout_MenuItemActionPerformed
+
+    private void Outbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Outbox_MenuItemActionPerformed
+        FinanceDeptEmployeeOutboxPage financeEmployeeOutboxPage=new FinanceDeptEmployeeOutboxPage();
+        financeEmployeeOutboxPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Outbox_MenuItemActionPerformed
+
+    private void Inbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inbox_MenuItemActionPerformed
+        FinanceDeptEmployeeInboxPage financeEmployeeInboxPage=new FinanceDeptEmployeeInboxPage();
+        financeEmployeeInboxPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Inbox_MenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,10 +195,9 @@ public class FinanceDeptEmployeePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ApprovedForPayment_MenuItem;
-    private javax.swing.JMenuItem ContactCDEmployee_MenuItem;
-    private javax.swing.JMenuItem ContactGarage_MenuItem;
     private javax.swing.JMenuItem Inbox_MenuItem;
     private javax.swing.JMenuItem Logout_MenuItem;
+    private javax.swing.JMenuItem Outbox_MenuItem;
     private javax.swing.JMenuItem PaymentRecords_MenuItem;
     private javax.swing.JMenuItem PendingClaims_MenuItem;
     private javax.swing.JMenu jMenu1;

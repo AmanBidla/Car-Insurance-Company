@@ -5,6 +5,8 @@
  */
 package cicInterface;
 
+import cicSrc.Application;
+
 /**
  *
  * @author george
@@ -14,8 +16,26 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
     /**
      * Creates new form EmployeeCDInboxPage
      */
+    
+    
+    
     public EmployeeCDInboxPage() {
         initComponents();
+        if (Application.MessageToCDEmployee>0){
+            this.NewMessage_Label.setVisible(true);
+            this.ReadMessage_Button.setVisible(true);
+            this.NoNewMessages_Label.setVisible(false);
+        }
+        else{
+            this.NewMessage_Label.setVisible(false);
+            this.ReadMessage_Button.setVisible(false);
+            this.NoNewMessages_Label.setVisible(true);
+        
+        }
+        this.From_Label.setVisible(false);
+        this.SenderRole_TextField.setVisible(false);
+        this.SenderName_TextField.setVisible(false);
+        this.ReceivedMessage_TextArea.setVisible(false);
     }
 
     /**
@@ -34,7 +54,7 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
         ReceivedMessage_TextArea = new javax.swing.JTextField();
         SenderRole_TextField = new javax.swing.JTextField();
         BackToPage_Button = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        From_Label = new javax.swing.JLabel();
         SenderName_TextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,9 +84,14 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
         SenderRole_TextField.setText("jTextField1");
 
         BackToPage_Button.setText("Back To Page");
+        BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToPage_ButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("From");
+        From_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        From_Label.setText("From");
 
         SenderName_TextField.setText("jTextField1");
 
@@ -91,7 +116,7 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 2, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(From_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SenderRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -112,7 +137,7 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SenderRole_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
+                    .addComponent(From_Label)
                     .addComponent(SenderName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ReceivedMessage_TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,7 +155,49 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
 
     private void ReadMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadMessage_ButtonActionPerformed
         // TODO add your handling code here:
+        
+        if (Application.MessageFromClaimant>0){
+            ClaimantOutboxPage claimantOutbox=new ClaimantOutboxPage();
+            this.SenderRole_TextField.setText("Claimant");
+            this.SenderName_TextField.setText(claimantOutbox.claimantName);//change after CustomerRecordsPage
+            this.ReceivedMessage_TextArea.setText(claimantOutbox.claimantMessage);
+            Application.MessageFromClaimant--;
+            Application.MessageToCDEmployee--;
+        
+        }
+        else if(Application.MessageFromFinanceDeptEmployee>0) {
+            FinanceDeptEmployeeOutboxPage financeOutbox=new FinanceDeptEmployeeOutboxPage();
+            this.SenderRole_TextField.setText("FinanceDeptEmployee");
+            this.SenderName_TextField.setText(financeOutbox.financeDeptEmployeeName);//change after CustomerRecordsPage
+            this.ReceivedMessage_TextArea.setText(financeOutbox.financeDeptEmployeeMessage);
+            Application.MessageFromFinanceDeptEmployee--;
+            Application.MessageToCDEmployee--;
+        
+        
+        
+        }
+        else if(Application.MessageFromGarage>0) {
+            GarageOutboxPage garageOutbox=new GarageOutboxPage();
+            this.SenderRole_TextField.setText("Garage Owner");
+            this.SenderName_TextField.setText(garageOutbox.garageOwnerName);//change after CustomerRecordsPage
+            this.ReceivedMessage_TextArea.setText(garageOutbox.garageOwnerMessage);
+            Application.MessageFromGarage--;
+            Application.MessageToCDEmployee--;
+        }
+        this.From_Label.setVisible(true);
+        this.SenderRole_TextField.setVisible(true);
+        this.SenderName_TextField.setVisible(true);
+        this.ReceivedMessage_TextArea.setVisible(true);
+        
     }//GEN-LAST:event_ReadMessage_ButtonActionPerformed
+   
+    private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
+        EmployeeOfCDPage employeeCDPage=new EmployeeOfCDPage();
+        employeeCDPage.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +236,7 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackToPage_Button;
+    private javax.swing.JLabel From_Label;
     private javax.swing.JLabel NewMessage_Label;
     private javax.swing.JLabel NoNewMessages_Label;
     private javax.swing.JButton ReadMessage_Button;
@@ -176,6 +244,5 @@ public class EmployeeCDInboxPage extends javax.swing.JFrame {
     private javax.swing.JTextField SenderName_TextField;
     private javax.swing.JTextField SenderRole_TextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

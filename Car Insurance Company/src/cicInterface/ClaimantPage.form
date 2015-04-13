@@ -35,20 +35,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CustomerInbox_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ContactCD_MenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="Outbox_MenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Contact CDDept"/>
+                <Property name="text" type="java.lang.String" value="Outbox"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ContactCD_MenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ContactGarage_MenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Contact Garage"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ContactGarage_MenuItemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Outbox_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

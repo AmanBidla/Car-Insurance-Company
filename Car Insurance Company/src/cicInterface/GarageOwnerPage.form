@@ -17,20 +17,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GarageInbox_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ContactCD_menuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="Outbox_MenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Contact EmployeeOfCD"/>
+                <Property name="text" type="java.lang.String" value="Outbox"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ContactCD_menuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ContactCustomer_MenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Contact Customer"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ContactCustomer_MenuItemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Outbox_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

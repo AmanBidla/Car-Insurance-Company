@@ -11,16 +11,14 @@ import cicSrc.Application;
  *
  * @author george
  */
-public class GarageInboxPage extends javax.swing.JFrame {
+public class ClaimantInboxPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form GarageInboxPage
+     * Creates new form CustomerInboxPage
      */
-    
-    
-    public GarageInboxPage() {
+    public ClaimantInboxPage() {
         initComponents();
-        if (Application.MessageToGarage>0){
+        if (Application.MessageToClaimant>0){
             this.NewMessage_Label.setVisible(true);
             this.ReadMessage_Button.setVisible(true);
             this.NoNewMessages_Label.setVisible(false);
@@ -46,20 +44,40 @@ public class GarageInboxPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NewMessage_Label = new javax.swing.JLabel();
-        ReadMessage_Button = new javax.swing.JButton();
-        SenderRole_TextField = new javax.swing.JTextField();
-        ReceivedMessage_TextArea = new javax.swing.JTextField();
-        SenderName_TextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        NoNewMessages_Label = new javax.swing.JLabel();
-        From_Label = new javax.swing.JLabel();
         BackToPage_Button = new javax.swing.JButton();
+        From_Label = new javax.swing.JLabel();
+        ReceivedMessage_TextArea = new javax.swing.JTextField();
+        SenderRole_TextField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        SenderName_TextField = new javax.swing.JTextField();
+        ReadMessage_Button = new javax.swing.JButton();
+        NewMessage_Label = new javax.swing.JLabel();
+        NoNewMessages_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        NewMessage_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NewMessage_Label.setText("You have a new message!");
+        BackToPage_Button.setText("Back To Page");
+        BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToPage_ButtonActionPerformed(evt);
+            }
+        });
+
+        From_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        From_Label.setText("From");
+
+        ReceivedMessage_TextArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReceivedMessage_TextAreaActionPerformed(evt);
+            }
+        });
+
+        SenderRole_TextField.setText("jTextField1");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Inbox");
+
+        SenderName_TextField.setText("jTextField1");
 
         ReadMessage_Button.setText("Read Message");
         ReadMessage_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -68,31 +86,11 @@ public class GarageInboxPage extends javax.swing.JFrame {
             }
         });
 
-        SenderRole_TextField.setText("jTextField1");
-
-        ReceivedMessage_TextArea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReceivedMessage_TextAreaActionPerformed(evt);
-            }
-        });
-
-        SenderName_TextField.setText("jTextField1");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Inbox");
+        NewMessage_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NewMessage_Label.setText("You have a new message!");
 
         NoNewMessages_Label.setForeground(new java.awt.Color(255, 0, 0));
         NoNewMessages_Label.setText("There are no new messages!");
-
-        From_Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        From_Label.setText("From");
-
-        BackToPage_Button.setText("Back To Page");
-        BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackToPage_ButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,6 +146,18 @@ public class GarageInboxPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
+        ClaimantPage claimantPage=new ClaimantPage();
+        claimantPage.setVisible(true);
+
+        this.dispose();
+
+    }//GEN-LAST:event_BackToPage_ButtonActionPerformed
+
+    private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
+
     private void ReadMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadMessage_ButtonActionPerformed
         // TODO add your handling code here:
 
@@ -157,33 +167,23 @@ public class GarageInboxPage extends javax.swing.JFrame {
             this.SenderName_TextField.setText(employeeCDOutbox.employeeCDName);//change after CustomerRecordsPage
             this.ReceivedMessage_TextArea.setText(employeeCDOutbox.employeeCDMessage);
             Application.MessageFromCDEmployee--;
-            Application.MessageToGarage--;
+            Application.MessageToClaimant--;
 
         }
-        else if(Application.MessageFromClaimant>0) {
-            ClaimantOutboxPage claimantOutbox=new ClaimantOutboxPage();
+        else if(Application.MessageFromGarage>0) {
+            GarageOutboxPage garageOutbox=new GarageOutboxPage();
             this.SenderRole_TextField.setText("Garage Owner");
-            this.SenderName_TextField.setText(claimantOutbox.claimantName);//change after CustomerRecordsPage
-            this.ReceivedMessage_TextArea.setText(claimantOutbox.claimantMessage);
-            Application.MessageFromClaimant--;
-            Application.MessageToGarage--;
+            this.SenderName_TextField.setText(garageOutbox.garageOwnerName);//change after CustomerRecordsPage
+            this.ReceivedMessage_TextArea.setText(garageOutbox.garageOwnerMessage);
+            Application.MessageFromGarage--;
+            Application.MessageToClaimant--;
         }
         this.From_Label.setVisible(true);
         this.SenderRole_TextField.setVisible(true);
         this.SenderName_TextField.setVisible(true);
         this.ReceivedMessage_TextArea.setVisible(true);
+
     }//GEN-LAST:event_ReadMessage_ButtonActionPerformed
-
-    private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
-
-    private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        GarageOwnerPage garagePage=new GarageOwnerPage();
-        garagePage.setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,20 +202,21 @@ public class GarageInboxPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GarageInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimantInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GarageInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimantInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GarageInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimantInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GarageInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimantInboxPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GarageInboxPage().setVisible(true);
+                new ClaimantInboxPage().setVisible(true);
             }
         });
     }

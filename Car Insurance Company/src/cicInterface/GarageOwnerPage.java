@@ -30,8 +30,7 @@ public class GarageOwnerPage extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         GarageInbox_MenuItem = new javax.swing.JMenuItem();
-        ContactCD_menuItem = new javax.swing.JMenuItem();
-        ContactCustomer_MenuItem = new javax.swing.JMenuItem();
+        Outbox_MenuItem = new javax.swing.JMenuItem();
         Claims_MenuItem = new javax.swing.JMenu();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
         ReplyToClaims_MenuItem = new javax.swing.JMenuItem();
@@ -50,21 +49,13 @@ public class GarageOwnerPage extends javax.swing.JFrame {
         });
         jMenu1.add(GarageInbox_MenuItem);
 
-        ContactCD_menuItem.setText("Contact EmployeeOfCD");
-        ContactCD_menuItem.addActionListener(new java.awt.event.ActionListener() {
+        Outbox_MenuItem.setText("Outbox");
+        Outbox_MenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContactCD_menuItemActionPerformed(evt);
+                Outbox_MenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(ContactCD_menuItem);
-
-        ContactCustomer_MenuItem.setText("Contact Customer");
-        ContactCustomer_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContactCustomer_MenuItemActionPerformed(evt);
-            }
-        });
-        jMenu1.add(ContactCustomer_MenuItem);
+        jMenu1.add(Outbox_MenuItem);
 
         jMenuBar1.add(jMenu1);
 
@@ -116,23 +107,17 @@ public class GarageOwnerPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ContactCD_menuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactCD_menuItemActionPerformed
+    private void Outbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Outbox_MenuItemActionPerformed
         GarageOutboxPage garageOutboxPage=new GarageOutboxPage();
                 garageOutboxPage.setVisible(true);
                 this.dispose();
-    }//GEN-LAST:event_ContactCD_menuItemActionPerformed
+    }//GEN-LAST:event_Outbox_MenuItemActionPerformed
 
     private void GarageInbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GarageInbox_MenuItemActionPerformed
         GarageInboxPage garageInboxPage=new GarageInboxPage();
                 garageInboxPage.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_GarageInbox_MenuItemActionPerformed
-
-    private void ContactCustomer_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactCustomer_MenuItemActionPerformed
-        GarageOutboxPage garageOutboxPage=new GarageOutboxPage();
-                garageOutboxPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_ContactCustomer_MenuItemActionPerformed
 
     private void PendingClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingClaims_MenuItemActionPerformed
         PendingClaimsPage pendingPage=new PendingClaimsPage();
@@ -189,10 +174,9 @@ public class GarageOwnerPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Claims_MenuItem;
-    private javax.swing.JMenuItem ContactCD_menuItem;
-    private javax.swing.JMenuItem ContactCustomer_MenuItem;
     private javax.swing.JMenuItem GarageInbox_MenuItem;
     private javax.swing.JMenuItem Logout_MenuItem;
+    private javax.swing.JMenuItem Outbox_MenuItem;
     private javax.swing.JMenuItem PendingClaims_MenuItem;
     private javax.swing.JMenuItem ReplyToClaims_MenuItem;
     private javax.swing.JMenu jMenu1;

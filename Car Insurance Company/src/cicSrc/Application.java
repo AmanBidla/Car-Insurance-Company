@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import cicInterface.LoginPage;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,11 +33,21 @@ public class Application {
     public static Form form2;
 
     public static EmployeeOfFinancialDept financialDeptEmployee;
+    
+    public static int MessageToCDEmployee=0;
+    public static int MessageToClaimant=0;
+    public static int MessageToFinanceDeptEmployee=0;
+    public static int MessageToGarage=0;
+    
+    public static int MessageFromCDEmployee=0;
+    public static int MessageFromClaimant=0;
+    public static int MessageFromFinanceDeptEmployee=0;
+    public static int MessageFromGarage=0;
 
     
     public static void main (String[] args){
         
-        boolean value=false; 
+        
         
         //apo dw kai meta testarw
         
@@ -44,10 +55,12 @@ public class Application {
         
         // edw teleiwnei to test space mou
         
-        /*administrator created */
-        Admin admin = new Admin();
-        admin.username = "admin";
-        admin.password = "admin";
+        initialize();
+        LoginPage login=new LoginPage();
+        
+        login.setVisible(true);
+        
+        
         
         
          
@@ -122,7 +135,7 @@ public class Application {
         
         //EmployeeOfFinancialDept
         
-        financialDeptEmployee=new EmployeeOfFinancialDept();
+        financialDeptEmployee=new EmployeeOfFinancialDept("geo","dik","fin","emp");
         
 
        
