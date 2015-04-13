@@ -21,6 +21,8 @@ public class LoginPage extends javax.swing.JFrame {
     
     public static String userRole;
     
+    public static String user;
+    
     public LoginPage() {
         initComponents();
         Application.initialize();
@@ -176,7 +178,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_User_TextActionPerformed
 
     private void EmployeeOfCD_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeOfCD_ButtonActionPerformed
-        String user = User_Text.getText();
+        user = User_Text.getText();
         String pass = Password_Text.getText();
         
         if (user.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
@@ -200,7 +202,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_EmployeeOfCD_ButtonActionPerformed
 
     private void ClaimHandlerA_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHandlerA_ButtonActionPerformed
-        String user = User_Text.getText();
+        user = User_Text.getText();
         String pass = Password_Text.getText();
         
         if (user.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
@@ -224,7 +226,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ClaimHandlerA_ButtonActionPerformed
 
     private void FinanceEmployee_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinanceEmployee_ButtonActionPerformed
-        String user = User_Text.getText();
+       user = User_Text.getText();
         String pass = Password_Text.getText();
         
         if (user.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
@@ -246,7 +248,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_FinanceEmployee_ButtonActionPerformed
 
     private void Customer_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_ButtonActionPerformed
-        String user = User_Text.getText();
+        user = User_Text.getText();
         String pass = Password_Text.getText();
         
         
@@ -269,7 +271,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_Customer_ButtonActionPerformed
 
     private void Garage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Garage_ButtonActionPerformed
-        String user = User_Text.getText();
+        user = User_Text.getText();
         String pass = Password_Text.getText();
         
         if (user.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){

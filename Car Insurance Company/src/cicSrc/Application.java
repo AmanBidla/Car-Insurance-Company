@@ -92,10 +92,13 @@ public class Application {
         //claimant creation
         claimant1 = new Claimant("Charlie","Hebdo","IamCharlie","13579","IK 5345","2018/03/12");
         claimant1.priceOfCar = 32000;
+        claimant1.costOfInsurance = 650;
         claimant2 = new Claimant("Charles","Hebdos","IamCharles","13579","IM 3224","2015/04/22");
         claimant2.priceOfCar = 23000;
+        claimant2.costOfInsurance = 450;
         claimant3 = new Claimant("Tsoutsounis","Paparopoulos","tsoutsou","megalh","ZN 1212","2014/08/31");
         claimant3.priceOfCar = 18000;
+        claimant3.costOfInsurance = 410;
         
         /*boolean value=false;
         while (value==false){
