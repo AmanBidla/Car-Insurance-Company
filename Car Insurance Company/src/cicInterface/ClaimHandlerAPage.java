@@ -215,7 +215,7 @@ public class ClaimHandlerAPage extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterClaims_MenuItemActionPerformed
 
     private void MarkClaim_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkClaim_MenuItemActionPerformed
-        MarkClaimsPage markClaimsPage=new MarkClaimsPage();
+        PendingClaimsPage markClaimsPage=new PendingClaimsPage();
         markClaimsPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MarkClaim_MenuItemActionPerformed
