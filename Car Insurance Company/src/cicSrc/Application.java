@@ -38,11 +38,13 @@ public class Application {
     public static int MessageToClaimant=0;
     public static int MessageToFinanceDeptEmployee=0;
     public static int MessageToGarage=0;
+    public static int MessageToClaimHandlerA=0;
     
     public static int MessageFromCDEmployee=0;
     public static int MessageFromClaimant=0;
     public static int MessageFromFinanceDeptEmployee=0;
     public static int MessageFromGarage=0;
+    public static int MessageFromClaimHandlerA=0;
     
     public static int NewClaims=0;
     

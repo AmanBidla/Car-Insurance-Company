@@ -5,25 +5,17 @@
  */
 package cicInterface;
 
-import cicInterface.LoginPage;
-
 /**
  *
  * @author george
  */
-public class EmployeeOfCDPage extends javax.swing.JFrame {
+public class ClaimHandlerAPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form EmployeeOfCDPage
+     * Creates new form ClaimHandlerAPage
      */
-    public EmployeeOfCDPage() {
-        
+    public ClaimHandlerAPage() {
         initComponents();
-        
-        
-        
-       
-        
         
     }
 
@@ -47,6 +39,7 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
         ClaimHistory_MenuItem = new javax.swing.JMenuItem();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
         RegisterClaims_MenuItem = new javax.swing.JMenuItem();
+        MarkClaim_MenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         CreateForm_MenuItem = new javax.swing.JMenuItem();
         CheckForm_MenuItem = new javax.swing.JMenuItem();
@@ -121,6 +114,14 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
         });
         jMenu2.add(RegisterClaims_MenuItem);
 
+        MarkClaim_MenuItem.setText("Mark Claim");
+        MarkClaim_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarkClaim_MenuItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MarkClaim_MenuItem);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Form");
@@ -173,63 +174,69 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
 
     private void CheckRecords_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecords_MenuItemActionPerformed
         ClaimantRecordsPage personalPage=new ClaimantRecordsPage();
-                personalPage.setVisible(true);
-                this.dispose();
+        personalPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CheckRecords_MenuItemActionPerformed
 
     private void EmployeeCDInbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeCDInbox_MenuItemActionPerformed
-        EmployeeCDInboxPage employeeInboxPage=new EmployeeCDInboxPage();
-                employeeInboxPage.setVisible(true);
-                this.dispose();
+        ClaimHandlerAInboxPage chAInboxPage=new ClaimHandlerAInboxPage();
+        chAInboxPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_EmployeeCDInbox_MenuItemActionPerformed
 
     private void Outbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Outbox_MenuItemActionPerformed
-        EmployeeCDOutboxPage employeeOutboxPage=new EmployeeCDOutboxPage();
-                employeeOutboxPage.setVisible(true);
-                this.dispose();
+        ClaimHandlerAOutboxPage chAOutboxPage=new ClaimHandlerAOutboxPage();
+        chAOutboxPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Outbox_MenuItemActionPerformed
-
-    private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
-        LoginPage loginPage=new LoginPage();
-                loginPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_Logout_MenuItemActionPerformed
 
     private void NewClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewClaims_MenuItemActionPerformed
         NewClaimsPage newClaimsPage=new NewClaimsPage();
-                newClaimsPage.setVisible(true);
-                this.dispose();
+        newClaimsPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_NewClaims_MenuItemActionPerformed
 
     private void ClaimHistory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHistory_MenuItemActionPerformed
         ClaimHistoryPage claimHistoryPage=new ClaimHistoryPage();
-                claimHistoryPage.setVisible(true);
-                this.dispose();
+        claimHistoryPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ClaimHistory_MenuItemActionPerformed
 
     private void PendingClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingClaims_MenuItemActionPerformed
         PendingClaimsPage pendingPage=new PendingClaimsPage();
-                pendingPage.setVisible(true);
-                this.dispose();
+        pendingPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
     private void RegisterClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterClaims_MenuItemActionPerformed
         RegisterClaimsPage registerClaimsPage=new RegisterClaimsPage();
-                registerClaimsPage.setVisible(true);
-                this.dispose();
+        registerClaimsPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_RegisterClaims_MenuItemActionPerformed
+
+    private void MarkClaim_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkClaim_MenuItemActionPerformed
+        MarkClaimsPage markClaimsPage=new MarkClaimsPage();
+        markClaimsPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MarkClaim_MenuItemActionPerformed
 
     private void CreateForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateForm_MenuItemActionPerformed
         FormPage formPage=new FormPage();
-                formPage.setVisible(true);
-                this.dispose();
+        formPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CreateForm_MenuItemActionPerformed
 
     private void CheckForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckForm_MenuItemActionPerformed
         FormPage formPage=new FormPage();
-                formPage.setVisible(true);
-                this.dispose();
+        formPage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CheckForm_MenuItemActionPerformed
+
+    private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
+        LoginPage loginPage=new LoginPage();
+        loginPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Logout_MenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,20 +255,20 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmployeeOfCDPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimHandlerAPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmployeeOfCDPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimHandlerAPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmployeeOfCDPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimHandlerAPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmployeeOfCDPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClaimHandlerAPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmployeeOfCDPage().setVisible(true);
+                new ClaimHandlerAPage().setVisible(true);
             }
         });
     }
@@ -273,6 +280,7 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem CreateForm_MenuItem;
     private javax.swing.JMenuItem EmployeeCDInbox_MenuItem;
     private javax.swing.JMenuItem Logout_MenuItem;
+    private javax.swing.JMenuItem MarkClaim_MenuItem;
     private javax.swing.JMenuItem NewClaims_MenuItem;
     private javax.swing.JMenuItem Outbox_MenuItem;
     private javax.swing.JMenuItem PendingClaims_MenuItem;

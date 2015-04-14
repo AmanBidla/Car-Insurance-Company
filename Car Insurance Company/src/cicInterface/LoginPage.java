@@ -21,7 +21,7 @@ public class LoginPage extends javax.swing.JFrame {
     
     public static String userRole;
     
-    public static String user;
+    public static String username;
     
     public LoginPage() {
         initComponents();
@@ -175,10 +175,10 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_User_TextActionPerformed
 
     private void EmployeeOfCD_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeOfCD_ButtonActionPerformed
-        user = User_Text.getText();
+        username = User_Text.getText();
         String pass = Password_Text.getText();
         
-        if (user.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
+        if (username.equals(Application.employeeCD.username) && pass.equals(Application.employeeCD.password)){
             
             handlerA=false;
             userRole="EmployeeOfCD";
@@ -199,10 +199,10 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_EmployeeOfCD_ButtonActionPerformed
 
     private void ClaimHandlerA_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHandlerA_ButtonActionPerformed
-        user = User_Text.getText();
+        username = User_Text.getText();
         String pass = Password_Text.getText();
         
-        if (user.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
+        if (username.equals(Application.claimHandlerA.username) && pass.equals(Application.claimHandlerA.password)){
             
             handlerA=true;
             userRole="ClaimHandlerA";
@@ -223,10 +223,10 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ClaimHandlerA_ButtonActionPerformed
 
     private void FinanceEmployee_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinanceEmployee_ButtonActionPerformed
-       user = User_Text.getText();
+       username = User_Text.getText();
         String pass = Password_Text.getText();
         
-        if (user.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
+        if (username.equals(Application.financialDeptEmployee.username) && pass.equals(Application.financialDeptEmployee.password)){
             
             userRole="FinanceDeptEmployee";
             FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
@@ -245,11 +245,11 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_FinanceEmployee_ButtonActionPerformed
 
     private void Customer_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_ButtonActionPerformed
-        user = User_Text.getText();
+        username = User_Text.getText();
         String pass = Password_Text.getText();
         
         
-        if (user.equals(Application.claimant1.username) && pass.equals(Application.claimant1.password)){
+        if (username.equals(Application.claimant1.username) && pass.equals(Application.claimant1.password)){
             
             userRole="Claimant";
             ClaimantPage claimantPage=new ClaimantPage();
@@ -268,10 +268,10 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_Customer_ButtonActionPerformed
 
     private void Garage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Garage_ButtonActionPerformed
-        user = User_Text.getText();
+        username = User_Text.getText();
         String pass = Password_Text.getText();
         
-        if (user.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){
+        if (username.equals(Application.garage1.username) && pass.equals(Application.garage1.password)){
             
             userRole="GarageOwner";
             GarageOwnerPage garagePage=new GarageOwnerPage();

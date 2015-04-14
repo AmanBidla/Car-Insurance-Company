@@ -32,7 +32,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jButton1.setVisible(false);
         jLabel1.setVisible(false);
         
-        String claimant = log.user;
+        String claimant = log.username;
         switch (claimant){
             case "IamCharlie":
                 jTextField1.setText(Application.claimant1.name);                
