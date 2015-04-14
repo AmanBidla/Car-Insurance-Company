@@ -206,7 +206,7 @@ public class LoginPage extends javax.swing.JFrame {
             
             handlerA=true;
             userRole="ClaimHandlerA";
-            EmployeeOfCDPage handlerAPage=new EmployeeOfCDPage();
+            ClaimHandlerAPage handlerAPage=new ClaimHandlerAPage();
                 
                 handlerAPage.setVisible(true);
                 this.dispose();
