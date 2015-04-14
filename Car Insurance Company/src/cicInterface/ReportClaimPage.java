@@ -9,6 +9,7 @@ import cicSrc.Claim;
 import cicSrc.Application;
 import cicSrc.Claimant;
 
+
 /**
  *
  * @author george
@@ -18,6 +19,8 @@ public class ReportClaimPage extends javax.swing.JFrame {
     /**
      * Creates new form ReportClaimPage
      */
+    public static Claim newClaim;
+    
     public ReportClaimPage() {
         initComponents();
     }
@@ -34,8 +37,8 @@ public class ReportClaimPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Name_TextField = new javax.swing.JTextField();
-        Surname_TextField = new javax.swing.JTextField();
+        ReportName_TextField = new javax.swing.JTextField();
+        ReportSurname_TextField = new javax.swing.JTextField();
         Location_TextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -52,9 +55,9 @@ public class ReportClaimPage extends javax.swing.JFrame {
 
         jLabel3.setText("Cost Of Damage");
 
-        Name_TextField.addActionListener(new java.awt.event.ActionListener() {
+        ReportName_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Name_TextFieldActionPerformed(evt);
+                ReportName_TextFieldActionPerformed(evt);
             }
         });
 
@@ -106,8 +109,8 @@ public class ReportClaimPage extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(41, 41, 41)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Name_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                    .addComponent(Surname_TextField))
+                                    .addComponent(ReportName_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                    .addComponent(ReportSurname_TextField))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -122,10 +125,10 @@ public class ReportClaimPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Name_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ReportName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Surname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ReportSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -149,15 +152,15 @@ public class ReportClaimPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Name_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Name_TextFieldActionPerformed
+    private void ReportName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportName_TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Name_TextFieldActionPerformed
+    }//GEN-LAST:event_ReportName_TextFieldActionPerformed
 
     private void ReportClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportClaim_ButtonActionPerformed
         // TODO add your handling code here:
         Claimant claimant=new Claimant();
         int costOfDmg= Integer.parseInt(this.CostOfDamage_TextField.getText());
-        Claim newClaim=claimant.reportClaim(this.Name_TextField.getText(),this.Surname_TextField.getText(),this.Location_TextField.getText(),this.Date_TextField.getText(),costOfDmg);
+        newClaim=claimant.reportClaim(this.ReportName_TextField.getText(),this.ReportSurname_TextField.getText(),this.Location_TextField.getText(),this.Date_TextField.getText(),costOfDmg);
         Application.NewClaims++;
     }//GEN-LAST:event_ReportClaim_ButtonActionPerformed
 
@@ -209,9 +212,9 @@ public class ReportClaimPage extends javax.swing.JFrame {
     private javax.swing.JTextField CostOfDamage_TextField;
     private javax.swing.JTextField Date_TextField;
     private javax.swing.JTextField Location_TextField;
-    private javax.swing.JTextField Name_TextField;
     private javax.swing.JButton ReportClaim_Button;
-    private javax.swing.JTextField Surname_TextField;
+    public static javax.swing.JTextField ReportName_TextField;
+    public static javax.swing.JTextField ReportSurname_TextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
