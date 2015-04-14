@@ -14,6 +14,10 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     /**
      * Creates new form PendingClaimsPage
      */
+    
+    //number of approved payments (is subject to change depending on the approved payments each time)
+    public static int approved_payments = 0;
+    
     public PendingClaimsPage() {
         initComponents();
         LoginPage login1 = new LoginPage();
