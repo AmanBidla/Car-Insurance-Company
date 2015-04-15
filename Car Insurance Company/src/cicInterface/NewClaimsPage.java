@@ -65,14 +65,6 @@ public class NewClaimsPage extends javax.swing.JFrame {
         ));
         jTable1.setRowHeight(22);
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Claims");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Name");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Surname");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Location");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Date");
-            jTable1.getColumnModel().getColumn(5).setHeaderValue("Cost Of Damage");
-        }
 
         jCheckBox1.setText("Move To Pending Claims");
         jCheckBox1.setPreferredSize(new java.awt.Dimension(81, 18));
@@ -158,6 +150,8 @@ public class NewClaimsPage extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
+        //PendingClaimsPage pendingPage = new PendingClaimsPage(); 
+        
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
