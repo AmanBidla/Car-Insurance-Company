@@ -9,34 +9,47 @@ package cicInterface;
  *
  * @author george
  */
+
+import cicSrc.Claim;
+
 public class PendingClaimsPage extends javax.swing.JFrame {
 
     /**
      * Creates new form PendingClaimsPage
      */
     
+     //boolean variables checking when the positive button is pressed.
+        boolean positive1=false;
+        boolean positive2=false;
+        boolean positive3=false;
+        boolean positive4=false;
+        
+      public static Claim pendingClaim;
+    
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
     
     public PendingClaimsPage() {
         initComponents();
+        
+              
         LoginPage login1 = new LoginPage();
         //only ClaimHandlerA will be able to see this
         
         if (login1.userRole != "ClaimHandlerA")
         {
-        jRadioButton1.setVisible(false);
+        Claim1Positive.setVisible(false);
         jRadioButton2.setVisible(false);
-        jRadioButton9.setVisible(false);
+        Claim2Positive.setVisible(false);
         jRadioButton10.setVisible(false);
-        jRadioButton3.setVisible(false);
-        jRadioButton4.setVisible(false);
+        Claim3Positive.setVisible(false);
+        Claim4Positive.setVisible(false);
         jRadioButton5.setVisible(false);
         jRadioButton6.setVisible(false);
-        jCheckBox2.setVisible(false);
-        jCheckBox3.setVisible(false);
-        jCheckBox4.setVisible(false);
-        jCheckBox5.setVisible(false);
+        CheckBoxClaim1.setVisible(false);
+        CheckBoxClaim2.setVisible(false);
+        CheckBoxClaim3.setVisible(false);
+        CheckBoxClaim4.setVisible(false);
         }
         
         
@@ -55,30 +68,27 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         MarkClaimGroup2 = new javax.swing.ButtonGroup();
         MarkClaimGroup3 = new javax.swing.ButtonGroup();
         MarkClaimGroup4 = new javax.swing.ButtonGroup();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        Claim1Positive = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
+        Claim2Positive = new javax.swing.JRadioButton();
         jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        Claim3Positive = new javax.swing.JRadioButton();
+        Claim4Positive = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-
-        jCheckBox1.setText("jCheckBox1");
+        CheckBoxClaim1 = new javax.swing.JCheckBox();
+        CheckBoxClaim2 = new javax.swing.JCheckBox();
+        CheckBoxClaim3 = new javax.swing.JCheckBox();
+        CheckBoxClaim4 = new javax.swing.JCheckBox();
+        BackToPage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MarkClaimGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Positive");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        MarkClaimGroup1.add(Claim1Positive);
+        Claim1Positive.setText("Positive");
+        Claim1Positive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                Claim1PositiveActionPerformed(evt);
             }
         });
 
@@ -90,51 +100,86 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             }
         });
 
-        MarkClaimGroup2.add(jRadioButton9);
-        jRadioButton9.setText("Positive");
-        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+        MarkClaimGroup2.add(Claim2Positive);
+        Claim2Positive.setText("Positive");
+        Claim2Positive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton9ActionPerformed(evt);
+                Claim2PositiveActionPerformed(evt);
             }
         });
 
         MarkClaimGroup2.add(jRadioButton10);
         jRadioButton10.setText("Negative");
-
-        MarkClaimGroup3.add(jRadioButton3);
-        jRadioButton3.setText("Positive");
-
-        MarkClaimGroup4.add(jRadioButton4);
-        jRadioButton4.setText("Positive");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
+
+        MarkClaimGroup3.add(Claim3Positive);
+        Claim3Positive.setText("Positive");
+        Claim3Positive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Claim3PositiveActionPerformed(evt);
+            }
+        });
+
+        MarkClaimGroup4.add(Claim4Positive);
+        Claim4Positive.setText("Positive");
+        Claim4Positive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Claim4PositiveActionPerformed(evt);
             }
         });
 
         MarkClaimGroup3.add(jRadioButton5);
         jRadioButton5.setText("Negative");
-
-        MarkClaimGroup4.add(jRadioButton6);
-        jRadioButton6.setText("Negative");
-
-        jCheckBox2.setText("Claim Marked");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                jRadioButton5ActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("Claim Marked");
-
-        jCheckBox4.setText("Claim Marked");
-
-        jCheckBox5.setText("Claim Marked");
-
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        MarkClaimGroup4.add(jRadioButton6);
+        jRadioButton6.setText("Negative");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+
+        CheckBoxClaim1.setText("Claim Marked");
+        CheckBoxClaim1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxClaim1ActionPerformed(evt);
+            }
+        });
+
+        CheckBoxClaim2.setText("Claim Marked");
+        CheckBoxClaim2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxClaim2ActionPerformed(evt);
+            }
+        });
+
+        CheckBoxClaim3.setText("Claim Marked");
+        CheckBoxClaim3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxClaim3ActionPerformed(evt);
+            }
+        });
+
+        CheckBoxClaim4.setText("Claim Marked");
+        CheckBoxClaim4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxClaim4ActionPerformed(evt);
+            }
+        });
+
+        BackToPage.setText("Back");
+        BackToPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToPageActionPerformed(evt);
             }
         });
 
@@ -147,31 +192,31 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jRadioButton3)
+                            .addComponent(Claim3Positive)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jRadioButton5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jCheckBox4))
+                            .addComponent(CheckBoxClaim3))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jRadioButton9)
+                            .addComponent(Claim2Positive)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jRadioButton10)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jCheckBox3))
+                            .addComponent(CheckBoxClaim2))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jRadioButton1)
+                            .addComponent(Claim1Positive)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jRadioButton2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jCheckBox2)))
+                            .addComponent(CheckBoxClaim1)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jRadioButton4)
+                        .addComponent(Claim4Positive)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRadioButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jCheckBox5))))
+                            .addComponent(BackToPage)
+                            .addComponent(CheckBoxClaim4))))
                 .addGap(85, 85, 85))
         );
         layout.setVerticalGroup(
@@ -179,54 +224,62 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
+                    .addComponent(Claim1Positive)
                     .addComponent(jRadioButton2)
-                    .addComponent(jCheckBox2))
+                    .addComponent(CheckBoxClaim1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton9)
+                    .addComponent(Claim2Positive)
                     .addComponent(jRadioButton10)
-                    .addComponent(jCheckBox3))
+                    .addComponent(CheckBoxClaim2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
+                    .addComponent(Claim3Positive)
                     .addComponent(jRadioButton5)
-                    .addComponent(jCheckBox4))
+                    .addComponent(CheckBoxClaim3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
+                    .addComponent(Claim4Positive)
                     .addComponent(jRadioButton6)
-                    .addComponent(jCheckBox5))
+                    .addComponent(CheckBoxClaim4))
                 .addGap(122, 122, 122)
-                .addComponent(jButton1)
+                .addComponent(BackToPage)
                 .addContainerGap(170, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void Claim1PositiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Claim1PositiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        positive1 = true;
+    }//GEN-LAST:event_Claim1PositiveActionPerformed
 
-    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+    private void Claim2PositiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Claim2PositiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton9ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        positive2 =true;
+    }//GEN-LAST:event_Claim2PositiveActionPerformed
+                  
+        
+    private void Claim4PositiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Claim4PositiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+        positive4 = true;
+    }//GEN-LAST:event_Claim4PositiveActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
+        positive1 = false;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void CheckBoxClaim1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxClaim1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+        if (positive1 == true)
+            approved_payments++;
+    }//GEN-LAST:event_CheckBoxClaim1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BackToPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPageActionPerformed
         // TODO add your handling code here:
+        
         LoginPage login = new LoginPage();
         if (login.userRole == "EmployeeOfCD")
         {
@@ -262,7 +315,45 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             g.setVisible(true);
             this.dispose();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BackToPageActionPerformed
+
+    private void Claim3PositiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Claim3PositiveActionPerformed
+        // TODO add your handling code here:
+        positive3 = true;
+    }//GEN-LAST:event_Claim3PositiveActionPerformed
+
+    private void CheckBoxClaim2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxClaim2ActionPerformed
+        // TODO add your handling code here:
+         if (positive2 == true)
+            approved_payments++;
+    }//GEN-LAST:event_CheckBoxClaim2ActionPerformed
+
+    private void CheckBoxClaim3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxClaim3ActionPerformed
+        // TODO add your handling code here:
+         if (positive3 == true)
+            approved_payments++;
+    }//GEN-LAST:event_CheckBoxClaim3ActionPerformed
+
+    private void CheckBoxClaim4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxClaim4ActionPerformed
+        // TODO add your handling code here:
+         if (positive4 == true)
+            approved_payments++;
+    }//GEN-LAST:event_CheckBoxClaim4ActionPerformed
+
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+        // TODO add your handling code here:
+        positive2 = false;
+    }//GEN-LAST:event_jRadioButton10ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+        positive3 = false;
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+        positive4 = false;
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,23 +391,22 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToPage;
+    private javax.swing.JCheckBox CheckBoxClaim1;
+    private javax.swing.JCheckBox CheckBoxClaim2;
+    private javax.swing.JCheckBox CheckBoxClaim3;
+    private javax.swing.JCheckBox CheckBoxClaim4;
+    private javax.swing.JRadioButton Claim1Positive;
+    private javax.swing.JRadioButton Claim2Positive;
+    private javax.swing.JRadioButton Claim3Positive;
+    private javax.swing.JRadioButton Claim4Positive;
     private javax.swing.ButtonGroup MarkClaimGroup1;
     private javax.swing.ButtonGroup MarkClaimGroup2;
     private javax.swing.ButtonGroup MarkClaimGroup3;
     private javax.swing.ButtonGroup MarkClaimGroup4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton9;
     // End of variables declaration//GEN-END:variables
 }
