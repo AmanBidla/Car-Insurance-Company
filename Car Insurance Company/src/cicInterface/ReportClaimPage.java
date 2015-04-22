@@ -19,7 +19,10 @@ public class ReportClaimPage extends javax.swing.JFrame {
     /**
      * Creates new form ReportClaimPage
      */
-    public static Claim newClaim;
+    public static Claim[] newClaim=new Claim[10];
+    public static int claimNumber=0;
+    public static int first=0;
+    public static int last=0;
     
     public ReportClaimPage() {
         initComponents();
@@ -160,8 +163,12 @@ public class ReportClaimPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         Claimant claimant=new Claimant();
         int costOfDmg= Integer.parseInt(this.CostOfDamage_TextField.getText());
-        newClaim=claimant.reportClaim(this.ReportName_TextField.getText(),this.ReportSurname_TextField.getText(),this.Location_TextField.getText(),this.Date_TextField.getText(),costOfDmg);
+        
+        
+        newClaim[claimNumber]=claimant.reportClaim(this.ReportName_TextField.getText(),this.ReportSurname_TextField.getText(),this.Location_TextField.getText(),this.Date_TextField.getText(),costOfDmg);
         Application.NewClaims++;
+        claimNumber++;
+        last=claimNumber;
     }//GEN-LAST:event_ReportClaim_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed

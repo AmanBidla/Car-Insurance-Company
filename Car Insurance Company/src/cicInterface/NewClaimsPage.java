@@ -5,6 +5,9 @@
  */
 package cicInterface;
 
+import cicSrc.Application;
+import cicSrc.Claim;
+
 
 
 /**
@@ -16,8 +19,26 @@ public class NewClaimsPage extends javax.swing.JFrame {
     /**
      * Creates new form NewClaimsPage
      */
+    public static int pendingClaimsNumber=0;
+    public static String[] pendingClaims;
+    
     public NewClaimsPage() {
         initComponents();
+        if (Application.NewClaims>0){
+            this.NewClaims_Label.setVisible(true);
+            this.ShowClaim_Button.setVisible(true);
+            this.NoNewClaims_Label.setVisible(false);
+        }
+        else {
+            this.NewClaims_Label.setVisible(false);
+            this.ShowClaim_Button.setVisible(false);
+            this.NoNewClaims_Label.setVisible(true);
+        
+        }
+        /*this.Claim1_Checkbox.setVisible(false);
+        this.Claim2_Checkbox.setVisible(false);
+        this.Claim3_Checkbox.setVisible(false);
+        this.Claim4_Checkbox.setVisible(false);*/
     }
 
     /**
@@ -29,59 +50,62 @@ public class NewClaimsPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        NoNewClaims_Label = new javax.swing.JLabel();
+        NewClaims_Label = new javax.swing.JLabel();
+        ShowClaim_Button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        BackToPage_Button = new javax.swing.JButton();
+        Proceed_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("No new claims reported!");
+        NoNewClaims_Label.setText("No new claims reported!");
 
-        jLabel2.setText("New claim reported!");
+        NewClaims_Label.setText("New claim reported!");
 
-        jButton1.setText("Show Claim");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ShowClaim_Button.setText("Show Claim");
+        ShowClaim_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ShowClaim_ButtonActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Claims", "Name", "Surname", "Location", "Date", "Cost Of Damage"
+                "Claims", "Name", "Surname", "Location", "Date", "Cost Of Damage", "Move To Pending"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTable1.setRowHeight(22);
         jScrollPane1.setViewportView(jTable1);
 
-        jCheckBox1.setText("Move To Pending Claims");
-        jCheckBox1.setPreferredSize(new java.awt.Dimension(81, 18));
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        BackToPage_Button.setText("Back To Page");
+        BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                BackToPage_ButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Move To Pending Claims");
-        jCheckBox2.setPreferredSize(new java.awt.Dimension(81, 18));
-
-        jCheckBox3.setText("Move To Pending Claims");
-        jCheckBox3.setPreferredSize(new java.awt.Dimension(81, 18));
-
-        jCheckBox4.setText("Move To Pending Claims");
-        jCheckBox4.setPreferredSize(new java.awt.Dimension(81, 18));
+        Proceed_Button.setText("Proceed");
+        Proceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Proceed_ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,68 +115,121 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(ShowClaim_Button)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
+                        .addComponent(NewClaims_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 525, Short.MAX_VALUE)
+                        .addComponent(NoNewClaims_Label)
                         .addGap(66, 66, 66))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                    .addComponent(jCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 29, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BackToPage_Button)
+                    .addComponent(Proceed_Button))
+                .addGap(84, 84, 84))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(NewClaims_Label)
+                    .addComponent(NoNewClaims_Label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addComponent(ShowClaim_Button)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Proceed_Button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(BackToPage_Button)
+                .addGap(62, 62, 62))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ShowClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowClaim_ButtonActionPerformed
         // TODO add your handling code here:
         ReportClaimPage reportClaim=new ReportClaimPage();
-        this.jTable1.getModel().setValueAt("Claim 1", 1, 1);
-        jTable1.getModel().setValueAt(reportClaim.newClaim.claimantName, 1, 2);
-        jTable1.getModel().setValueAt(reportClaim.newClaim.claimantSurname, 1, 3);
-        jTable1.getModel().setValueAt(reportClaim.newClaim.claimantLocation, 1, 4);
-        jTable1.getModel().setValueAt(reportClaim.newClaim.claimDate, 1, 5);
-        jTable1.getModel().setValueAt(reportClaim.newClaim.claimCostOfDmg, 1, 6);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-        //PendingClaimsPage pendingPage = new PendingClaimsPage(); 
+        int i=reportClaim.first;
+        boolean EmptyRowFound=false;
+        while (i<reportClaim.last)
+        {
+            int j=0;
+            EmptyRowFound=false;
+            while ((j<4)&&(EmptyRowFound==false)){
+                if(this.jTable1.getModel().getValueAt(j, 0)==null){
+                     jTable1.getModel().setValueAt("Claim" + " " + i, j, 0);
+                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantName, j, 1);
+                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantSurname, j, 2);
+                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantLocation, j, 3);
+                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimDate, j, 4);
+                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimCostOfDmg, j, 5);
+                     EmptyRowFound=true;
+                     
+                
         
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+                }
+                else {
+                    j++;
+                
+                }
+                
+            }
+            i++;
+            
+            
+        }
+        reportClaim.first=reportClaim.last;
+       
+    }//GEN-LAST:event_ShowClaim_ButtonActionPerformed
+
+    private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
+        // TODO add your handling code here:
+        LoginPage login = new LoginPage();
+        if (login.userRole == "EmployeeOfCD")
+        {
+            EmployeeOfCDPage e = new EmployeeOfCDPage();
+            e.setVisible(true);
+            this.dispose();
+        }
+        
+        else if (login.userRole == "ClaimHandlerA")
+        {
+            ClaimHandlerAPage chA = new ClaimHandlerAPage();
+            chA.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BackToPage_ButtonActionPerformed
+
+    private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<4;i++){
+            Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
+            if(val==true){
+                //PendingClaimsPage pendingPage=new PendingClaimsPage();
+                //pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
+                //pendingClaimsNumber++;
+                
+                
+                
+                for (int j=0;j<7;j++){
+                   jTable1.getModel().setValueAt(null, i, j); 
+                
+                }
+                
+            
+            }
+        
+        
+        }
+    }//GEN-LAST:event_Proceed_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,13 +267,11 @@ public class NewClaimsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton BackToPage_Button;
+    private javax.swing.JLabel NewClaims_Label;
+    private javax.swing.JLabel NoNewClaims_Label;
+    private javax.swing.JButton Proceed_Button;
+    private javax.swing.JButton ShowClaim_Button;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

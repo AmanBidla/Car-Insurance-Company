@@ -111,7 +111,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         jCheckBox8 = new javax.swing.JCheckBox();
         jRadioButton19 = new javax.swing.JRadioButton();
         jRadioButton20 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
+        Claim1_Label = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -388,7 +388,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Claim 1");
+        Claim1_Label.setText("Claim 1");
 
         jLabel5.setText("Claim 2");
 
@@ -405,7 +405,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(12, 12, 12)
-                            .addComponent(jLabel4))
+                            .addComponent(Claim1_Label))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jLabel7)))
@@ -534,7 +534,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                                 .addComponent(jRadioButton3)
                                 .addComponent(jRadioButton4)
                                 .addComponent(jRadioButton7)
-                                .addComponent(jLabel4)))
+                                .addComponent(Claim1_Label)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -839,6 +839,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBoxClaim3;
     private javax.swing.JCheckBox CheckBoxClaim4;
     private javax.swing.JRadioButton Claim1Positive;
+    private javax.swing.JLabel Claim1_Label;
     private javax.swing.JRadioButton Claim2Positive;
     private javax.swing.JRadioButton Claim3Positive;
     private javax.swing.JRadioButton Claim4Positive;
@@ -860,7 +861,6 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
