@@ -20,7 +20,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
      * Creates new form NewClaimsPage
      */
     public static int pendingClaimsNumber=0;
-    public static String[] pendingClaims;
+    public static String[] pendingClaims=new String[10];
     
     public NewClaimsPage() {
         initComponents();
@@ -35,10 +35,8 @@ public class NewClaimsPage extends javax.swing.JFrame {
             this.NoNewClaims_Label.setVisible(true);
         
         }
-        /*this.Claim1_Checkbox.setVisible(false);
-        this.Claim2_Checkbox.setVisible(false);
-        this.Claim3_Checkbox.setVisible(false);
-        this.Claim4_Checkbox.setVisible(false);*/
+        this.jTable1.setVisible(false);
+        
     }
 
     /**
@@ -157,6 +155,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
     private void ShowClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowClaim_ButtonActionPerformed
         // TODO add your handling code here:
         ReportClaimPage reportClaim=new ReportClaimPage();
+        this.jTable1.setVisible(true);
         int i=reportClaim.first;
         boolean EmptyRowFound=false;
         while (i<reportClaim.last)
@@ -197,14 +196,14 @@ public class NewClaimsPage extends javax.swing.JFrame {
         {
             EmployeeOfCDPage e = new EmployeeOfCDPage();
             e.setVisible(true);
-            this.dispose();
+            this.setVisible(false);
         }
         
         else if (login.userRole == "ClaimHandlerA")
         {
             ClaimHandlerAPage chA = new ClaimHandlerAPage();
             chA.setVisible(true);
-            this.dispose();
+            this.setVisible(false);
         }
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
@@ -212,10 +211,10 @@ public class NewClaimsPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         for (int i=0;i<4;i++){
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
-            if(val==true){
-                //PendingClaimsPage pendingPage=new PendingClaimsPage();
-                //pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
-                //pendingClaimsNumber++;
+            if(val){
+                PendingClaimsPage pendingPage=new PendingClaimsPage();
+                pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
+                pendingClaimsNumber++;
                 
                 
                 
@@ -223,7 +222,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                    jTable1.getModel().setValueAt(null, i, j); 
                 
                 }
-                
+                Application.NewClaims--;
             
             }
         
