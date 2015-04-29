@@ -48,6 +48,10 @@ public class Application {
     
     public static int NewClaims=0;
     
+    public static Claim[] newClaim=new Claim[10];
+    
+    public static int ID_number=1;
+    
     public static boolean[] Insured= {false, false, false, false};
     public static boolean[] NotInsured={false, false, false, false};
     public static boolean[] Simple={false, false, false, false};
@@ -126,11 +130,17 @@ public class Application {
         //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
         claim1.amount_of_payment = claim1.claimCostOfDmg;
-        claim1.claim_ID = 1;
+        claim1.claim_ID = ID_number;
+        ID_number++;
+        newClaim[0]= claim1;
         claim2 = new Claim ("Charles","Hebdos","Emmyvagen 3,Solna","2015/01/05",6000);
-        claim2.claim_ID = 2;
+        claim2.claim_ID = ID_number;
+        ID_number++;
+        newClaim[1]= claim2;
         claim3 = new Claim ("Tsoutsounis","Paparopoulos","Elvagen 5,Solna","2014/09/07",3000);
-        claim3.claim_ID = 3;
+        claim3.claim_ID = ID_number;
+        ID_number++;
+        newClaim[2]= claim3; // append claim to new claims array
         
         //claim Handler creation
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
