@@ -25,7 +25,7 @@ public class LoginPage extends javax.swing.JFrame {
     
     public LoginPage() {
         initComponents();
-        Application.initialize();
+        
         LoginFailed_Label.setVisible(false);
         
     }

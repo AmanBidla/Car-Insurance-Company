@@ -22,7 +22,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
      */
     public ClaimantRecordsPage() {
         initComponents();
-        Application.initialize();
+        
         LoginPage log = new LoginPage();
         
         if (log.userRole == "Claimant")
