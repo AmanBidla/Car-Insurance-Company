@@ -7,6 +7,8 @@ package cicInterface;
 
 import cicSrc.Claim;
 import cicSrc.Application;
+import static cicSrc.Application.ID_number;
+import static cicSrc.Application.newClaim;
 import cicSrc.Claimant;
 
 
@@ -19,10 +21,12 @@ public class ReportClaimPage extends javax.swing.JFrame {
     /**
      * Creates new form ReportClaimPage
      */
-    public static Claim[] newClaim=new Claim[10];
-    public static int claimNumber=0;
+    
+    public static int claimNumber=3;
     public static int first=0;
     public static int last=0;
+  
+   
     
     public ReportClaimPage() {
         initComponents();
@@ -166,6 +170,8 @@ public class ReportClaimPage extends javax.swing.JFrame {
         
         
         newClaim[claimNumber]=claimant.reportClaim(this.ReportName_TextField.getText(),this.ReportSurname_TextField.getText(),this.Location_TextField.getText(),this.Date_TextField.getText(),costOfDmg);
+        newClaim[claimNumber].claim_ID = ID_number;
+        ID_number++;
         Application.NewClaims++;
         claimNumber++;
         last=claimNumber;

@@ -6,6 +6,7 @@
 package cicInterface;
 
 import cicSrc.Application;
+import static cicSrc.Application.ID_number;
 import cicSrc.Claim;
 
 
@@ -20,7 +21,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
      * Creates new form NewClaimsPage
      */
     public static int pendingClaimsNumber=0;
-    public static String[] pendingClaims=new String[10];
+    public static int[] pendingClaims=new int[10];
     
     public NewClaimsPage() {
         initComponents();
@@ -164,14 +165,15 @@ public class NewClaimsPage extends javax.swing.JFrame {
             EmptyRowFound=false;
             while ((j<4)&&(EmptyRowFound==false)){
                 if(this.jTable1.getModel().getValueAt(j, 0)==null){
-                     jTable1.getModel().setValueAt("Claim" + " " + i, j, 0);
-                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantName, j, 1);
-                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantSurname, j, 2);
-                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimantLocation, j, 3);
-                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimDate, j, 4);
-                     jTable1.getModel().setValueAt(reportClaim.newClaim[i].claimCostOfDmg, j, 5);
-                     EmptyRowFound=true;
                      
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claim_ID, j, 0);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantName, j, 1);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantSurname, j, 2);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantLocation, j, 3);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimDate, j, 4);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimCostOfDmg, j, 5);
+                     EmptyRowFound=true;
+                                          
                 
         
                 }
@@ -213,7 +215,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
             if(val){
                 
-                pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
+                pendingClaims[pendingClaimsNumber]=(int)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
                 
                 

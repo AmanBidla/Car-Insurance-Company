@@ -23,9 +23,12 @@ public class Claim {
     public String claimDecision;//positive, negative
     public String claimStatus; //reported, claimantInsured, classified, accepted, rejected, registered, sent for payment
     public Boolean payment;
-    public int claim_ID;
+    public static int claim_ID; // ID number for claims - incrementing with every new claim
     public int amount_of_payment = 0;
     public int claimCostOfDmg;
+    public static Claim[] registeredClaims = new Claim[16];
+    public static int position=0;//position of element in the Claim[] array
+    public static Claim[] pending = new Claim[10];
    // public int priceOfCar;
     
     //public Claim(){}
