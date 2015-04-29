@@ -413,6 +413,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 this.ContactGarage_Button.setVisible(true);
                 this.GarageProceed_Button.setVisible(true);
                 this.pendingClaims_Table.getModel().setValueAt(true,i,5);
+                this.pendingClaims_Table.getModel().setValueAt("Classified As Simple!",i,9);
                 
                 
             
@@ -423,11 +424,12 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 
                 this.DamageHistory_Button.setVisible(true);
                 this.DamageHistoryProceed_Button.setVisible(true);
+                this.pendingClaims_Table.getModel().setValueAt("Classified As Complex!",i,9);
                 
             
             
             }
-            this.pendingClaims_Table.getModel().setValueAt("Classified!",i,9);
+            
            
         
         }
