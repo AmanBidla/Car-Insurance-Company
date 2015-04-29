@@ -84,7 +84,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Claims", "Name", "Surname", "Cost Of Damage"
+                "Claim ID", "Name", "Surname", "Cost Of Damage"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -211,7 +211,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add claim_ID number
         PendingClaimsPage pending=new PendingClaimsPage();
         this.jTable1.getModel().setValueAt(1, 1, 1);
         jTable1.getModel().setValueAt(pending.pendingClaim.claimantName, 1, 2);
@@ -222,12 +222,12 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
+        
         claim1_paid = true;
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
         FinanceDeptEmployeePage finance = new FinanceDeptEmployeePage();
         finance.setVisible(true);
         this.dispose();
@@ -244,17 +244,17 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
+        
         claim2_paid = true;
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
+        
         claim3_paid = true;
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
+        
         claim4_paid = true;
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 

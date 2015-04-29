@@ -124,7 +124,7 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SendMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessage_ButtonActionPerformed
-        // TODO add your handling code here:
+        
 
         chAName=Application.claimHandlerA.name + " " + Application.claimHandlerA.surname;//we can change this once we make the personal records page
         chAMessage=this.MessageToBeSent_TextArea.getText();
@@ -144,11 +144,11 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         ClaimHandlerAPage chAPage=new ClaimHandlerAPage();
         chAPage.setVisible(true);
 
@@ -156,7 +156,7 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     /**

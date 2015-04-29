@@ -149,8 +149,7 @@ public class GarageInboxPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReadMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadMessage_ButtonActionPerformed
-        // TODO add your handling code here:
-
+       
         if (Application.MessageFromCDEmployee>0){
             EmployeeCDOutboxPage employeeCDOutbox=new EmployeeCDOutboxPage();
             this.SenderRole_TextField.setText("Employee Of CD");
@@ -175,7 +174,7 @@ public class GarageInboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ReadMessage_ButtonActionPerformed
 
     private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed

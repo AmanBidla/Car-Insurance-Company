@@ -160,15 +160,15 @@ public class ClaimantPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Claim_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Claim_MenuActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_Claim_MenuActionPerformed
 
     private void PersonalDetails_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonalDetails_MenuActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_PersonalDetails_MenuActionPerformed
 
     private void Form_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Form_MenuActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_Form_MenuActionPerformed
 
     private void CheckRecords_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecords_MenuItemActionPerformed

@@ -155,11 +155,11 @@ public class ClaimantInboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
 
     private void ReadMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadMessage_ButtonActionPerformed
-        // TODO add your handling code here:
+      
 
         if (Application.MessageFromCDEmployee>0){
             EmployeeCDOutboxPage employeeCDOutbox=new EmployeeCDOutboxPage();

@@ -156,11 +156,11 @@ public class ReportClaimPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReportName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportName_TextFieldActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_ReportName_TextFieldActionPerformed
 
     private void ReportClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportClaim_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         Claimant claimant=new Claimant();
         int costOfDmg= Integer.parseInt(this.CostOfDamage_TextField.getText());
         
@@ -172,7 +172,7 @@ public class ReportClaimPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ReportClaim_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        // TODO add your handling code here:
+       
         ClaimantPage claimantPage=new ClaimantPage();
         claimantPage.setVisible(true);
 

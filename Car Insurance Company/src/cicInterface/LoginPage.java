@@ -171,7 +171,7 @@ public class LoginPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void User_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_TextActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_User_TextActionPerformed
 
     private void EmployeeOfCD_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeOfCD_ButtonActionPerformed
@@ -211,11 +211,10 @@ public class LoginPage extends javax.swing.JFrame {
                 handlerAPage.setVisible(true);
                 this.dispose();
             
-            
+           
+                }
         
-        }
         else{
-            
             
             LoginFailed_Label.setVisible(true);
         
@@ -231,8 +230,7 @@ public class LoginPage extends javax.swing.JFrame {
             userRole="FinanceDeptEmployee";
             FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
                 financialDeptPage.setVisible(true);
-                this.dispose();
-            
+                this.dispose();          
             
         
         }
@@ -246,16 +244,14 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void Customer_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_ButtonActionPerformed
         username = User_Text.getText();
-        String pass = Password_Text.getText();
-        
+        String pass = Password_Text.getText();        
         
         if (username.equals(Application.claimant1.username) && pass.equals(Application.claimant1.password)){
             
             userRole="Claimant";
             ClaimantPage claimantPage=new ClaimantPage();
                 claimantPage.setVisible(true);
-                this.dispose();
-            
+                this.dispose();           
             
         
         }
@@ -276,8 +272,7 @@ public class LoginPage extends javax.swing.JFrame {
             userRole="GarageOwner";
             GarageOwnerPage garagePage=new GarageOwnerPage();
                 garagePage.setVisible(true);
-                this.dispose();
-            
+                this.dispose();            
             
         
         }

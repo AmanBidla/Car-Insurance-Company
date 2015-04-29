@@ -124,16 +124,15 @@ public class GarageOutboxPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void SendMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessage_ButtonActionPerformed
-        // TODO add your handling code here:
-        
+               
         garageOwnerName=Application.garage1.name + " " + Application.garage1.surname;//we can change this once we make the personal records page
         garageOwnerMessage=this.MessageToBeSent_TextArea.getText();
         String recipientRole=(String)this.RecipientList_Box.getSelectedItem();
@@ -150,7 +149,7 @@ public class GarageOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        // TODO add your handling code here:
+      
         GarageOwnerPage garagePage=new GarageOwnerPage();
         garagePage.setVisible(true);
         
