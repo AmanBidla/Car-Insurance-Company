@@ -38,7 +38,6 @@ public class ClaimHandlerAPage extends javax.swing.JFrame {
         NewClaims_MenuItem = new javax.swing.JMenuItem();
         ClaimHistory_MenuItem = new javax.swing.JMenuItem();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
-        RegisterClaims_MenuItem = new javax.swing.JMenuItem();
         MarkClaim_MenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         CreateForm_MenuItem = new javax.swing.JMenuItem();
@@ -105,14 +104,6 @@ public class ClaimHandlerAPage extends javax.swing.JFrame {
             }
         });
         jMenu2.add(PendingClaims_MenuItem);
-
-        RegisterClaims_MenuItem.setText("Register Claims");
-        RegisterClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterClaims_MenuItemActionPerformed(evt);
-            }
-        });
-        jMenu2.add(RegisterClaims_MenuItem);
 
         MarkClaim_MenuItem.setText("Mark Claim");
         MarkClaim_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -208,12 +199,6 @@ public class ClaimHandlerAPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
-    private void RegisterClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterClaims_MenuItemActionPerformed
-        RegisterClaimsPage registerClaimsPage=new RegisterClaimsPage();
-        registerClaimsPage.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RegisterClaims_MenuItemActionPerformed
-
     private void MarkClaim_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkClaim_MenuItemActionPerformed
         PendingClaimsPage markClaimsPage=new PendingClaimsPage();
         markClaimsPage.setVisible(true);
@@ -284,7 +269,6 @@ public class ClaimHandlerAPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem NewClaims_MenuItem;
     private javax.swing.JMenuItem Outbox_MenuItem;
     private javax.swing.JMenuItem PendingClaims_MenuItem;
-    private javax.swing.JMenuItem RegisterClaims_MenuItem;
     private javax.swing.JMenu Upate;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

@@ -71,14 +71,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PendingClaims_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="RegisterClaims_MenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Register Claims"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegisterClaims_MenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="MarkClaim_MenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mark Claim"/>
