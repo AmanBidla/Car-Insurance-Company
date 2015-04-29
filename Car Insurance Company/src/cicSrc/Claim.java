@@ -23,6 +23,7 @@ public class Claim {
     public String claimDecision;//positive, negative
     public String claimStatus; //reported, claimantInsured, classified, accepted, rejected, registered, sent for payment
     public Boolean payment;
+    public int claim_ID;
     public int amount_of_payment = 0;
     public int claimCostOfDmg;
    // public int priceOfCar;

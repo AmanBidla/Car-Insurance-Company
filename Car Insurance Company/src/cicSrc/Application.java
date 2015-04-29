@@ -126,8 +126,11 @@ public class Application {
         //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
         claim1.amount_of_payment = claim1.claimCostOfDmg;
+        claim1.claim_ID = 1;
         claim2 = new Claim ("Charles","Hebdos","Emmyvagen 3,Solna","2015/01/05",6000);
+        claim2.claim_ID = 2;
         claim3 = new Claim ("Tsoutsounis","Paparopoulos","Elvagen 5,Solna","2014/09/07",3000);
+        claim3.claim_ID = 3;
         
         //claim Handler creation
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");

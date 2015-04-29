@@ -77,7 +77,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Claims", "Name", "Surname", "Location", "Date", "Cost Of Damage", "Move To Pending"
+                "Claim ID", "Name", "Surname", "Location", "Date", "Cost Of Damage", "Move To Pending"
             }
         ) {
             Class[] types = new Class [] {
@@ -153,7 +153,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ShowClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowClaim_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         ReportClaimPage reportClaim=new ReportClaimPage();
         this.jTable1.setVisible(true);
         int i=reportClaim.first;
@@ -190,7 +190,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ShowClaim_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         LoginPage login = new LoginPage();
         if (login.userRole == "EmployeeOfCD")
         {
@@ -208,7 +208,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         for (int i=0;i<4;i++){
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
             if(val){
