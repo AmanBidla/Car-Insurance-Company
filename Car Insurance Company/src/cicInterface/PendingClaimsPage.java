@@ -68,6 +68,21 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         this.History_Label.setVisible(false);
         this.NotInsured_Label.setVisible(false);
         
+        LoginPage login = new LoginPage();
+        if ((login.userRole=="Claimant") || (login.userRole=="GarageOwner") || (login.userRole=="FinanceDeptEmployee")){
+          this.CheckInsurance_Button.setVisible(false);
+          this.ClassifyClaim_Button.setVisible(false);
+          this.DamageHistory_Button.setVisible(false);
+          this.ContactGarage_Button.setVisible(false);
+          this.InsuranceProceed_Button.setVisible(false);
+          this.ClassificationProceed_Button.setVisible(false);
+          this.DamageHistoryProceed_Button.setVisible(false);
+          this.GarageProceed_Button.setVisible(false);
+          this.DecisionProceed_Button.setVisible(false);
+          this.MoveToHistory_Button.setVisible(false);
+            
+        }
+        
         if (NewClaimsPage.pendingClaimsNumber>0){
             for (int i=0;i<NewClaimsPage.pendingClaimsNumber;i++){
                 this.pendingClaims_Table.getModel().setValueAt((String)NewClaimsPage.pendingClaims[i], i, 0);
