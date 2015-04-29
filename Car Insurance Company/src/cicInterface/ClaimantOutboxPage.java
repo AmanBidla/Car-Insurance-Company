@@ -28,7 +28,7 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     
     public ClaimantOutboxPage() {
         initComponents();
-        //Application.initialize();
+        
         
        
     }
@@ -134,13 +134,11 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void SendMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessage_ButtonActionPerformed
-        // TODO add your handling code here:
-        
-        
+  
         claimantName=Application.claimant1.name + " " + Application.claimant1.surname;//we can change this once we make the personal records page
         claimantMessage=this.MessageToBeSent_TextArea.getText();
         String recipientRole=(String)this.RecipientList_Box.getSelectedItem();
@@ -160,11 +158,11 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO add your handling code here:
+        // TODO 
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        // TODO add your handling code here:
+       
         ClaimantPage claimantPage=new ClaimantPage();
         claimantPage.setVisible(true);
         
