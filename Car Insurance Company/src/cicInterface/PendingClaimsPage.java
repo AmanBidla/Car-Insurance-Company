@@ -20,6 +20,9 @@ import static cicSrc.Application.PhoneGarage;
 import static cicSrc.Application.Positive;
 import static cicSrc.Application.Simple;*/
 import cicSrc.Application;
+import static cicSrc.Application.newClaim;
+import static cicSrc.Claim.position;
+import static cicSrc.Claim.registeredClaims;
 
 public class PendingClaimsPage extends javax.swing.JFrame {
 
@@ -70,7 +73,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
         if (NewClaimsPage.pendingClaimsNumber>0){
             for (int i=0;i<NewClaimsPage.pendingClaimsNumber;i++){
-                this.pendingClaims_Table.getModel().setValueAt((String)NewClaimsPage.pendingClaims[i], i, 0);
+                this.pendingClaims_Table.getModel().setValueAt((int)NewClaimsPage.pendingClaims[i], i, 0);
             
             
             }
@@ -179,11 +182,11 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Claims", "Insured", "Not Insured", "Simple", "Complex", "Damage History Checked", "Garage Owner Phoned", "Positive", "Negative", "Status"
+                "Claim ID", "Insured", "Not Insured", "Simple", "Complex", "Damage History Checked", "Garage Owner Phoned", "Positive", "Negative", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -621,10 +624,20 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         for (int i=0;i<4;i++){
         
-            if (((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Approved For Payment!")||((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Rejected!")){
+            if (((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Approved For Payment!")||((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Rejected!"))
+            {
                 
                 //register claim to the array of ClaimsHistoryPage
                 this.pendingClaims_Table.getModel().setValueAt("Registered!",i,9);
+                for (int j=0;j<10;j++)
+                {
+                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
+                {
+                    registeredClaims[position] = newClaim[j];
+                    position++;
+                }
+                }
+                
                 
                 
             

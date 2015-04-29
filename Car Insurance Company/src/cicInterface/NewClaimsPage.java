@@ -21,7 +21,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
      * Creates new form NewClaimsPage
      */
     public static int pendingClaimsNumber=0;
-    public static String[] pendingClaims=new String[10];
+    public static int[] pendingClaims=new int[10];
     
     public NewClaimsPage() {
         initComponents();
@@ -215,7 +215,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
             if(val){
                 
-                pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
+                pendingClaims[pendingClaimsNumber]=(int)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
                 
                 
