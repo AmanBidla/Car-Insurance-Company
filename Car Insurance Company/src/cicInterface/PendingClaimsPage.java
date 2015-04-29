@@ -67,9 +67,6 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
         }
         
-        if (Application.Insured[0]==true){
-                this.jLabel1.setVisible(true);
-            }
         
         
         for (int i=0;i<4;i++){
