@@ -20,49 +20,78 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="1528" max="32767" attributes="0"/>
-              <Component id="BackToPage" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
-                      <Component id="CheckInsurance_Button" min="-2" pref="134" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                      <Component id="ClassifyClaim_Button" min="-2" pref="145" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                      <Component id="DamageHistory_Button" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="ContactGarage_Button" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="NotInsured_Label" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="InsuranceNotChecked_Label" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="399" max="-2" attributes="0"/>
+                      <Component id="InsuranceProceed_Button" pref="85" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+                      <Component id="ClassificationProceed_Button" pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="DamageHistoryProceed_Button" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
+                  <Component id="DmgHistory_Label" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="Garage_Label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="GarageProceed_Button" pref="104" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="DecisionProceed_Button" max="32767" attributes="0"/>
+                      <EmptySpace pref="358" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Decision_Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ClaimHandlerA_Label" min="-2" pref="137" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="423" max="-2" attributes="0"/>
-                      <Component id="InsuranceProceed_Button" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
-                      <Component id="ClassificationProceed_Button" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Component id="DamageHistoryProceed_Button" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="GarageProceed_Button" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
-                      <Component id="DecisionProceed_Button" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                          <Component id="CheckInsurance_Button" min="-2" pref="134" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+                          <Component id="ClassifyClaim_Button" min="-2" pref="145" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="DamageHistory_Button" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="ContactGarage_Button" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="1552" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="History_Label" min="-2" max="-2" attributes="0"/>
                       <Component id="MoveToHistory_Button" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" min="-2" pref="1552" max="-2" attributes="0"/>
+                  <Component id="BackToPage" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="159" max="32767" attributes="0"/>
+              <EmptySpace pref="177" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,11 +116,22 @@
                   <Component id="DecisionProceed_Button" alignment="3" max="32767" attributes="0"/>
                   <Component id="MoveToHistory_Button" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="InsuranceNotChecked_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DmgHistory_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Garage_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="History_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Decision_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ClaimHandlerA_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="NotInsured_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Component id="BackToPage" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -284,11 +324,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DecisionProceed_ButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="They are true!"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="MoveToHistory_Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="Move to History"/>
@@ -296,6 +331,41 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MoveToHistory_ButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="InsuranceNotChecked_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Insurance not checked!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="DmgHistory_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Claim not classified!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Garage_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Damage history not checked!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Decision_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Garage owner not messaged!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="History_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Claim not marked!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ClaimHandlerA_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Only claim handler A!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="NotInsured_Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Claimant not insured!"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
