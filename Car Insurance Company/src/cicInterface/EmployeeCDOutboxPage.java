@@ -40,7 +40,7 @@ public class EmployeeCDOutboxPage extends javax.swing.JFrame {
         RecipientName_TextField = new javax.swing.JTextField();
         BackToPage_Button = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         RecipientList_Box.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Claimant", "FinanceDept Employee", "Garage Owner" }));
 

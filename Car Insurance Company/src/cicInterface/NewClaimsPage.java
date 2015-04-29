@@ -212,7 +212,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
         for (int i=0;i<4;i++){
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
             if(val){
-                PendingClaimsPage pendingPage=new PendingClaimsPage();
+                
                 pendingClaims[pendingClaimsNumber]=(String)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
                 

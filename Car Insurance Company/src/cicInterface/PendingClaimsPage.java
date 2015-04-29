@@ -11,6 +11,15 @@ package cicInterface;
  */
 
 import cicSrc.Claim;
+/*import static cicSrc.Application.Complex;
+import static cicSrc.Application.DmgHistory;
+import static cicSrc.Application.Insured;
+import static cicSrc.Application.Negative;
+import static cicSrc.Application.NotInsured;
+import static cicSrc.Application.PhoneGarage;
+import static cicSrc.Application.Positive;
+import static cicSrc.Application.Simple;*/
+import cicSrc.Application;
 
 public class PendingClaimsPage extends javax.swing.JFrame {
 
@@ -19,10 +28,14 @@ public class PendingClaimsPage extends javax.swing.JFrame {
      */
     
      //boolean variables checking when the positive button is pressed.
-        boolean positive1=false;
+        /*boolean positive1=false;
         boolean positive2=false;
         boolean positive3=false;
-        boolean positive4=false;
+        boolean positive4=false;*/
+    
+        
+        
+        
         
       public static Claim pendingClaim;
     
@@ -35,7 +48,14 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         this.ClassifyClaim_Button.setVisible(false);
         this.DamageHistory_Button.setVisible(false);
         this.ContactGarage_Button.setVisible(false);
-        this.MarkClaim_Button.setVisible(false);
+        this.InsuranceProceed_Button.setVisible(false);
+        this.ClassificationProceed_Button.setVisible(false);
+        this.DamageHistoryProceed_Button.setVisible(false);
+        this.GarageProceed_Button.setVisible(false);
+        this.DecisionProceed_Button.setVisible(false);
+        this.MoveToHistory_Button.setVisible(false);
+        this.jLabel1.setVisible(false);
+        
         if (NewClaimsPage.pendingClaimsNumber>0){
             for (int i=0;i<NewClaimsPage.pendingClaimsNumber;i++){
                 this.pendingClaims_Table.getModel().setValueAt((String)NewClaimsPage.pendingClaims[i], i, 0);
@@ -43,8 +63,30 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             
             }
             this.CheckInsurance_Button.setVisible(true);
+            this.InsuranceProceed_Button.setVisible(true);
         
         }
+        
+        if (Application.Insured[0]==true){
+                this.jLabel1.setVisible(true);
+            }
+        
+        
+        for (int i=0;i<4;i++){
+            this.pendingClaims_Table.getModel().setValueAt(Application.Insured[i],i,1);
+            this.pendingClaims_Table.getModel().setValueAt(Application.NotInsured[i],i,2);
+            this.pendingClaims_Table.getModel().setValueAt(Application.Simple[i],i,3);
+            this.pendingClaims_Table.getModel().setValueAt(Application.Complex[i],i,4);
+            this.pendingClaims_Table.getModel().setValueAt(Application.DmgHistory[i],i,5);
+            this.pendingClaims_Table.getModel().setValueAt(Application.PhoneGarage[i],i,6);
+            this.pendingClaims_Table.getModel().setValueAt(Application.Positive[i],i,7);
+            this.pendingClaims_Table.getModel().setValueAt(Application.Negative[i],i,8);
+            
+            
+        }
+       
+        
+        
        
             
         
@@ -69,11 +111,15 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         ContactGarage_Button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         pendingClaims_Table = new javax.swing.JTable();
-        MarkClaim_Button = new javax.swing.JButton();
+        InsuranceProceed_Button = new javax.swing.JButton();
+        ClassificationProceed_Button = new javax.swing.JButton();
+        DamageHistoryProceed_Button = new javax.swing.JButton();
+        GarageProceed_Button = new javax.swing.JButton();
+        DecisionProceed_Button = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        MoveToHistory_Button = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        BackToPage.setText("Back");
+        BackToPage.setText("Back To Page ");
         BackToPage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackToPageActionPerformed(evt);
@@ -108,6 +154,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(51, 23));
+
         pendingClaims_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -127,14 +175,55 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        pendingClaims_Table.setPreferredSize(new java.awt.Dimension(750, 64));
         pendingClaims_Table.setRowHeight(22);
         jScrollPane1.setViewportView(pendingClaims_Table);
 
-        MarkClaim_Button.setText("Mark Claim");
-        MarkClaim_Button.addActionListener(new java.awt.event.ActionListener() {
+        InsuranceProceed_Button.setText("Proceed");
+        InsuranceProceed_Button.setPreferredSize(new java.awt.Dimension(31, 23));
+        InsuranceProceed_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarkClaim_ButtonActionPerformed(evt);
+                InsuranceProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        ClassificationProceed_Button.setText("Proceed");
+        ClassificationProceed_Button.setPreferredSize(new java.awt.Dimension(51, 23));
+        ClassificationProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClassificationProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        DamageHistoryProceed_Button.setText("Proceed");
+        DamageHistoryProceed_Button.setPreferredSize(new java.awt.Dimension(51, 23));
+        DamageHistoryProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DamageHistoryProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        GarageProceed_Button.setText("Proceed");
+        GarageProceed_Button.setPreferredSize(new java.awt.Dimension(51, 23));
+        GarageProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GarageProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        DecisionProceed_Button.setText("Proceed");
+        DecisionProceed_Button.setPreferredSize(new java.awt.Dimension(51, 23));
+        DecisionProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DecisionProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("They are true!");
+
+        MoveToHistory_Button.setText("Move to History");
+        MoveToHistory_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoveToHistory_ButtonActionPerformed(evt);
             }
         });
 
@@ -143,40 +232,66 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(1528, Short.MAX_VALUE)
                 .addComponent(BackToPage)
                 .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
+                        .addGap(228, 228, 228)
                         .addComponent(CheckInsurance_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(172, 172, 172)
                         .addComponent(ClassifyClaim_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104)
+                        .addGap(102, 102, 102)
                         .addComponent(DamageHistory_Button)
-                        .addGap(39, 39, 39)
-                        .addComponent(ContactGarage_Button)
-                        .addGap(103, 103, 103)
-                        .addComponent(MarkClaim_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addComponent(ContactGarage_Button))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(423, 423, 423)
+                        .addComponent(InsuranceProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(240, 240, 240)
+                        .addComponent(ClassificationProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(83, 83, 83)
+                        .addComponent(DamageHistoryProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(81, 81, 81)
+                        .addComponent(GarageProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(242, 242, 242)
+                        .addComponent(DecisionProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(47, 47, 47)
+                        .addComponent(MoveToHistory_Button))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1552, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 187, Short.MAX_VALUE))
+                .addGap(0, 159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckInsurance_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ClassifyClaim_Button)
                     .addComponent(DamageHistory_Button)
-                    .addComponent(ContactGarage_Button)
-                    .addComponent(MarkClaim_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(107, 107, 107)
+                    .addComponent(ContactGarage_Button))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InsuranceProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ClassificationProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DamageHistoryProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GarageProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DecisionProceed_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MoveToHistory_Button))
+                .addGap(76, 76, 76)
+                .addComponent(jLabel1)
+                .addGap(17, 17, 17)
                 .addComponent(BackToPage)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addGap(213, 213, 213))
         );
 
         pack();
@@ -225,24 +340,170 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void ClassifyClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassifyClaim_ButtonActionPerformed
         // TODO add your handling code here:
+        ClassifyClaimsPage classifyClaims=new ClassifyClaimsPage();
+        classifyClaims.setVisible(true);
     }//GEN-LAST:event_ClassifyClaim_ButtonActionPerformed
 
     private void ContactGarage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactGarage_ButtonActionPerformed
         // TODO add your handling code here:
+        LoginPage login = new LoginPage();
+        if (login.userRole == "EmployeeOfCD")
+        {
+            EmployeeCDOutboxPage employeeOutbox = new EmployeeCDOutboxPage();
+            employeeOutbox.setVisible(true);
+ 
+        }
+        
+        else if (login.userRole == "ClaimHandlerA")
+        {
+            ClaimHandlerAOutboxPage chAOutbox = new ClaimHandlerAOutboxPage();
+            chAOutbox.setVisible(true);
+            
+        }
+        
     }//GEN-LAST:event_ContactGarage_ButtonActionPerformed
 
     private void CheckInsurance_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckInsurance_ButtonActionPerformed
         // TODO add your handling code here:
+        ClaimantRecordsPage claimantRecords=new ClaimantRecordsPage();
+        claimantRecords.setVisible(true);
+       
         
     }//GEN-LAST:event_CheckInsurance_ButtonActionPerformed
 
     private void DamageHistory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageHistory_ButtonActionPerformed
         // TODO add your handling code here:
+        ClaimHistoryPage claimHistory=new ClaimHistoryPage();
+        claimHistory.setVisible(true);
     }//GEN-LAST:event_DamageHistory_ButtonActionPerformed
 
-    private void MarkClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkClaim_ButtonActionPerformed
+    private void InsuranceProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsuranceProceed_ButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MarkClaim_ButtonActionPerformed
+        for (int i=0;i<4;i++){
+        
+            if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 1)==true){
+                Application.Insured[i]=true;
+                this.ClassifyClaim_Button.setVisible(true);
+                this.ClassificationProceed_Button.setVisible(true);
+                this.pendingClaims_Table.getModel().setValueAt("Claimant Insured!",i,9);
+                
+            
+            }
+            else if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 2)==true){
+                Application.NotInsured[i]=true;
+                this.pendingClaims_Table.getModel().setValueAt("Rejected!",i,9);
+                this.pendingClaims_Table.getModel().setValueAt(true,i,8);
+                this.DecisionProceed_Button.setVisible(true);
+                
+            
+            
+            }
+            
+        
+        }
+        
+    }//GEN-LAST:event_InsuranceProceed_ButtonActionPerformed
+
+    private void ClassificationProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassificationProceed_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<4;i++){
+        
+            if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 3)==true){
+                Application.Simple[i]=true;
+                this.ContactGarage_Button.setVisible(true);
+                this.GarageProceed_Button.setVisible(true);
+                this.pendingClaims_Table.getModel().setValueAt(true,i,5);
+                
+                
+            
+            }
+            else if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 4)==true){
+                Application.Complex[i]=true;
+                
+                
+                this.DamageHistory_Button.setVisible(true);
+                this.DamageHistoryProceed_Button.setVisible(true);
+                
+            
+            
+            }
+            this.pendingClaims_Table.getModel().setValueAt("Classified!",i,9);
+           
+        
+        }
+    }//GEN-LAST:event_ClassificationProceed_ButtonActionPerformed
+
+    private void DamageHistoryProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageHistoryProceed_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<4;i++){
+        
+            if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 5)==true){
+                Application.DmgHistory[i]=true;
+                this.ContactGarage_Button.setVisible(true);
+                this.GarageProceed_Button.setVisible(true);
+                this.pendingClaims_Table.getModel().setValueAt("Damage History Checked!",i,9);
+                
+                
+            
+            }
+        }
+        
+    }//GEN-LAST:event_DamageHistoryProceed_ButtonActionPerformed
+
+    private void GarageProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GarageProceed_ButtonActionPerformed
+        // TODO add your handling code here:
+        LoginPage login = new LoginPage();
+        for (int i=0;i<4;i++){
+        
+            if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 6)==true){
+                
+                if (login.userRole == "ClaimHandlerA"){
+                this.DecisionProceed_Button.setVisible(true);
+                }
+                this.pendingClaims_Table.getModel().setValueAt("Garage Owner Phoned!",i,9);
+                Application.PhoneGarage[i]=true;
+                
+                
+                
+            
+            }
+        }
+    }//GEN-LAST:event_GarageProceed_ButtonActionPerformed
+
+    private void DecisionProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecisionProceed_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<4;i++){
+        
+            if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 7)==true){
+                
+                this.pendingClaims_Table.getModel().setValueAt("Approved For Payment!",i,9);
+                Application.Positive[i]=true;
+                approved_payments++;
+                //insert this claim in an array with the approved claims-it's easier if this array has some or all of the columns of the newClaims array
+            }
+            else if((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 8)==true){
+                 this.pendingClaims_Table.getModel().setValueAt("Rejected!",i,9);
+                 Application.Negative[i]=true;
+                
+            }
+            this.MoveToHistory_Button.setVisible(true);
+        }
+    }//GEN-LAST:event_DecisionProceed_ButtonActionPerformed
+
+    private void MoveToHistory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveToHistory_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<4;i++){
+        
+            if (((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Approved For Payment!")||((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Rejected!")){
+                
+                //register claim to the array of ClaimsHistoryPage
+                this.pendingClaims_Table.getModel().setValueAt("Registered!",i,9);
+                
+                
+            
+            }
+        }
+    }//GEN-LAST:event_MoveToHistory_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,10 +543,16 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackToPage;
     private javax.swing.JButton CheckInsurance_Button;
+    private javax.swing.JButton ClassificationProceed_Button;
     private javax.swing.JButton ClassifyClaim_Button;
     private javax.swing.JButton ContactGarage_Button;
+    private javax.swing.JButton DamageHistoryProceed_Button;
     private javax.swing.JButton DamageHistory_Button;
-    private javax.swing.JButton MarkClaim_Button;
+    private javax.swing.JButton DecisionProceed_Button;
+    private javax.swing.JButton GarageProceed_Button;
+    private javax.swing.JButton InsuranceProceed_Button;
+    private javax.swing.JButton MoveToHistory_Button;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable pendingClaims_Table;
     // End of variables declaration//GEN-END:variables

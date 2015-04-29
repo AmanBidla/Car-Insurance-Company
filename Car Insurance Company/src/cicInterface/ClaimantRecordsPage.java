@@ -108,7 +108,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         SelectCustomerBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Claimant 1", "Claimant 2", "Claimant 3", "Claimant 4" }));
 

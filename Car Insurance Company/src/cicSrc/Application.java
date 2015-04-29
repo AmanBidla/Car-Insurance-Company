@@ -48,6 +48,17 @@ public class Application {
     
     public static int NewClaims=0;
     
+    public static boolean[] Insured=new boolean[4];
+    public static boolean[] NotInsured=new boolean[4];
+    public static boolean[] Simple=new boolean[4];
+    public static boolean[] Complex=new boolean[4];
+    public static boolean[] DmgHistory=new boolean[4];
+    public static boolean[] PhoneGarage=new boolean[4];
+    public static boolean[] Positive=new boolean[4];
+    public static boolean[] Negative=new boolean[4];
+    
+ 
+    
     
 
     
@@ -156,6 +167,18 @@ public class Application {
         
         //garage owner creation
         garage1 = new GarageOwner("Ioannis","Papakostas","johnnyaoua", "12345");
+        
+        for (int i=0;i<4;i++){
+            Insured[i]=false;
+            NotInsured[i]=false;
+            Simple[i]=false;
+            Complex[i]=false;
+            DmgHistory[i]=false;
+            PhoneGarage[i]=false;
+            Positive[i]=false;
+            Negative[i]=false;
+            
+        }
     
     
     
