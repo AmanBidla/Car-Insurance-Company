@@ -5,6 +5,9 @@
  */
 package cicInterface;
 
+import static cicSrc.Application.claimant1;
+import static cicSrc.Claim.registeredClaims;
+
 /**
  *
  * @author george
@@ -15,7 +18,23 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
      * Creates new form PaymentRecordsPage
      */
     public PaymentRecordsPage() {
-        initComponents();
+                    initComponents();
+                    int j=0;
+                    for (int i=0;i<16;i++)
+                    {
+                     
+                     if (registeredClaims[i].claimDecision == "positive")          
+                                  
+                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, j, 0); // ID
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantName, j, 1); // Name
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, j, 2); // Surname
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, j, 3); // Location
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimDate, j, 4); // Date
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, j, 5); // Cost of Dmg
+                       j++;                             
+                        
+                    }
+        
     }
 
     /**
@@ -27,17 +46,53 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Claim ID", "Name", "Surname", "Location", "Date", "Cost Of Damage"
+            }
+        ));
+        jTable1.setRowHeight(22);
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setText("Payment Records");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(615, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(104, 104, 104)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(105, Short.MAX_VALUE)))
         );
 
         pack();
@@ -79,5 +134,8 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

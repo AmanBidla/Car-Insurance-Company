@@ -29,6 +29,7 @@ public class Claim {
     public static Claim[] registeredClaims = new Claim[16];
     public static int position=0;//position of element in the Claim[] array
     public static Claim[] pending = new Claim[10];
+    public static Claim[] paid = new Claim[10];
    // public int priceOfCar;
     
     //public Claim(){}
