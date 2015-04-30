@@ -6,6 +6,7 @@
 package cicInterface;
 
 import static cicSrc.Application.claimant1;
+import static cicSrc.Claim.paid;
 import static cicSrc.Claim.registeredClaims;
 
 /**
@@ -24,13 +25,13 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
                     {
                      
                      if (registeredClaims[i].claimDecision == "positive")          
-                                  
-                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, j, 0); // ID
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimantName, j, 1); // Name
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, j, 2); // Surname
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, j, 3); // Location
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimDate, j, 4); // Date
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, j, 5); // Cost of Dmg
+                          paid[i]= registeredClaims[i];     
+                     jTable1.getModel().setValueAt(paid[i].claim_ID, j, 0); // ID
+                     jTable1.getModel().setValueAt(paid[i].claimantName, j, 1); // Name
+                     jTable1.getModel().setValueAt(paid[i].claimantSurname, j, 2); // Surname
+                     jTable1.getModel().setValueAt(paid[i].claimantLocation, j, 3); // Location
+                     jTable1.getModel().setValueAt(paid[i].claimDate, j, 4); // Date
+                     jTable1.getModel().setValueAt(paid[i].claimCostOfDmg, j, 5); // Cost of Dmg
                        j++;                             
                         
                     }
