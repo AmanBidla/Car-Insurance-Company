@@ -5,6 +5,16 @@
  */
 package cicInterface;
 
+import static cicInterface.PendingClaimsPage.ClassIndex;
+import static cicInterface.PendingClaimsPage.UnclassifiedClaims;
+import static cicSrc.Application.claimant1;
+import static cicSrc.Application.claimant2;
+import static cicSrc.Application.claimant3;
+import static cicSrc.Application.Simple;
+import static cicSrc.Application.Complex;
+import static cicInterface.FormPage.NewSimpleForms;
+import static cicInterface.FormPage.NewComplexForms;
+
 /**
  *
  * @author george
@@ -16,6 +26,43 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
      */
     public ClassifyClaimsPage() {
         initComponents();
+        if (ClassIndex>0){
+            this.NoClaims_Label.setVisible(false);
+            for(int i=0;i<ClassIndex;i++){
+                
+                
+                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claim_ID, i, 0); // ID
+                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimantName, i, 1); // Name
+                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimantSurname, i, 2); // Surname
+                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimCostOfDmg, i, 3); // Location
+                     if ((UnclassifiedClaims[i].claimantName==claimant1.name)&&(UnclassifiedClaims[i].claimantSurname==claimant1.surname))
+                     {
+                         jTable1.getModel().setValueAt(claimant1.priceOfCar, i, 4);
+                
+                     }
+                     else if((UnclassifiedClaims[i].claimantName==claimant2.name)&&(UnclassifiedClaims[i].claimantSurname==claimant2.surname))
+                     {
+                         jTable1.getModel().setValueAt(claimant2.priceOfCar, i, 4);
+                     }
+                     else if((UnclassifiedClaims[i].claimantName==claimant3.name)&&(UnclassifiedClaims[i].claimantSurname==claimant3.surname))
+                     {
+                         jTable1.getModel().setValueAt(claimant3.priceOfCar, i, 4);
+                     }
+                     else
+                     {
+                          jTable1.getModel().setValueAt("Price of car unspecified!", i, 4);
+                     }
+                         
+            
+            }
+        
+        
+        }
+        else 
+        {
+            this.NoClaims_Label.setVisible(true);
+        
+        }
     }
 
     /**
@@ -27,21 +74,113 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        SimpleProceed_Button = new javax.swing.JButton();
+        ComplexProceed_Button = new javax.swing.JButton();
+        NoClaims_Label = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Claim ID", "Name", "Surname", "Cost Of Damage", "Price Of Car", "Simple", "Complex", "Form"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setRowHeight(22);
+        jScrollPane1.setViewportView(jTable1);
+
+        SimpleProceed_Button.setText("Proceed");
+        SimpleProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SimpleProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        ComplexProceed_Button.setText("Proceed");
+        ComplexProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComplexProceed_ButtonActionPerformed(evt);
+            }
+        });
+
+        NoClaims_Label.setText("There are no claims for classification! ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SimpleProceed_Button)
+                        .addGap(73, 73, 73)
+                        .addComponent(ComplexProceed_Button)
+                        .addGap(186, 186, 186))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 87, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(241, 241, 241)
+                .addComponent(NoClaims_Label)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(NoClaims_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SimpleProceed_Button)
+                    .addComponent(ComplexProceed_Button))
+                .addGap(76, 76, 76))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SimpleProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpleProceed_ButtonActionPerformed
+        for (int i=0;i<4;i++){
+            if ((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true){
+                UnclassifiedClaims[i].claimCategory="Simple";
+                Simple[i]=true;
+                this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
+                NewSimpleForms++;
+                
+                
+            
+            }   
+            else if((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true){
+                UnclassifiedClaims[i].claimCategory="Complex";
+                Complex[i]=true;
+                this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
+                NewComplexForms++;
+                
+                
+            }
+           
+        }
+    }//GEN-LAST:event_SimpleProceed_ButtonActionPerformed
+
+    private void ComplexProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComplexProceed_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComplexProceed_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +218,10 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ComplexProceed_Button;
+    private javax.swing.JLabel NoClaims_Label;
+    private javax.swing.JButton SimpleProceed_Button;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
