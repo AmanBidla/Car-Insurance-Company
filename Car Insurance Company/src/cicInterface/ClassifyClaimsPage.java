@@ -76,8 +76,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        SimpleProceed_Button = new javax.swing.JButton();
-        ComplexProceed_Button = new javax.swing.JButton();
+        Proceed_Button = new javax.swing.JButton();
         NoClaims_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -104,17 +103,10 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         jTable1.setRowHeight(22);
         jScrollPane1.setViewportView(jTable1);
 
-        SimpleProceed_Button.setText("Proceed");
-        SimpleProceed_Button.addActionListener(new java.awt.event.ActionListener() {
+        Proceed_Button.setText("Proceed");
+        Proceed_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SimpleProceed_ButtonActionPerformed(evt);
-            }
-        });
-
-        ComplexProceed_Button.setText("Proceed");
-        ComplexProceed_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComplexProceed_ButtonActionPerformed(evt);
+                Proceed_ButtonActionPerformed(evt);
             }
         });
 
@@ -125,18 +117,16 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SimpleProceed_Button)
-                        .addGap(73, 73, 73)
-                        .addComponent(ComplexProceed_Button)
-                        .addGap(186, 186, 186))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 87, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(241, 241, 241)
                 .addComponent(NoClaims_Label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Proceed_Button)
+                .addGap(271, 271, 271))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,16 +136,14 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SimpleProceed_Button)
-                    .addComponent(ComplexProceed_Button))
+                .addComponent(Proceed_Button)
                 .addGap(76, 76, 76))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SimpleProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpleProceed_ButtonActionPerformed
+    private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
         for (int i=0;i<4;i++){
             if ((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true){
                 UnclassifiedClaims[i].claimCategory="Simple";
@@ -176,11 +164,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             }
            
         }
-    }//GEN-LAST:event_SimpleProceed_ButtonActionPerformed
-
-    private void ComplexProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComplexProceed_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComplexProceed_ButtonActionPerformed
+    }//GEN-LAST:event_Proceed_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,9 +202,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ComplexProceed_Button;
     private javax.swing.JLabel NoClaims_Label;
-    private javax.swing.JButton SimpleProceed_Button;
+    private javax.swing.JButton Proceed_Button;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
