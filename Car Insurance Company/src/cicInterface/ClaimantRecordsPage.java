@@ -13,6 +13,9 @@ package cicInterface;
 import static cicInterface.LoginPage.userRole;
 import cicSrc.Claimant;
 import cicSrc.Application;
+import static cicSrc.Application.claimant1;
+import static cicSrc.Application.claimant2;
+import static cicSrc.Application.claimant3;
 
 
 public class ClaimantRecordsPage extends javax.swing.JFrame {
@@ -82,6 +85,12 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jLabel6.setVisible(false);
         jLabel7.setVisible(false);
         jButton2.setVisible(false);
+        jButton3.setVisible(false);
+        jButton4.setVisible(false);
+        jButton5.setVisible(false);
+        jButton6.setVisible(false);
+        jButton7.setVisible(false);
+        jButton8.setVisible(false);
         // Claimant claimant=new Claimant();
         
         
@@ -130,11 +139,6 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jLabel1.setText("Select Claimant");
 
         jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jTextField2.setText("jTextField2");
 
@@ -385,61 +389,130 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        int priceofcar = Integer.parseInt(this.PriceOfCarTextField.getText());
-        int costofinsurance = Integer.parseInt(this.CostOfInsuranceTextField.getText());
         String claimant =(String)this.SelectCustomerBox.getSelectedItem();
         switch (claimant){
             case "Claimant 1":
                 jTextField1.setText(this.jTextField1.getText()); 
-                // change the value of the attribute too.
-                jTextField2.setText(this.jTextField2.getText());               
-                jTextField3.setText(this.jTextField3.getText());                
-                jTextField4.setText(this.jTextField4.getText());                
-                CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
-                PriceOfCarTextField.setText(Integer.toString(priceofcar));                
+                claimant1.name = jTextField1.getText();
+                            
             break;
             case "Claimant 2":
-               jTextField1.setText(this.jTextField1.getText());                
-                jTextField2.setText(this.jTextField2.getText());               
-                jTextField3.setText(this.jTextField3.getText());                
-                jTextField4.setText(this.jTextField4.getText());                
-                CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
-                PriceOfCarTextField.setText(Integer.toString(priceofcar)); 
+                jTextField1.setText(this.jTextField1.getText()); 
+                claimant2.name = jTextField1.getText();                
+                 
             break;
             case "Claimant 3":
-                jTextField1.setText(this.jTextField1.getText());                
-                jTextField2.setText(this.jTextField2.getText());               
-                jTextField3.setText(this.jTextField3.getText());                
-                jTextField4.setText(this.jTextField4.getText());                
-                CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
-                PriceOfCarTextField.setText(Integer.toString(priceofcar)); 
+                jTextField1.setText(this.jTextField1.getText()); 
+                claimant3.name = jTextField1.getText(); 
             break;
             default: break;
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // change claimant surname
+         
+        String claimant =(String)this.SelectCustomerBox.getSelectedItem();
+        switch (claimant){
+            case "Claimant 1":
+                jTextField2.setText(this.jTextField2.getText()); 
+                claimant1.surname = jTextField2.getText();
+                               
+            break;
+            case "Claimant 2":
+               jTextField2.setText(this.jTextField2.getText()); 
+                claimant2.surname = jTextField2.getText();
+            break;
+            case "Claimant 3":
+                jTextField2.setText(this.jTextField2.getText()); 
+                claimant3.surname = jTextField2.getText(); 
+            break;
+            default: break;
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // change claimant plate number
+       
+        String claimant =(String)this.SelectCustomerBox.getSelectedItem();
+        switch (claimant){
+            case "Claimant 1":
+                            
+                jTextField3.setText(this.jTextField3.getText()); 
+                claimant1.plateNumber = jTextField3.getText();
+                               
+            break;
+            case "Claimant 2":
+               jTextField3.setText(this.jTextField3.getText()); 
+                claimant2.plateNumber = jTextField3.getText(); 
+            break;
+            case "Claimant 3":
+                jTextField3.setText(this.jTextField3.getText()); 
+                claimant3.plateNumber = jTextField3.getText(); 
+            break;
+            default: break;
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // change expiration date of the insurance
+        
+        String claimant =(String)this.SelectCustomerBox.getSelectedItem();
+        switch (claimant){
+            case "Claimant 1":
+                
+                jTextField4.setText(this.jTextField4.getText()); 
+                claimant1.expiringDateOfInsurance = jTextField4.getText();
+                            
+            break;
+            case "Claimant 2":
+               jTextField4.setText(this.jTextField4.getText()); 
+                claimant2.expiringDateOfInsurance = jTextField4.getText();
+            break;
+            case "Claimant 3":
+               jTextField4.setText(this.jTextField4.getText()); 
+                claimant3.expiringDateOfInsurance = jTextField4.getText();
+            break;
+            default: break;
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // change cost of insurance
+        
+        int costofinsurance = Integer.parseInt(this.CostOfInsuranceTextField.getText());
+        String claimant =(String)this.SelectCustomerBox.getSelectedItem();
+        switch (claimant){
+            case "Claimant 1":          
+                CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
+                claimant1.costOfInsurance   =   costofinsurance;            
+            break;
+            case "Claimant 2":
+               CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
+               claimant2.costOfInsurance   =   costofinsurance;  
+            break;
+            case "Claimant 3":
+                CostOfInsuranceTextField.setText(Integer.toString(costofinsurance));                
+                claimant3.costOfInsurance   =   costofinsurance; 
+            break;
+            default: break;
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // change price of car
+        int priceofcar = Integer.parseInt(this.PriceOfCarTextField.getText());
+        String claimant =(String)this.SelectCustomerBox.getSelectedItem();
+        switch (claimant){
+            case "Claimant 1":               
+                PriceOfCarTextField.setText(Integer.toString(priceofcar));  
+                claimant1.priceOfCar =priceofcar;
+            break;
+            case "Claimant 2":
+               PriceOfCarTextField.setText(Integer.toString(priceofcar));  
+                claimant2.priceOfCar =priceofcar;
+            break;
+            case "Claimant 3":
+                PriceOfCarTextField.setText(Integer.toString(priceofcar));  
+                claimant3.priceOfCar =priceofcar; 
+            break;
+            default: break;
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
