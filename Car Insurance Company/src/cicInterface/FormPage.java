@@ -14,6 +14,8 @@ public class FormPage extends javax.swing.JFrame {
     /**
      * Creates new form FillInFormPage
      */
+    public static int NewSimpleForms=0;
+    public static int NewComplexForms=0;
     
     public static String formStatus="formNotCreated";
     

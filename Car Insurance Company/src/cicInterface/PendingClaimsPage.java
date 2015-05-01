@@ -41,6 +41,9 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     public static boolean GaragePhoned=false;
     public static boolean ClaimMarked=false;
     
+    public static Claim[] UnclassifiedClaims=new Claim[10];
+    public static int ClassIndex=0;
+    
         
         
         
@@ -411,7 +414,19 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPageActionPerformed
 
     private void ClassifyClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassifyClaim_ButtonActionPerformed
-        // TODO add your handling code here:
+        for (int i=0;i<4;i++)
+        {
+        
+        
+            for (int j=0;j<10;j++)
+            {
+                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
+                {
+                    UnclassifiedClaims[ClassIndex] = newClaim[j];
+                    ClassIndex++;
+                }
+            }
+        }
         ClassifyClaimsPage classifyClaims=new ClassifyClaimsPage();
         classifyClaims.setVisible(true);
     }//GEN-LAST:event_ClassifyClaim_ButtonActionPerformed
