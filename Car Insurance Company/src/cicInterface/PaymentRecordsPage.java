@@ -7,7 +7,7 @@ package cicInterface;
 
 import static cicSrc.Application.claimant1;
 import static cicSrc.Claim.paid;
-import static cicSrc.Claim.registeredClaims;
+import static cicSrc.Application.registeredClaims;
 
 /**
  *

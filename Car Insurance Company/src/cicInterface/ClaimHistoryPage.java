@@ -9,7 +9,7 @@ import cicSrc.Application;
 import static cicSrc.Application.claimant1;
 import static cicSrc.Application.claimant2;
 import static cicSrc.Application.claimant3;
-import static cicSrc.Claim.registeredClaims;
+import static cicSrc.Application.registeredClaims;
 
 /**
  *

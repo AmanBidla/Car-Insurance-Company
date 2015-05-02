@@ -10,7 +10,8 @@ package cicInterface;
  * @author george
  */
 
-import cicSrc.Claim;
+import static cicSrc.Application.unclassifiedClaims;
+import static cicSrc.Application.classIndex;
 /*import static cicSrc.Application.Complex;
 import static cicSrc.Application.DmgHistory;
 import static cicSrc.Application.Insured;
@@ -21,8 +22,9 @@ import static cicSrc.Application.Positive;
 import static cicSrc.Application.Simple;*/
 import cicSrc.Application;
 import static cicSrc.Application.newClaim;
-import static cicSrc.Claim.position;
-import static cicSrc.Claim.registeredClaims;
+import cicSrc.Claim;
+import static cicSrc.Application.position;
+import static cicSrc.Application.registeredClaims;
 
 public class PendingClaimsPage extends javax.swing.JFrame {
 
@@ -41,14 +43,13 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     public static boolean GaragePhoned=false;
     public static boolean ClaimMarked=false;
     
-    public static Claim[] UnclassifiedClaims=new Claim[10];
-    public static int ClassIndex=0;
+    
     
         
         
         
         
-      public static Claim pendingClaim;
+    public static Claim pendingClaim;
     
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
@@ -154,6 +155,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         History_Label = new javax.swing.JLabel();
         ClaimHandlerA_Label = new javax.swing.JLabel();
         NotInsured_Label = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BackToPage.setText("Back To Page ");
         BackToPage.addActionListener(new java.awt.event.ActionListener() {
@@ -421,9 +424,10 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             for (int j=0;j<10;j++)
             {
                 if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
-                {
-                    UnclassifiedClaims[ClassIndex] = newClaim[j];
-                    ClassIndex++;
+                { 
+                    
+                    unclassifiedClaims[classIndex] = newClaim[j];
+                    classIndex++;
                 }
             }
         }
@@ -673,6 +677,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             
             }
         }
+        ClaimHistoryPage claimHistory=new ClaimHistoryPage();
+        claimHistory.setVisible(true);
     }//GEN-LAST:event_MoveToHistory_ButtonActionPerformed
 
     /**

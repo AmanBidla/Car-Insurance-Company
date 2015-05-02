@@ -5,8 +5,7 @@
  */
 package cicInterface;
 
-import static cicInterface.PendingClaimsPage.ClassIndex;
-import static cicInterface.PendingClaimsPage.UnclassifiedClaims;
+
 import static cicSrc.Application.claimant1;
 import static cicSrc.Application.claimant2;
 import static cicSrc.Application.claimant3;
@@ -14,6 +13,8 @@ import static cicSrc.Application.Simple;
 import static cicSrc.Application.Complex;
 import static cicInterface.FormPage.NewSimpleForms;
 import static cicInterface.FormPage.NewComplexForms;
+import static cicSrc.Application.unclassifiedClaims;
+import static cicSrc.Application.classIndex;
 
 /**
  *
@@ -26,25 +27,25 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
      */
     public ClassifyClaimsPage() {
         initComponents();
-        if (ClassIndex>0){
+        if (classIndex>0){
             this.NoClaims_Label.setVisible(false);
-            for(int i=0;i<ClassIndex;i++){
+            for(int i=0;i<classIndex;i++){
                 
                 
-                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claim_ID, i, 0); // ID
-                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimantName, i, 1); // Name
-                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimantSurname, i, 2); // Surname
-                     jTable1.getModel().setValueAt(UnclassifiedClaims[i].claimCostOfDmg, i, 3); // Location
-                     if ((UnclassifiedClaims[i].claimantName==claimant1.name)&&(UnclassifiedClaims[i].claimantSurname==claimant1.surname))
+                     jTable1.getModel().setValueAt(unclassifiedClaims[i].claim_ID, i, 0); // ID
+                     jTable1.getModel().setValueAt(unclassifiedClaims[i].claimantName, i, 1); // Name
+                     jTable1.getModel().setValueAt(unclassifiedClaims[i].claimantSurname, i, 2); // Surname
+                     jTable1.getModel().setValueAt(unclassifiedClaims[i].claimCostOfDmg, i, 3); // Location
+                     if ((unclassifiedClaims[i].claimantName.equals(claimant1.name))&&(unclassifiedClaims[i].claimantSurname.equals(claimant1.surname)))
                      {
                          jTable1.getModel().setValueAt(claimant1.priceOfCar, i, 4);
                 
                      }
-                     else if((UnclassifiedClaims[i].claimantName==claimant2.name)&&(UnclassifiedClaims[i].claimantSurname==claimant2.surname))
+                     else if((unclassifiedClaims[i].claimantName.equals(claimant2.name))&&(unclassifiedClaims[i].claimantSurname.equals(claimant2.surname)))
                      {
                          jTable1.getModel().setValueAt(claimant2.priceOfCar, i, 4);
                      }
-                     else if((UnclassifiedClaims[i].claimantName==claimant3.name)&&(UnclassifiedClaims[i].claimantSurname==claimant3.surname))
+                     else if((unclassifiedClaims[i].claimantName.equals(claimant3.name))&&(unclassifiedClaims[i].claimantSurname.equals(claimant3.surname)))
                      {
                          jTable1.getModel().setValueAt(claimant3.priceOfCar, i, 4);
                      }
@@ -146,7 +147,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
         for (int i=0;i<4;i++){
             if ((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true){
-                UnclassifiedClaims[i].claimCategory="Simple";
+                unclassifiedClaims[i].claimCategory="Simple";
                 Simple[i]=true;
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
                 NewSimpleForms++;
@@ -155,7 +156,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             
             }   
             else if((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true){
-                UnclassifiedClaims[i].claimCategory="Complex";
+                unclassifiedClaims[i].claimCategory="Complex";
                 Complex[i]=true;
                 this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
                 NewComplexForms++;
@@ -164,6 +165,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             }
            
         }
+        
     }//GEN-LAST:event_Proceed_ButtonActionPerformed
 
     /**

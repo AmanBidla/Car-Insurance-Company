@@ -50,6 +50,13 @@ public class Application {
     
     public static Claim[] newClaim=new Claim[10];
     
+    public static Claim[] unclassifiedClaims=new Claim[10];
+    public static int classIndex=0;
+    
+    
+    public static Claim[] registeredClaims = new Claim[16];
+    public static int position=0;
+    
     public static int ID_number=1;
     
     public static boolean[] Insured= {false, false, false, false};
@@ -126,6 +133,12 @@ public class Application {
         value=claimant1.login(claimant1);
         }*/
         
+        for (int i=0;i<10;i++){
+            newClaim[i]=new Claim();
+            unclassifiedClaims[i]=new Claim();
+            registeredClaims[i]=new Claim();
+        
+        }
         
         //claim creation - I assume that claim1 coreesponds to claimant1,claim2 to claimant2 etc.
         claim1 = new Claim("Charlie","Hebdo","Kungsgatan 17,Stockholm","2014/12/11",1000);
