@@ -10,6 +10,7 @@ package cicInterface;
  * @author george
  */
 
+import static cicInterface.NewClaimsPage.pendingClaimsNumber;
 import static cicSrc.Application.unclassifiedClaims;
 import static cicSrc.Application.classIndex;
 /*import static cicSrc.Application.Complex;
@@ -417,7 +418,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPageActionPerformed
 
     private void ClassifyClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassifyClaim_ButtonActionPerformed
-        for (int i=0;i<4;i++)
+        for (int i=0;i<pendingClaimsNumber;i++)
         {
         
         
