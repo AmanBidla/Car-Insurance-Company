@@ -98,6 +98,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         Proceed_Button = new javax.swing.JButton();
         NoClaims_Label = new javax.swing.JLabel();
+        BackToPage_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -132,21 +133,33 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
 
         NoClaims_Label.setText("There are no claims for classification! ");
 
+        BackToPage_Button.setText("Back To Page");
+        BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToPage_ButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 87, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(241, 241, 241)
                 .addComponent(NoClaims_Label)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 87, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Proceed_Button)
-                .addGap(271, 271, 271))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Proceed_Button)
+                        .addGap(271, 271, 271))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BackToPage_Button)
+                        .addGap(76, 76, 76))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +170,9 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Proceed_Button)
-                .addGap(76, 76, 76))
+                .addGap(18, 18, 18)
+                .addComponent(BackToPage_Button)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -197,6 +212,12 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Proceed_ButtonActionPerformed
 
+    private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
+        // TODO add your handling code here:
+        PendingClaimsPage pending=new PendingClaimsPage();
+        pending.setVisible(true);
+    }//GEN-LAST:event_BackToPage_ButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,6 +254,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToPage_Button;
     private javax.swing.JLabel NoClaims_Label;
     private javax.swing.JButton Proceed_Button;
     private javax.swing.JScrollPane jScrollPane1;
