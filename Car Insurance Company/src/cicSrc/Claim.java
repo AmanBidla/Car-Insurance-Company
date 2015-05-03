@@ -21,7 +21,7 @@ public class Claim {
     public String claimDate;
     public String claimCategory;//simple, complex
     public String claimDecision;//positive, negative
-    public String claimStatus; //reported, claimantInsured, classified, accepted, rejected, registered, sent for payment
+    public String claimStatus; //reported, Insured, classified, accepted, rejected, registered, sent for payment
     public Boolean payment;
     public int claim_ID; // ID number for claims - incrementing with every new claim
     public int amount_of_payment = 0;

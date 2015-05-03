@@ -6,6 +6,7 @@
 package cicInterface;
 
 import static cicInterface.PendingClaimsPage.approved_payments;
+import cicSrc.Claim;
 
 /**
  *
@@ -24,6 +25,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     boolean claim2_paid = false;
     boolean claim3_paid = false;
     boolean claim4_paid = false;
+    public static Claim[] approvedforpayment = new Claim[10];
     
     public ClaimsApprovedForPaymentPage() {
         initComponents();
@@ -212,11 +214,14 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add claim_ID number
-        PendingClaimsPage pending=new PendingClaimsPage();
-        this.jTable1.getModel().setValueAt(1, 1, 1);
-        jTable1.getModel().setValueAt(pending.pendingClaim.claimantName, 1, 2);
-        jTable1.getModel().setValueAt(pending.pendingClaim.claimantSurname, 1, 3);
-        jTable1.getModel().setValueAt(pending.pendingClaim.claimCostOfDmg, 1, 4);
+      
+        for (int i=0;i<approved_payments;i++)
+        {
+        jTable1.getModel().setValueAt(approvedforpayment[i].claim_ID, i, 1);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimantName, i, 2);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimantSurname, i, 3);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimCostOfDmg, i, 4);
+        }
         
         //TODO add buttons to issue payments and move claims to Payment Records
     }//GEN-LAST:event_jButton1ActionPerformed

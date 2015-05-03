@@ -12,6 +12,7 @@ import cicSrc.Application;
 import static cicSrc.Application.ID_number;
 import static cicSrc.Application.newClaim;
 import cicSrc.Claim;
+import static cicSrc.Claim.pending;
 
 
 
@@ -266,6 +267,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 
                 pendingClaims[pendingClaimsNumber]=(int)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
+                pending[i]= newClaim[i];
                                 
                 
                 

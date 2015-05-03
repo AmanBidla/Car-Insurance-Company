@@ -215,6 +215,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         PendingClaimsPage pending=new PendingClaimsPage();
         pending.setVisible(true);
+        ClaimsForClassification=0;
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     /**
