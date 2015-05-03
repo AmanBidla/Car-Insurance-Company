@@ -5,6 +5,9 @@
  */
 package cicInterface;
 
+import static cicInterface.ReportClaimPage.claimNumber;
+import static cicInterface.ReportClaimPage.first;
+import static cicInterface.ReportClaimPage.last;
 import cicSrc.Application;
 import static cicSrc.Application.ID_number;
 import cicSrc.Claim;
@@ -22,9 +25,11 @@ public class NewClaimsPage extends javax.swing.JFrame {
      */
     public static int pendingClaimsNumber=0;
     public static int[] pendingClaims=new int[10];
+    public int nrOfClaims=0;  // showing the number of new claims
     
     public NewClaimsPage() {
         initComponents();
+        last=claimNumber;
         if (Application.NewClaims>0){
             this.NewClaims_Label.setVisible(true);
             this.ShowClaim_Button.setVisible(true);
@@ -187,6 +192,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
             
             
         }
+        nrOfClaims=last-first;
         reportClaim.first=reportClaim.last;
        
     }//GEN-LAST:event_ShowClaim_ButtonActionPerformed
@@ -211,7 +217,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
 
     private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
         
-        for (int i=0;i<4;i++){
+        for (int i=0;i<nrOfClaims;i++){
             Boolean val=(Boolean)this.jTable1.getModel().getValueAt(i, 6);
             if(val){
                 

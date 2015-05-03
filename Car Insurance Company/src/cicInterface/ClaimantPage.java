@@ -42,7 +42,7 @@ public class ClaimantPage extends javax.swing.JFrame {
         Logged_Menu = new javax.swing.JMenu();
         Logout_MenuItem = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         PersonalDetails_Menu.setText("Personal Details");
         PersonalDetails_Menu.addActionListener(new java.awt.event.ActionListener() {

@@ -9,6 +9,8 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import cicInterface.LoginPage;
+import cicInterface.ReportClaimPage;
+import static cicInterface.ReportClaimPage.last;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -156,14 +158,20 @@ public class Application {
         claim1.claim_ID = ID_number;
         ID_number++;
         newClaim[0]= claim1;
+        Application.NewClaims++;
+        last++;
         claim2 = new Claim ("Charles","Hebdos","Emmyvagen 3,Solna","2015/01/05",6000);
         claim2.claim_ID = ID_number;
         ID_number++;
         newClaim[1]= claim2;
+        last++;
+        Application.NewClaims++;
         claim3 = new Claim ("Tsoutsounis","Paparopoulos","Elvagen 5,Solna","2014/09/07",3000);
         claim3.claim_ID = ID_number;
         ID_number++;
         newClaim[2]= claim3; // append claim to new claims array
+        Application.NewClaims++;
+        last++;
         
         //claim Handler creation
         claimHandlerA = new ClaimHandlerA("Yanni","The Pimp","johnny","aoua");
