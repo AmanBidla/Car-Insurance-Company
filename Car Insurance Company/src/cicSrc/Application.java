@@ -55,7 +55,7 @@ public class Application {
     public static Claim[] newClaim=new Claim[10];
     
     public static Claim[] unclassifiedClaims=new Claim[10];
-    public static int classIndex=0;
+    public static int unclassifiedIndex=0;
     
     public static Claim[] simpleClaims=new Claim[10];
     public static int simpleIndex=0;
@@ -65,7 +65,7 @@ public class Application {
     
     
     public static Claim[] registeredClaims = new Claim[16];
-    public static int position=0;
+    public static int registeredIndex=0;
     
     public static int ID_number=1;
     

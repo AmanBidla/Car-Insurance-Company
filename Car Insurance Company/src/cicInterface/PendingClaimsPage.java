@@ -12,7 +12,7 @@ package cicInterface;
 
 import static cicInterface.NewClaimsPage.pendingClaimsNumber;
 import static cicSrc.Application.unclassifiedClaims;
-import static cicSrc.Application.classIndex;
+import static cicSrc.Application.unclassifiedIndex;
 /*import static cicSrc.Application.Complex;
 import static cicSrc.Application.DmgHistory;
 import static cicSrc.Application.Insured;
@@ -25,7 +25,7 @@ import cicSrc.Application;
 import static cicSrc.Application.ClaimsForClassification;
 import static cicSrc.Application.newClaim;
 import cicSrc.Claim;
-import static cicSrc.Application.position;
+import static cicSrc.Application.registeredIndex;
 import static cicSrc.Application.registeredClaims;
 
 public class PendingClaimsPage extends javax.swing.JFrame {
@@ -428,8 +428,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
                 { 
                     
-                    unclassifiedClaims[classIndex] = newClaim[j];
-                    classIndex++;
+                    unclassifiedClaims[unclassifiedIndex] = newClaim[j];
+                    unclassifiedIndex++;
                     ClaimsForClassification++;
                 }
             }
@@ -670,8 +670,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 {
                 if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
                 {
-                    registeredClaims[position] = newClaim[j];
-                    position++;
+                    registeredClaims[registeredIndex] = newClaim[j];
+                    registeredIndex++;
                 }
                 }
                 

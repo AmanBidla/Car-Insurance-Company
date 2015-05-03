@@ -15,7 +15,7 @@ import static cicInterface.FormPage.NewSimpleForms;
 import static cicInterface.FormPage.NewComplexForms;
 import static cicSrc.Application.ClaimsForClassification;
 import static cicSrc.Application.unclassifiedClaims;
-import static cicSrc.Application.classIndex;
+import static cicSrc.Application.unclassifiedIndex;
 import static cicSrc.Application.complexClaims;
 import static cicSrc.Application.complexIndex;
 import static cicSrc.Application.simpleClaims;
