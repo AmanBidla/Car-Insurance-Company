@@ -10,6 +10,7 @@ package cicInterface;
  * @author george
  */
 
+import static cicInterface.ClaimsApprovedForPaymentPage.approvedforpayment;
 import static cicInterface.NewClaimsPage.pendingClaimsNumber;
 import static cicSrc.Application.unclassifiedClaims;
 import static cicSrc.Application.unclassifiedIndex;
@@ -27,6 +28,7 @@ import static cicSrc.Application.newClaim;
 import cicSrc.Claim;
 import static cicSrc.Application.registeredIndex;
 import static cicSrc.Application.registeredClaims;
+import static cicSrc.Claim.pending;
 
 public class PendingClaimsPage extends javax.swing.JFrame {
 
@@ -51,7 +53,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
         
         
-    public static Claim pendingClaim;
+    
     
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
@@ -105,7 +107,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
         
         
-        for (int i=0;i<4;i++){
+        for (int i=0;i<pendingClaimsNumber;i++){
             this.pendingClaims_Table.getModel().setValueAt(Application.Insured[i],i,1);
             this.pendingClaims_Table.getModel().setValueAt(Application.NotInsured[i],i,2);
             this.pendingClaims_Table.getModel().setValueAt(Application.Simple[i],i,3);
@@ -114,6 +116,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             this.pendingClaims_Table.getModel().setValueAt(Application.PhoneGarage[i],i,6);
             this.pendingClaims_Table.getModel().setValueAt(Application.Positive[i],i,7);
             this.pendingClaims_Table.getModel().setValueAt(Application.Negative[i],i,8);
+            this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
             
             
         }
@@ -425,10 +428,10 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
             for (int j=0;j<10;j++)
             {
-                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
+                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== pending[j].claim_ID)
                 { 
                     
-                    unclassifiedClaims[unclassifiedIndex] = newClaim[j];
+                    unclassifiedClaims[unclassifiedIndex] = pending[j];
                     unclassifiedIndex++;
                     ClaimsForClassification++;
                 }
@@ -472,12 +475,13 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_DamageHistory_ButtonActionPerformed
 
     private void InsuranceProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsuranceProceed_ButtonActionPerformed
-        // TODO add your handling code here:
-        for (int i=0;i<4;i++){
+        
+        for (int i=0;i<pendingClaimsNumber;i++){
         
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 1)==true){
                 Application.Insured[i]=true;
-                this.pendingClaims_Table.getModel().setValueAt("Claimant Insured!",i,9);
+                pending[i].claimStatus = "Insured";
+                this.pendingClaims_Table.getModel().setValueAt(pending[i].claimStatus,i,9);
                 
                 
             
@@ -497,7 +501,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void ClassificationProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassificationProceed_ButtonActionPerformed
         
-        for (int i=0;i<4;i++){
+        for (int i=0;i<pendingClaimsNumber;i++){
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 3)==true){
                 
                 
@@ -508,7 +512,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     this.NotInsured_Label.setVisible(false);
                     Application.Simple[i]=true;
                     this.pendingClaims_Table.getModel().setValueAt(true,i,5);
-                    this.pendingClaims_Table.getModel().setValueAt("Classified As Simple!",i,9);
+                    pending[i].claimStatus="Classified As Simple";
+                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                 }
                 else if (Application.NotInsured[i]==true){
                     InsuranceChecked=true;
@@ -527,7 +532,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 if (Application.Insured[i]==true){
                     InsuranceChecked=true;
                     Application.Complex[i]=true;
-                    this.pendingClaims_Table.getModel().setValueAt("Classified As Complex!",i,9);
+                    pending[i].claimStatus="Classified As Complex";
+                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                 }
                 else if (Application.NotInsured[i]==true){
                     InsuranceChecked=true;
@@ -551,7 +557,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void DamageHistoryProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageHistoryProceed_ButtonActionPerformed
         // TODO add your handling code here:
-        for (int i=0;i<4;i++){
+        for (int i=0;i<pendingClaimsNumber;i++){
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 5)==true){
                 
                 
@@ -560,8 +566,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     ClaimClassified=true;
                     this.DmgHistory_Label.setVisible(false);
                     Application.DmgHistory[i]=true;
-                
-                    this.pendingClaims_Table.getModel().setValueAt("Damage History Checked!",i,9);
+                    pending[i].claimStatus="Damage History Checked";
+                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                
                 }
        
@@ -581,7 +587,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void GarageProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GarageProceed_ButtonActionPerformed
         
-        for (int i=0;i<4;i++){
+        for (int i=0;i<pendingClaimsNumber;i++){
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 6)==true){
                 
                 
@@ -590,8 +596,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     DmgHistoryChecked=true;
                     this.Garage_Label.setVisible(false);
                     Application.PhoneGarage[i]=true;
-                
-                    this.pendingClaims_Table.getModel().setValueAt("Garage Owner Phoned!",i,9);
+                    pending[i].claimStatus="Garage Owner Phoned";
+                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                
                 }
        
@@ -619,14 +625,16 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         else if (login.userRole=="ClaimHandlerA"){
             this.ClaimHandlerA_Label.setVisible(false);
         
-            for (int i=0;i<4;i++){
+            for (int i=0;i<pendingClaimsNumber;i++){
         
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 7)==true){
                 
                 if (Application.PhoneGarage[i]==true){
                     GaragePhoned=true;
                     this.Decision_Label.setVisible(false);
-                    this.pendingClaims_Table.getModel().setValueAt("Approved For Payment!",i,9);
+                    pending[i].claimStatus="Approved For Payment";
+                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
+                    approvedforpayment[approved_payments]=pending[i];
                     Application.Positive[i]=true;
                     approved_payments++;
                 }
@@ -642,7 +650,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 
                 if (Application.PhoneGarage[i]==true){
                    GaragePhoned=true; 
-                   this.pendingClaims_Table.getModel().setValueAt("Rejected!",i,9);
+                   pending[i].claimStatus = "Rejected!";
+                   this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                    Application.Negative[i]=true;
                 }
                 
@@ -659,18 +668,19 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void MoveToHistory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveToHistory_ButtonActionPerformed
         // TODO add your handling code here:
-        for (int i=0;i<4;i++){
+        for (int i=0;i<pendingClaimsNumber;i++){
         
             if (((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Approved For Payment!")||((String)this.pendingClaims_Table.getModel().getValueAt(i, 9)=="Rejected!"))
             {
                 
                 //register claim to the array of ClaimsHistoryPage
-                this.pendingClaims_Table.getModel().setValueAt("Registered!",i,9);
+                pending[i].claimStatus = "Registered!";
+                this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                 for (int j=0;j<10;j++)
                 {
-                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== newClaim[j].claim_ID)
+                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== pending[j].claim_ID)
                 {
-                    registeredClaims[registeredIndex] = newClaim[j];
+                    registeredClaims[registeredIndex] = pending[j];
                     registeredIndex++;
                 }
                 }

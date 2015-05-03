@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import cicInterface.LoginPage;
 import cicInterface.ReportClaimPage;
 import static cicInterface.ReportClaimPage.last;
+import static cicSrc.Claim.pending;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -149,6 +150,7 @@ public class Application {
             simpleClaims[i]=new Claim();
             complexClaims[i]=new Claim();
             registeredClaims[i]=new Claim();
+            pending[i]=new Claim();
         
         }
         
