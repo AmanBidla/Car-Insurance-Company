@@ -185,7 +185,6 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             if (((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 6)!=true)){
                 unclassifiedClaims[j].claimCategory="Simple";
                 Simple[i]=true;
-                
                 simpleClaims[simpleIndex]=unclassifiedClaims[j];
                 simpleIndex++;
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
