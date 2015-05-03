@@ -200,9 +200,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-        PaymentRecordsPage payments = new PaymentRecordsPage();
-        
+              
         for (int i=0;i<approved_payments;i++)
         {
         if ((Boolean)jTable1.getModel().getValueAt(i , 4) == true) 
@@ -213,6 +211,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
         }
         
         }
+        PaymentRecordsPage payments = new PaymentRecordsPage();
         payments.setVisible(true);
         this.dispose();
                        

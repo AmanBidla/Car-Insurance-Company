@@ -53,7 +53,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             this.NoClaims_Label.setVisible(false);
             for(int i=0;i<ClaimsForClassification;i++){
                 
-                
+                    if (unclassifiedClaims[j].claimStatus != "Rejected!")
+                    {
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claim_ID, i, 0); // ID
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claimantName, i, 1); // Name
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claimantSurname, i, 2); // Surname
@@ -78,7 +79,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                      j++;    
             
             }
-
+            }
+        
             
             
         }
