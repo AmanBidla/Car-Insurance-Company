@@ -10,6 +10,7 @@ import static cicSrc.Claim.paid;
 import static cicSrc.Application.registeredClaims;
 import static cicSrc.Claim.paidIndex;
 
+
 /**
  *
  * @author george
@@ -24,6 +25,7 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
                     int j=0;
                     System.out.println(paidIndex);
                     for (int i=0;i<paidIndex;i++)
+
                     {
                      
                      jTable1.getModel().setValueAt(paid[i].claim_ID, j, 0); // ID
