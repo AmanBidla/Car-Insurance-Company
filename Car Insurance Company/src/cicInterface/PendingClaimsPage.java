@@ -21,6 +21,7 @@ import static cicSrc.Application.PhoneGarage;
 import static cicSrc.Application.Positive;
 import static cicSrc.Application.Simple;*/
 import cicSrc.Application;
+import static cicSrc.Application.ClaimsForClassification;
 import static cicSrc.Application.newClaim;
 import cicSrc.Claim;
 import static cicSrc.Application.position;
@@ -428,6 +429,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     
                     unclassifiedClaims[classIndex] = newClaim[j];
                     classIndex++;
+                    ClaimsForClassification++;
                 }
             }
         }

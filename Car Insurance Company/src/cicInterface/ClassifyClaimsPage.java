@@ -13,8 +13,13 @@ import static cicSrc.Application.Simple;
 import static cicSrc.Application.Complex;
 import static cicInterface.FormPage.NewSimpleForms;
 import static cicInterface.FormPage.NewComplexForms;
+import static cicSrc.Application.ClaimsForClassification;
 import static cicSrc.Application.unclassifiedClaims;
 import static cicSrc.Application.classIndex;
+import static cicSrc.Application.complexClaims;
+import static cicSrc.Application.complexIndex;
+import static cicSrc.Application.simpleClaims;
+import static cicSrc.Application.simpleIndex;
 
 /**
  *
@@ -27,9 +32,9 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
      */
     public ClassifyClaimsPage() {
         initComponents();
-        if (classIndex>0){
+        if (ClaimsForClassification>0){
             this.NoClaims_Label.setVisible(false);
-            for(int i=0;i<classIndex;i++){
+            for(int i=0;i<ClaimsForClassification;i++){
                 
                 
                      jTable1.getModel().setValueAt(unclassifiedClaims[i].claim_ID, i, 0); // ID
@@ -56,6 +61,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                          
             
             }
+            ClaimsForClassification=0;
         
         
         }
@@ -149,6 +155,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             if ((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true){
                 unclassifiedClaims[i].claimCategory="Simple";
                 Simple[i]=true;
+                
+                simpleClaims[simpleIndex]=unclassifiedClaims[i];
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
                 NewSimpleForms++;
                 
@@ -158,6 +166,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             else if((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true){
                 unclassifiedClaims[i].claimCategory="Complex";
                 Complex[i]=true;
+                complexClaims[complexIndex]=unclassifiedClaims[i];
                 this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
                 NewComplexForms++;
                 
