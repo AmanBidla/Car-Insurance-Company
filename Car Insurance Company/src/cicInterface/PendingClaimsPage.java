@@ -632,7 +632,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 if (Application.PhoneGarage[i]==true){
                     GaragePhoned=true;
                     this.Decision_Label.setVisible(false);
-                    pending[i].claimStatus="Approved For Payment";
+                    pending[i].claimStatus="Approved For Payment!";
                     this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                     approvedforpayment[approved_payments]=pending[i];
                     Application.Positive[i]=true;

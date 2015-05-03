@@ -217,10 +217,10 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
       
         for (int i=0;i<approved_payments;i++)
         {
-        jTable1.getModel().setValueAt(approvedforpayment[i].claim_ID, i, 1);
-        jTable1.getModel().setValueAt(approvedforpayment[i].claimantName, i, 2);
-        jTable1.getModel().setValueAt(approvedforpayment[i].claimantSurname, i, 3);
-        jTable1.getModel().setValueAt(approvedforpayment[i].claimCostOfDmg, i, 4);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claim_ID, i, 0);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimantName, i, 1);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimantSurname, i, 2);
+        jTable1.getModel().setValueAt(approvedforpayment[i].claimCostOfDmg, i, 3);
         }
         
         //TODO add buttons to issue payments and move claims to Payment Records
