@@ -10,6 +10,7 @@ import static cicInterface.ReportClaimPage.first;
 import static cicInterface.ReportClaimPage.last;
 import cicSrc.Application;
 import static cicSrc.Application.ID_number;
+import static cicSrc.Application.newClaim;
 import cicSrc.Claim;
 
 
@@ -26,6 +27,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
     public static int pendingClaimsNumber=0;
     public static int[] pendingClaims=new int[10];
     public int nrOfClaims=0;  // showing the number of new claims
+    public static boolean all_steps_done = false;
     
     public NewClaimsPage() {
         initComponents();
@@ -162,6 +164,8 @@ public class NewClaimsPage extends javax.swing.JFrame {
         
         ReportClaimPage reportClaim=new ReportClaimPage();
         this.jTable1.setVisible(true);
+        if (all_steps_done == true)
+        {
         int i=reportClaim.first;
         boolean EmptyRowFound=false;
         while (i<reportClaim.last)
@@ -194,6 +198,45 @@ public class NewClaimsPage extends javax.swing.JFrame {
         }
         nrOfClaims=last-first;
         reportClaim.first=reportClaim.last;
+        all_steps_done =false;
+        }
+        else
+        {
+            int i=0;
+        boolean EmptyRowFound=false;
+        while (i<reportClaim.last)
+        {
+            int j=0;
+            EmptyRowFound=false;
+            while ((j<4)&&(EmptyRowFound==false)){
+                if(this.jTable1.getModel().getValueAt(j, 0)==null){
+                     
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claim_ID, j, 0);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantName, j, 1);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantSurname, j, 2);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimantLocation, j, 3);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimDate, j, 4);
+                     jTable1.getModel().setValueAt(Application.newClaim[i].claimCostOfDmg, j, 5);
+                     EmptyRowFound=true;
+                                          
+                
+        
+                }
+                else {
+                    j++;
+                
+                }
+                
+            }
+            i++;
+            
+            
+        }
+        nrOfClaims=last-first;
+        reportClaim.first=reportClaim.last;
+        all_steps_done =false;
+        }
+        
        
     }//GEN-LAST:event_ShowClaim_ButtonActionPerformed
 
@@ -223,6 +266,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 
                 pendingClaims[pendingClaimsNumber]=(int)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
+                                
                 
                 
                 
@@ -233,9 +277,13 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 Application.NewClaims--;
             
             }
-        
-        
+               
         }
+        if (pendingClaimsNumber == nrOfClaims)
+        {
+        all_steps_done = true;
+        }
+        
     }//GEN-LAST:event_Proceed_ButtonActionPerformed
 
     /**
