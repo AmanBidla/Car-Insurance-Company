@@ -27,6 +27,11 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
      */
     public ClassifyClaimsPage() {
         initComponents();
+        
+        for (int k=0;k<4;k++){
+            this.jTable1.getModel().setValueAt(false,k, 5);
+            this.jTable1.getModel().setValueAt(false,k, 6);
+        }
         if (classIndex>0){
             this.NoClaims_Label.setVisible(false);
             for(int i=0;i<classIndex;i++){
@@ -56,7 +61,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                          
             
             }
-        
+            classIndex=0;
         
         }
         else 
@@ -146,7 +151,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
 
     private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
         for (int i=0;i<4;i++){
-            if ((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true){
+            if (((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 6)!=true)){
                 unclassifiedClaims[i].claimCategory="Simple";
                 Simple[i]=true;
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
@@ -155,7 +160,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 
             
             }   
-            else if((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true){
+            else if(((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 5)!=true)){
                 unclassifiedClaims[i].claimCategory="Complex";
                 Complex[i]=true;
                 this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
