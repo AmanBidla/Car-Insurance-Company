@@ -24,8 +24,6 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
                     for (int i=0;i<16;i++)
                     {
                      
-                     if (registeredClaims[i].claimDecision == "positive")          
-                          paid[i]= registeredClaims[i];     
                      jTable1.getModel().setValueAt(paid[i].claim_ID, j, 0); // ID
                      jTable1.getModel().setValueAt(paid[i].claimantName, j, 1); // Name
                      jTable1.getModel().setValueAt(paid[i].claimantSurname, j, 2); // Surname

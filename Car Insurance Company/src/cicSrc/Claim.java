@@ -29,6 +29,7 @@ public class Claim {
     
     public static Claim[] pending = new Claim[10];
     public static Claim[] paid = new Claim[10];
+    public static int paidIndex=0;
    // public int priceOfCar;
     
     public Claim(){}

@@ -209,13 +209,13 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                         {
                                
                                   
-                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, l, 0); // ID
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, l, 0); // ID
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantName, l, 1); // Name
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, l, 2); // Surname
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, l, 3); // Location
                      jTable1.getModel().setValueAt(registeredClaims[i].claimDate, l, 4); // Date
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, l, 5); // Cost of Dmg
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, l, 6); // Decision
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claimCostOfDmg, l, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt((String)registeredClaims[i].claimDecision, l, 6); // Decision
                                  l++;
                         }
                     }
@@ -228,13 +228,13 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                         {
                             
                                      
-                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, k, 0); // ID
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, k, 0); // ID
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantName, k, 1); // Name
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, k, 2); // Surname
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, k, 3); // Location
                      jTable1.getModel().setValueAt(registeredClaims[i].claimDate, k, 4); // Date
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, k, 5); // Cost of Dmg
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, k, 6); // Decision
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claimCostOfDmg, k, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt((String)registeredClaims[i].claimDecision, k, 6); // Decision
                                  k++;
                         }
                     }
@@ -248,13 +248,13 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                            
                                          
                                      
-                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, j, 0); // ID
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, j, 0); // ID
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantName, j, 1); // Name
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, j, 2); // Surname
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, j, 3); // Location
                      jTable1.getModel().setValueAt(registeredClaims[i].claimDate, j, 4); // Date
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, j, 5); // Cost of Dmg
-                     jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, j, 6); // Decision
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claimCostOfDmg, j, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt((String)registeredClaims[i].claimDecision, j, 6); // Decision
                               j++;   
                         }
                     }
