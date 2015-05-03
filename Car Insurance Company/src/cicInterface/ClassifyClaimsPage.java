@@ -11,15 +11,19 @@ import static cicSrc.Application.claimant2;
 import static cicSrc.Application.claimant3;
 import static cicSrc.Application.Simple;
 import static cicSrc.Application.Complex;
-import static cicInterface.FormPage.NewSimpleForms;
-import static cicInterface.FormPage.NewComplexForms;
+//import static cicInterface.FormPage.NewSimpleForms;
+//import static cicInterface.FormPage.NewComplexForms;
+import static cicInterface.FormPage.NewForms;
 import static cicSrc.Application.ClaimsForClassification;
+import static cicSrc.Application.classifiedClaims;
+import static cicSrc.Application.classifiedIndex;
 import static cicSrc.Application.unclassifiedClaims;
 import static cicSrc.Application.unclassifiedIndex;
 import static cicSrc.Application.complexClaims;
 import static cicSrc.Application.complexIndex;
 import static cicSrc.Application.simpleClaims;
 import static cicSrc.Application.simpleIndex;
+import static cicSrc.Application.unclassifiedFirst;
 
 /**
  *
@@ -31,11 +35,11 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
      * Creates new form ClassifyClaimsPage
      */
     
-    public static int classifyFirst=0;
+    
     
     public ClassifyClaimsPage() {
         initComponents();
-        int j=classifyFirst;
+        int j=unclassifiedFirst;
 
         
 
@@ -179,34 +183,41 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Proceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proceed_ButtonActionPerformed
-        int j=classifyFirst;
+        int j=unclassifiedFirst;
         
         for (int i=0;i<ClaimsForClassification;i++){
             if (((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 6)!=true)){
-                unclassifiedClaims[j].claimCategory="Simple";
+                
                 Simple[i]=true;
-                simpleClaims[simpleIndex]=unclassifiedClaims[j];
-                simpleIndex++;
+                //simpleClaims[simpleIndex]=unclassifiedClaims[j];
+                //simpleIndex++;
+                classifiedClaims[classifiedIndex]=unclassifiedClaims[j];
+                classifiedClaims[classifiedIndex].claimCategory="Simple";
+                classifiedIndex++;
+                
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
-                NewSimpleForms++;
+                NewForms++;
                 
                 
             
             }   
             else if(((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 5)!=true)){
-                unclassifiedClaims[j].claimCategory="Complex";
+                
                 Complex[i]=true;
-                complexClaims[complexIndex]=unclassifiedClaims[j];
-                complexIndex++;
+                //complexClaims[complexIndex]=unclassifiedClaims[j];
+                //complexIndex++;
+                classifiedClaims[classifiedIndex]=unclassifiedClaims[j];
+                classifiedClaims[classifiedIndex].claimCategory="Complex";
+                classifiedIndex++;
                 this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
-                NewComplexForms++;
+                NewForms++;
                 
                 
             }
             j++;
            
         }
-        classifyFirst=j;
+        unclassifiedFirst=j;
         ClaimsForClassification=0;
         
     }//GEN-LAST:event_Proceed_ButtonActionPerformed
