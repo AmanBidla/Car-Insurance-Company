@@ -5,6 +5,9 @@
  */
 package cicInterface;
 
+import static cicSrc.Application.classifiedClaims;
+import static cicSrc.Application.classifiedFirst;
+
 /**
  *
  * @author george
@@ -14,19 +17,65 @@ public class FormPage extends javax.swing.JFrame {
     /**
      * Creates new form FillInFormPage
      */
-    public static int NewSimpleForms=0;
-    public static int NewComplexForms=0;
+    //public static int NewSimpleForms=0;
+    //public static int NewComplexForms=0;
+    public static int NewForms=0;
     
     public static String formStatus="formNotCreated";
     
     public FormPage() {
         initComponents();
+        
+        int j=classifiedFirst;
+        
+        for (int k=0;k<4;k++){
+            this.jTable1.getModel().setValueAt(false,k, 2);
+            
+        }
+        
+        if (NewForms>0){
+            this.NoForms_Label.setVisible(false);
+            this.NewFormsCreated_Label.setVisible(true);
+            for (int i=0;i<NewForms;i++){
+                jTable1.getModel().setValueAt(classifiedClaims[j].claim_ID, i, 0); // ID
+                jTable1.getModel().setValueAt(classifiedClaims[j].claimCategory, i, 1);
+            
+            }
+        
+        }
+        
+        this.ClaimID_Label.setVisible(false);
+        this.ClaimID_TextFIled.setVisible(false);
+        this.Name_Label.setVisible(false);
+        this.ToBeFilledInName_TextField.setVisible(false);
+        this.ToBeCheckedName_TextField.setVisible(false);
+        this.Surname_Label.setVisible(false);
+        this.ToBeFilledInSurname_TextField.setVisible(false);
+        this.ToBeCheckedSurname_TextField.setVisible(false);
+        this.Date_Label.setVisible(false);
+        this.ToBeFilledInDate_TextField.setVisible(false);
+        this.ToBeCheckedDate_TextField.setVisible(false);
+        this.Location_Label.setVisible(false);
+        this.ToBeFilledInLocation_TextField.setVisible(false);
+        this.ToBeCheckedLocation_TextField.setVisible(false);
+        this.Plate_Label.setVisible(false);
+        this.ToBeFilledInPlate_TextField.setVisible(false);
+        this.ToBeCheckedPlate_TextField.setVisible(false);
+        this.Agreement_Label.setVisible(false);
+        this.Agree_CheckBox.setVisible(false);
+        this.SubmitForm_Button.setVisible(false);
+        this.NotFilledInCorrectly_Button.setVisible(false);
+        this.RegisterClaim_Button.setVisible(false);
+        
+        
         LoginPage log = new LoginPage();
         
-        if (log.userRole == "EmployeeOfCD"){
+        if (log.userRole == "Claimant"){
+            
         
         
         }
+        
     }
 
     /**
@@ -44,32 +93,28 @@ public class FormPage extends javax.swing.JFrame {
         ToBeFilledInLocation_TextField = new javax.swing.JTextField();
         ToBeFilledInDate_TextField = new javax.swing.JTextField();
         ToBeFilledInPlate_TextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Name_Label = new javax.swing.JLabel();
+        Surname_Label = new javax.swing.JLabel();
+        Date_Label = new javax.swing.JLabel();
+        Location_Label = new javax.swing.JLabel();
+        Plate_Label = new javax.swing.JLabel();
+        Agreement_Label = new javax.swing.JLabel();
         Agree_CheckBox = new javax.swing.JCheckBox();
         SubmitForm_Button = new javax.swing.JButton();
         BackToPage_Button = new javax.swing.JButton();
         NotFilledInCorrectly_Button = new javax.swing.JButton();
         RegisterClaim_Button = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        FormCreated_Label = new javax.swing.JLabel();
-        SimpleForms_ComboBox = new javax.swing.JComboBox();
-        ComplexForms_ComboBox = new javax.swing.JComboBox();
-        FormCreated_Label1 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        NewFormsCreated_Label = new javax.swing.JLabel();
+        ClaimID_TextFIled = new javax.swing.JTextField();
+        ClaimID_Label = new javax.swing.JLabel();
         ToBeCheckedName_TextField = new javax.swing.JTextField();
         ToBeCheckedSurname_TextField = new javax.swing.JTextField();
         ToBeCheckedDate_TextField = new javax.swing.JTextField();
         ToBeCheckedLocation_TextField = new javax.swing.JTextField();
         ToBeCheckedPlate_TextField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        FillInForm_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,17 +146,17 @@ public class FormPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Name");
+        Name_Label.setText("Name");
 
-        jLabel3.setText("Surname");
+        Surname_Label.setText("Surname");
 
-        jLabel4.setText("Date Of Accident");
+        Date_Label.setText("Date Of Accident");
 
-        jLabel5.setText("Location Of Accident");
+        Location_Label.setText("Location Of Accident");
 
-        jLabel6.setText("Plate Number");
+        Plate_Label.setText("Plate Number");
 
-        jLabel7.setText("Do you agree with a 5% increase on your monthly installments?");
+        Agreement_Label.setText("Do you agree with a 5% increase on your monthly installments?");
 
         Agree_CheckBox.setText("Yes");
 
@@ -128,26 +173,17 @@ public class FormPage extends javax.swing.JFrame {
 
         RegisterClaim_Button.setText("Register Claim");
 
-        jButton1.setText("Fill in Form");
+        NewFormsCreated_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        NewFormsCreated_Label.setText("New forms created!");
 
-        FormCreated_Label.setText("New simple form created!");
-
-        SimpleForms_ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Simple Claim 1", "Simple Claim 2", "Simple Claim 3", "Simple Claim 4" }));
-
-        ComplexForms_ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Complex Claim 1", "Complex Claim 2", "Complex Claim 3", "Complex Claim 4" }));
-
-        FormCreated_Label1.setText("New complex form created!");
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        ClaimID_TextFIled.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                ClaimID_TextFIledActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Claim ID");
-
-        jButton2.setText("Fill in Form");
+        ClaimID_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ClaimID_Label.setText("Claim ID");
 
         ToBeCheckedName_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,148 +197,138 @@ public class FormPage extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Claim ID ", "Category", "Select Claim"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane2.setViewportView(jTable1);
+
+        FillInForm_Button.setText("Fill In Form");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToPage_Button)
+                .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Name_Label)
+                                    .addGap(96, 96, 96))
+                                .addComponent(Surname_Label, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Date_Label, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(ClaimID_Label))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ToBeFilledInPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ToBeCheckedPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(ToBeFilledInLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ToBeCheckedLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(ToBeFilledInDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ToBeCheckedDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ClaimID_TextFIled, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)
+                        .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Plate_Label)
+                            .addComponent(Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(NotFilledInCorrectly_Button)
                                         .addGap(18, 18, 18)
                                         .addComponent(RegisterClaim_Button))
-                                    .addComponent(jLabel7))
+                                    .addComponent(Agreement_Label))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SubmitForm_Button)
-                                    .addComponent(Agree_CheckBox))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(96, 96, 96))
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel1))
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(ToBeFilledInPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ToBeCheckedPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(ToBeFilledInLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ToBeCheckedLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(ToBeFilledInDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ToBeCheckedDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(42, 42, 42)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FormCreated_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FormCreated_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ComplexForms_ComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(SimpleForms_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(31, 31, 31)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton1))
-                                .addGap(39, 39, 39)
-                                .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BackToPage_Button)
-                .addGap(25, 25, 25))
+                                    .addComponent(Agree_CheckBox)))
+                            .addComponent(NewFormsCreated_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(FillInForm_Button)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(SimpleForms_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1)
-                                    .addComponent(FormCreated_Label))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ComplexForms_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FormCreated_Label1)
-                                    .addComponent(jButton2)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)))
+                .addGap(31, 31, 31)
+                .addComponent(NewFormsCreated_Label)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FillInForm_Button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ClaimID_TextFIled, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClaimID_Label))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Name_Label)
+                    .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Surname_Label)
+                    .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ToBeFilledInDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
+                    .addComponent(Date_Label)
                     .addComponent(ToBeCheckedDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ToBeFilledInLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
+                    .addComponent(Location_Label)
                     .addComponent(ToBeCheckedLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(Plate_Label)
                     .addComponent(ToBeFilledInPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ToBeCheckedPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(Agreement_Label)
                     .addComponent(Agree_CheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SubmitForm_Button)
@@ -338,9 +364,9 @@ public class FormPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void ClaimID_TextFIledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimID_TextFIledActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_ClaimID_TextFIledActionPerformed
 
     private void ToBeCheckedName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBeCheckedName_TextFieldActionPerformed
         // TODO add your handling code here:
@@ -388,15 +414,21 @@ public class FormPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox Agree_CheckBox;
+    private javax.swing.JLabel Agreement_Label;
     private javax.swing.JButton BackToPage_Button;
-    private javax.swing.JComboBox ComplexForms_ComboBox;
-    private javax.swing.JLabel FormCreated_Label;
-    private javax.swing.JLabel FormCreated_Label1;
+    private javax.swing.JLabel ClaimID_Label;
+    private javax.swing.JTextField ClaimID_TextFIled;
+    private javax.swing.JLabel Date_Label;
+    private javax.swing.JButton FillInForm_Button;
+    private javax.swing.JLabel Location_Label;
+    private javax.swing.JLabel Name_Label;
+    private javax.swing.JLabel NewFormsCreated_Label;
     private javax.swing.JLabel NoForms_Label;
     private javax.swing.JButton NotFilledInCorrectly_Button;
+    private javax.swing.JLabel Plate_Label;
     private javax.swing.JButton RegisterClaim_Button;
-    private javax.swing.JComboBox SimpleForms_ComboBox;
     private javax.swing.JButton SubmitForm_Button;
+    private javax.swing.JLabel Surname_Label;
     private javax.swing.JTextField ToBeCheckedDate_TextField;
     private javax.swing.JTextField ToBeCheckedLocation_TextField;
     private javax.swing.JTextField ToBeCheckedName_TextField;
@@ -407,17 +439,7 @@ public class FormPage extends javax.swing.JFrame {
     private javax.swing.JTextField ToBeFilledInName_TextField;
     private javax.swing.JTextField ToBeFilledInPlate_TextField;
     private javax.swing.JTextField ToBeFilledInSurname_TextField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JList jList1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

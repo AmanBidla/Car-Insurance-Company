@@ -57,12 +57,17 @@ public class Application {
     
     public static Claim[] unclassifiedClaims=new Claim[10];
     public static int unclassifiedIndex=0;
+    public static int unclassifiedFirst=0;
     
     public static Claim[] simpleClaims=new Claim[10];
     public static int simpleIndex=0;
     
     public static Claim[] complexClaims=new Claim[10];
     public static int complexIndex=0;
+    
+    public static Claim[] classifiedClaims=new Claim[10];
+    public static int classifiedIndex=0;
+    public static int classifiedFirst=0;
     
     
     public static Claim[] registeredClaims = new Claim[16];
@@ -147,6 +152,7 @@ public class Application {
         for (int i=0;i<10;i++){
             newClaim[i]=new Claim();
             unclassifiedClaims[i]=new Claim();
+            classifiedClaims[i]=new Claim();
             simpleClaims[i]=new Claim();
             complexClaims[i]=new Claim();
             registeredClaims[i]=new Claim();
