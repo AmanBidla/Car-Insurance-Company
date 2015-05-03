@@ -8,6 +8,7 @@ package cicInterface;
 import static cicSrc.Application.claimant1;
 import static cicSrc.Claim.paid;
 import static cicSrc.Application.registeredClaims;
+import cicSrc.Claim;
 
 /**
  *
@@ -21,7 +22,7 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
     public PaymentRecordsPage() {
                     initComponents();
                     int j=0;
-                    for (int i=0;i<16;i++)
+                    for (int i=0;i<Claim.paidIndex;i++)
                     {
                      
                      jTable1.getModel().setValueAt(paid[i].claim_ID, j, 0); // ID
