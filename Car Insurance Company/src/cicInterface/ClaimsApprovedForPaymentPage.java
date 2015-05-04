@@ -179,8 +179,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add claim_ID number
-      
+             
         for (int i=0;i<approved_payments;i++)
         {
         jTable1.getModel().setValueAt(approvedforpayment[i].claim_ID, i, 0);
@@ -189,7 +188,6 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
         jTable1.getModel().setValueAt(approvedforpayment[i].claimCostOfDmg, i, 3);
         }
         
-        //TODO add buttons to issue payments and move claims to Payment Records
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -200,19 +198,18 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-        PaymentRecordsPage payments = new PaymentRecordsPage();
-        
+              
         for (int i=0;i<approved_payments;i++)
         {
         if ((Boolean)jTable1.getModel().getValueAt(i , 4) == true) 
         {
            paid[paidIndex]=approvedforpayment[i];
-           approvedforpayment[i]= new Claim(); //experimenting 
+           //approvedforpayment[i]= new Claim(); //experimenting 
            paidIndex++;
         }
         
         }
+        PaymentRecordsPage payments = new PaymentRecordsPage();
         payments.setVisible(true);
         this.dispose();
                        

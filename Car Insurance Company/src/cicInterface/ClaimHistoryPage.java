@@ -207,8 +207,7 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                     {
                         if((registeredClaims[i].claimantName == claimant1.name) && (registeredClaims[i].claimantSurname== claimant1.surname))
                         {
-                               
-                                  
+                            
                      jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, l, 0); // ID
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantName, l, 1); // Name
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, l, 2); // Surname
@@ -245,9 +244,7 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                     {
                         if((registeredClaims[i].claimantName == claimant3.name) && (registeredClaims[i].claimantSurname== claimant3.surname))
                         {
-                           
-                                         
-                                     
+                        
                      jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, j, 0); // ID
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantName, j, 1); // Name
                      jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, j, 2); // Surname

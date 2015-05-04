@@ -23,7 +23,6 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
     public PaymentRecordsPage() {
                     initComponents();
                     int j=0;
-                    System.out.println(paidIndex);
                     for (int i=0;i<paidIndex;i++)
 
                     {
@@ -36,8 +35,7 @@ public class PaymentRecordsPage extends javax.swing.JFrame {
                      jTable1.getModel().setValueAt(paid[i].claimCostOfDmg, j, 5); // Cost of Dmg
                        j++;                             
                         
-                    }
-        
+                    } 
     }
 
     /**

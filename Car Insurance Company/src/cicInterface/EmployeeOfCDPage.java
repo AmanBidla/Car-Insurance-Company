@@ -18,13 +18,7 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
      */
     public EmployeeOfCDPage() {
         
-        initComponents();
-        
-        
-        
-       
-        
-        
+        initComponents();       
     }
 
     /**

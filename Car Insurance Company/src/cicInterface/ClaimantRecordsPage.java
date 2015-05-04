@@ -91,8 +91,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jButton6.setVisible(false);
         jButton7.setVisible(false);
         jButton8.setVisible(false);
-        // Claimant claimant=new Claimant();
-        
+               
         
                 }
         

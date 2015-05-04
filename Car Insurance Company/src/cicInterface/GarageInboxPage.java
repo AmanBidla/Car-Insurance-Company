@@ -174,7 +174,7 @@ public class GarageInboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ReadMessage_ButtonActionPerformed
 
     private void ReceivedMessage_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceivedMessage_TextAreaActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_ReceivedMessage_TextAreaActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed

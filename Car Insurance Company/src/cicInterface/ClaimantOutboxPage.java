@@ -20,11 +20,7 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     
     public static String claimantName;
     public static String claimantMessage;
-            
-    
-    
-    
-    
+             
     
     public ClaimantOutboxPage() {
         initComponents();
@@ -134,7 +130,7 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
-        // TODO 
+       
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void SendMessage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessage_ButtonActionPerformed
@@ -158,7 +154,7 @@ public class ClaimantOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO 
+     
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed

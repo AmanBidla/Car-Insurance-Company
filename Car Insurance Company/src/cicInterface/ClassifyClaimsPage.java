@@ -40,10 +40,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
     public ClassifyClaimsPage() {
         initComponents();
         int j=unclassifiedFirst;
-
-        
-
-        
+       
         for (int k=0;k<4;k++){
             this.jTable1.getModel().setValueAt(false,k, 5);
             this.jTable1.getModel().setValueAt(false,k, 6);
@@ -53,7 +50,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             this.NoClaims_Label.setVisible(false);
             for(int i=0;i<ClaimsForClassification;i++){
                 
-                
+                    if (unclassifiedClaims[j].claimStatus != "Rejected!")
+                    {
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claim_ID, i, 0); // ID
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claimantName, i, 1); // Name
                      jTable1.getModel().setValueAt(unclassifiedClaims[j].claimantSurname, i, 2); // Surname
@@ -78,9 +76,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                      j++;    
             
             }
-
-            
-            
+            }
+                
         }
         else 
         {
@@ -186,11 +183,12 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         int j=unclassifiedFirst;
         
         for (int i=0;i<ClaimsForClassification;i++){
+             if (unclassifiedClaims[j].claimStatus != "Rejected!")
+             {
             if (((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 6)!=true)){
                 
                 Simple[i]=true;
-                //simpleClaims[simpleIndex]=unclassifiedClaims[j];
-                //simpleIndex++;
+              
                 classifiedClaims[classifiedIndex]=unclassifiedClaims[j];
                 classifiedClaims[classifiedIndex].claimCategory="Simple";
                 classifiedIndex++;
@@ -198,14 +196,12 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
                 NewCreatedForms++;
                 
-                
-            
+                     
             }   
             else if(((Boolean)this.jTable1.getModel().getValueAt(i, 6)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 5)!=true)){
                 
                 Complex[i]=true;
-                //complexClaims[complexIndex]=unclassifiedClaims[j];
-                //complexIndex++;
+                
                 classifiedClaims[classifiedIndex]=unclassifiedClaims[j];
                 classifiedClaims[classifiedIndex].claimCategory="Complex";
                 classifiedIndex++;
@@ -216,6 +212,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             }
             j++;
            
+        }
         }
         unclassifiedFirst=j;
         ClaimsForClassification=0;
