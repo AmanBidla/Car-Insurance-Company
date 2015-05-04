@@ -126,9 +126,7 @@ public class GarageOwnerPage extends javax.swing.JFrame {
     }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
     private void ReplyToClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReplyToClaims_MenuItemActionPerformed
-        RequestsForRepairPage repairPage=new RequestsForRepairPage();
-                repairPage.setVisible(true);
-                this.dispose();
+        
     }//GEN-LAST:event_ReplyToClaims_MenuItemActionPerformed
 
     private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
