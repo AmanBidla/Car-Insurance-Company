@@ -503,6 +503,9 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     private void ClassificationProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassificationProceed_ButtonActionPerformed
         
         for (int i=0;i<pendingClaimsNumber;i++){
+            
+            if (pending[i].claimStatus!= "Rejected!")
+            {
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 3)==true){
                 
                 
@@ -552,6 +555,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             
            
         
+        }
         }
         
     }//GEN-LAST:event_ClassificationProceed_ButtonActionPerformed

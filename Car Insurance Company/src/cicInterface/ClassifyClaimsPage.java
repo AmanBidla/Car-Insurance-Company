@@ -188,6 +188,8 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
         int j=unclassifiedFirst;
         
         for (int i=0;i<ClaimsForClassification;i++){
+             if (unclassifiedClaims[j].claimStatus != "Rejected!")
+             {
             if (((Boolean)this.jTable1.getModel().getValueAt(i, 5)==true) && ((Boolean)this.jTable1.getModel().getValueAt(i, 6)!=true)){
                 
                 Simple[i]=true;
@@ -218,6 +220,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
             }
             j++;
            
+        }
         }
         unclassifiedFirst=j;
         ClaimsForClassification=0;

@@ -206,7 +206,7 @@ public class ClaimsApprovedForPaymentPage extends javax.swing.JFrame {
         if ((Boolean)jTable1.getModel().getValueAt(i , 4) == true) 
         {
            paid[paidIndex]=approvedforpayment[i];
-           approvedforpayment[i]= new Claim(); //experimenting 
+           //approvedforpayment[i]= new Claim(); //experimenting 
            paidIndex++;
         }
         
