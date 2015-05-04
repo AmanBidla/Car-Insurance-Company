@@ -183,9 +183,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                      jTable1.getModel().setValueAt(Application.newClaim[i].claimDate, j, 4);
                      jTable1.getModel().setValueAt(Application.newClaim[i].claimCostOfDmg, j, 5);
                      EmptyRowFound=true;
-                                          
-                
-        
+
                 }
                 else {
                     j++;
@@ -194,8 +192,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 
             }
             i++;
-            
-            
+      
         }
         nrOfClaims=last-first;
         reportClaim.first=reportClaim.last;
@@ -219,9 +216,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                      jTable1.getModel().setValueAt(Application.newClaim[i].claimDate, j, 4);
                      jTable1.getModel().setValueAt(Application.newClaim[i].claimCostOfDmg, j, 5);
                      EmptyRowFound=true;
-                                          
-                
-        
+
                 }
                 else {
                     j++;
@@ -230,15 +225,13 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 
             }
             i++;
-            
-            
+  
         }
         nrOfClaims=last-first;
         reportClaim.first=reportClaim.last;
         all_steps_done =false;
         }
-        
-       
+
     }//GEN-LAST:event_ShowClaim_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
@@ -268,10 +261,7 @@ public class NewClaimsPage extends javax.swing.JFrame {
                 pendingClaims[pendingClaimsNumber]=(int)this.jTable1.getModel().getValueAt(i, 0);
                 pendingClaimsNumber++;
                 pending[i]= newClaim[i];
-                                
-                
-                
-                
+
                 for (int j=0;j<7;j++){
                    jTable1.getModel().setValueAt(null, i, j); 
                 

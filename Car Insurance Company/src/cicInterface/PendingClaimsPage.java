@@ -36,41 +36,18 @@ public class PendingClaimsPage extends javax.swing.JFrame {
      * Creates new form PendingClaimsPage
      */
     
-     //boolean variables checking when the positive button is pressed.
-        /*boolean positive1=false;
-        boolean positive2=false;
-        boolean positive3=false;
-        boolean positive4=false;*/
     public static boolean InsuranceChecked=false;
     public static boolean ClaimClassified=false;
     public static boolean DmgHistoryChecked=false;
     public static boolean GaragePhoned=false;
     public static boolean ClaimMarked=false;
     
-    
-    
-        
-        
-        
-        
-    
-    
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
     
     public PendingClaimsPage() {
         initComponents();
-        /*this.CheckInsurance_Button.setVisible(false);
-        this.ClassifyClaim_Button.setVisible(false);
-        this.DamageHistory_Button.setVisible(false);
-        this.ContactGarage_Button.setVisible(false);
-        this.InsuranceProceed_Button.setVisible(false);
-        this.ClassificationProceed_Button.setVisible(false);
-        this.DamageHistoryProceed_Button.setVisible(false);
-        this.GarageProceed_Button.setVisible(false);
-        this.DecisionProceed_Button.setVisible(false);
-        this.MoveToHistory_Button.setVisible(false);
-        this.jLabel1.setVisible(false);*/
+        
         this.InsuranceNotChecked_Label.setVisible(false);
         this.DmgHistory_Label.setVisible(false);
         this.Garage_Label.setVisible(false);
@@ -105,8 +82,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
         
         }
         
-        
-        
+
         for (int i=0;i<pendingClaimsNumber;i++){
             this.pendingClaims_Table.getModel().setValueAt(Application.Insured[i],i,1);
             this.pendingClaims_Table.getModel().setValueAt(Application.NotInsured[i],i,2);
@@ -117,18 +93,9 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             this.pendingClaims_Table.getModel().setValueAt(Application.Positive[i],i,7);
             this.pendingClaims_Table.getModel().setValueAt(Application.Negative[i],i,8);
             this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
-            
-            
+    
         }
-       
-        
-        
-       
-            
-        
-        
-        
-        
+  
     }
 
     /**
@@ -424,13 +391,11 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     private void ClassifyClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassifyClaim_ButtonActionPerformed
         for (int i=0;i<pendingClaimsNumber;i++)
         {
-        
-        
+
             for (int j=0;j<10;j++)
             {
                 if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== pending[j].claim_ID)
                 { 
-                    
                     unclassifiedClaims[unclassifiedIndex] = pending[j];
                     unclassifiedIndex++;
                     ClaimsForClassification++;
@@ -461,7 +426,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ContactGarage_ButtonActionPerformed
 
     private void CheckInsurance_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckInsurance_ButtonActionPerformed
-        // TODO add your handling code here:
+        
         ClaimantRecordsPage claimantRecords=new ClaimantRecordsPage();
         claimantRecords.setVisible(true);
        
@@ -469,7 +434,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckInsurance_ButtonActionPerformed
 
     private void DamageHistory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageHistory_ButtonActionPerformed
-        // TODO add your handling code here:
+       
         ClaimHistoryPage claimHistory=new ClaimHistoryPage();
         claimHistory.setVisible(true);
     }//GEN-LAST:event_DamageHistory_ButtonActionPerformed
@@ -482,21 +447,15 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 Application.Insured[i]=true;
                 pending[i].claimStatus = "Insured";
                 this.pendingClaims_Table.getModel().setValueAt(pending[i].claimStatus,i,9);
-                
-                
-            
+
             }
             else if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 2)==true){
                 Application.NotInsured[i]=true;
                 pending[i].claimStatus = "Rejected!";
                 this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
-                
-            
-            
             }
-            
-        
-        }
+
+        } 
         
     }//GEN-LAST:event_InsuranceProceed_ButtonActionPerformed
 
@@ -507,9 +466,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             if (pending[i].claimStatus!= "Rejected!")
             {
             if ((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 3)==true){
-                
-                
-            
+
                 if (Application.Insured[i]==true){
                     InsuranceChecked=true;
                     this.InsuranceNotChecked_Label.setVisible(false);
@@ -551,10 +508,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 InsuranceChecked=false;
                 
             }
-           
-            
-           
-        
+
         }
         }
         
@@ -567,16 +521,14 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 
                 
             
-                if ((Application.Complex[i]==true)||(Application.Simple[i]==true)){
+                if ((Application.Complex[i]==true)||(Application.Simple[i]==true))
+                {
                     ClaimClassified=true;
                     this.DmgHistory_Label.setVisible(false);
                     Application.DmgHistory[i]=true;
                     pending[i].claimStatus="Damage History Checked";
                     this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
-               
                 }
-       
-                
                 if (ClaimClassified==false){
                     this.DmgHistory_Label.setVisible(true);
                 }
@@ -585,9 +537,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             } 
             
         }
-       
-       
-        
+ 
     }//GEN-LAST:event_DamageHistoryProceed_ButtonActionPerformed
 
     private void GarageProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GarageProceed_ButtonActionPerformed
@@ -605,8 +555,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                     this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                
                 }
-       
-                
+
                 if (DmgHistoryChecked==false){
                     this.Garage_Label.setVisible(true);
                 }
@@ -615,9 +564,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             } 
             
         }
-        
-        
-        
+  
     }//GEN-LAST:event_GarageProceed_ButtonActionPerformed
 
     private void DecisionProceed_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecisionProceed_ButtonActionPerformed
@@ -685,18 +632,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                 registeredClaims[registeredIndex] = pending[i];
                 registeredIndex++;
-               /* for (int j=0;j<10;j++)
-                {
-                if (((int)this.pendingClaims_Table.getModel().getValueAt(i,0))== pending[j].claim_ID)
-                {
-                    registeredClaims[registeredIndex] = pending[j];
-                    registeredIndex++;
-                }
-                }*/
-                
-                
-                
-            
+
             }
         }
         ClaimHistoryPage claimHistory=new ClaimHistoryPage();

@@ -33,7 +33,6 @@ public class GarageOwnerPage extends javax.swing.JFrame {
         Outbox_MenuItem = new javax.swing.JMenuItem();
         Claims_MenuItem = new javax.swing.JMenu();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
-        ReplyToClaims_MenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         Logout_MenuItem = new javax.swing.JMenuItem();
 
@@ -68,14 +67,6 @@ public class GarageOwnerPage extends javax.swing.JFrame {
             }
         });
         Claims_MenuItem.add(PendingClaims_MenuItem);
-
-        ReplyToClaims_MenuItem.setText("Confirm/Reject Claims");
-        ReplyToClaims_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReplyToClaims_MenuItemActionPerformed(evt);
-            }
-        });
-        Claims_MenuItem.add(ReplyToClaims_MenuItem);
 
         jMenuBar1.add(Claims_MenuItem);
 
@@ -125,10 +116,6 @@ public class GarageOwnerPage extends javax.swing.JFrame {
                 this.dispose();
     }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
-    private void ReplyToClaims_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReplyToClaims_MenuItemActionPerformed
-        
-    }//GEN-LAST:event_ReplyToClaims_MenuItemActionPerformed
-
     private void Logout_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_MenuItemActionPerformed
         LoginPage loginPage=new LoginPage();
                 loginPage.setVisible(true);
@@ -176,7 +163,6 @@ public class GarageOwnerPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem Logout_MenuItem;
     private javax.swing.JMenuItem Outbox_MenuItem;
     private javax.swing.JMenuItem PendingClaims_MenuItem;
-    private javax.swing.JMenuItem ReplyToClaims_MenuItem;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

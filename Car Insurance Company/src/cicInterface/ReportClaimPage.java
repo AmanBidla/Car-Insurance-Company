@@ -186,7 +186,7 @@ public class ReportClaimPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReportName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportName_TextFieldActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_ReportName_TextFieldActionPerformed
 
     private void ReportClaim_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportClaim_ButtonActionPerformed
@@ -204,19 +204,17 @@ public class ReportClaimPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ReportClaim_ButtonActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-       
         ClaimantPage claimantPage=new ClaimantPage();
         claimantPage.setVisible(true);
-
         this.dispose();
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     private void Date_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Date_TextFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Date_TextFieldActionPerformed
 
     private void ReportSurname_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportSurname_TextFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_ReportSurname_TextFieldActionPerformed
 
     /**

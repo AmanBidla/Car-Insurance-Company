@@ -148,13 +148,12 @@ public class EmployeeCDOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
         EmployeeOfCDPage employeeCDPage=new EmployeeOfCDPage();
         employeeCDPage.setVisible(true);
-
         this.dispose();
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 

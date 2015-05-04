@@ -144,7 +144,7 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SendMessage_ButtonActionPerformed
 
     private void MessageToBeSent_TextAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageToBeSent_TextAreaActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
@@ -156,7 +156,7 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     private void RecipientName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecipientName_TextFieldActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     /**

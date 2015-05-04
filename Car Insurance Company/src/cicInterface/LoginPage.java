@@ -171,7 +171,7 @@ public class LoginPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void User_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_TextActionPerformed
-        // TODO 
+        
     }//GEN-LAST:event_User_TextActionPerformed
 
     private void EmployeeOfCD_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeOfCD_ButtonActionPerformed
@@ -186,12 +186,9 @@ public class LoginPage extends javax.swing.JFrame {
                 
                 cdPage.setVisible(true);
                 this.dispose();
-            
-            
-        
+                    
         }
         else{
-            
             
             LoginFailed_Label.setVisible(true);
         
@@ -210,8 +207,7 @@ public class LoginPage extends javax.swing.JFrame {
                 
                 handlerAPage.setVisible(true);
                 this.dispose();
-            
-           
+
                 }
         
         else{
@@ -231,11 +227,9 @@ public class LoginPage extends javax.swing.JFrame {
             FinanceDeptEmployeePage financialDeptPage=new FinanceDeptEmployeePage();
                 financialDeptPage.setVisible(true);
                 this.dispose();          
-            
-        
+
         }
         else{
-            
             
             LoginFailed_Label.setVisible(true);
         
@@ -252,12 +246,10 @@ public class LoginPage extends javax.swing.JFrame {
             ClaimantPage claimantPage=new ClaimantPage();
                 claimantPage.setVisible(true);
                 this.dispose();           
-            
-        
+
         }
         else{
-            
-            
+
             LoginFailed_Label.setVisible(true);
         
         }
@@ -273,12 +265,10 @@ public class LoginPage extends javax.swing.JFrame {
             GarageOwnerPage garagePage=new GarageOwnerPage();
                 garagePage.setVisible(true);
                 this.dispose();            
-            
-        
+
         }
         else{
-            
-            
+
             LoginFailed_Label.setVisible(true);
         
         }
