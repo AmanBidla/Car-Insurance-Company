@@ -148,7 +148,7 @@ public class Claimant extends User{
            
             System.out.println("Do you agree with a 5% increase in your monthly instalments?");
             Scanner answer=new Scanner(System.in);
-            form.formAgreementOnIncreaseInPremiums = answer.next();
+            form.formAgreementOnIncrease = answer.next();
             
             
             form.formStatus = "Filled in-Needs to be checked!";

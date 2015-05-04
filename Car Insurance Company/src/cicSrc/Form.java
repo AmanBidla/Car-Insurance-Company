@@ -12,6 +12,7 @@ package cicSrc;
  */
 public class Form {
     
+    public int formClaimID;
     public String formType;
     public String formStatus;
     public String formName;
@@ -19,7 +20,7 @@ public class Form {
     public String formDateOfAccident;
     public String formLocationOfAccident;
     public String formInsuredPersonPlate;
-    public String formAgreementOnIncreaseInPremiums;
+    public String formAgreementOnIncrease;
     
     public Form(){}
     

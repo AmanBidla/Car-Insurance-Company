@@ -86,14 +86,6 @@
             <Property name="text" type="java.lang.String" value="Form"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="CreateForm_MenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Create Form"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateForm_MenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="CheckForm_MenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Check Form"/>

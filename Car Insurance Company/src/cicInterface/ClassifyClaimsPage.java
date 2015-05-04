@@ -13,7 +13,7 @@ import static cicSrc.Application.Simple;
 import static cicSrc.Application.Complex;
 //import static cicInterface.FormPage.NewSimpleForms;
 //import static cicInterface.FormPage.NewComplexForms;
-import static cicInterface.FormPage.NewForms;
+import static cicInterface.FormPage.NewCreatedForms;
 import static cicSrc.Application.ClaimsForClassification;
 import static cicSrc.Application.classifiedClaims;
 import static cicSrc.Application.classifiedIndex;
@@ -196,7 +196,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 classifiedIndex++;
                 
                 this.jTable1.getModel().setValueAt("Simple form created!",i, 7);
-                NewForms++;
+                NewCreatedForms++;
                 
                 
             
@@ -210,7 +210,7 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 classifiedClaims[classifiedIndex].claimCategory="Complex";
                 classifiedIndex++;
                 this.jTable1.getModel().setValueAt("Complex form created!",i, 7);
-                NewForms++;
+                NewCreatedForms++;
                 
                 
             }

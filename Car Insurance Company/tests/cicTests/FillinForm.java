@@ -68,7 +68,7 @@ public class FillinForm {
             Application.form1.formLocationOfAccident=Application.claim1.claimantLocation;
             Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
             
-            Application.form1.formAgreementOnIncreaseInPremiums = "Agree";
+            Application.form1.formAgreementOnIncrease = "Agree";
             
             Application.form1.formStatus = "Filled in-Needs to be checked!";
             

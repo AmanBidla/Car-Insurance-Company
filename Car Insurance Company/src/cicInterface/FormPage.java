@@ -5,8 +5,14 @@
  */
 package cicInterface;
 
+import static cicSrc.Application.checkedForms;
+import static cicSrc.Application.checkedFormsIndex;
 import static cicSrc.Application.classifiedClaims;
 import static cicSrc.Application.classifiedFirst;
+import static cicSrc.Application.filledInFirst;
+import static cicSrc.Application.filledInForms;
+import static cicSrc.Application.filledInFormsIndex;
+
 
 /**
  *
@@ -19,33 +25,22 @@ public class FormPage extends javax.swing.JFrame {
      */
     //public static int NewSimpleForms=0;
     //public static int NewComplexForms=0;
-    public static int NewForms=0;
+    public static int NewCreatedForms=0;
+    public static int NewFilledInForms=0;
     
     public static String formStatus="formNotCreated";
     
     public FormPage() {
         initComponents();
-        
-        int j=classifiedFirst;
+       
         
         for (int k=0;k<4;k++){
-            this.jTable1.getModel().setValueAt(false,k, 2);
+            this.Claimant_Table.getModel().setValueAt(false,k, 2);
             
-        }
-        
-        if (NewForms>0){
-            this.NoForms_Label.setVisible(false);
-            this.NewFormsCreated_Label.setVisible(true);
-            for (int i=0;i<NewForms;i++){
-                jTable1.getModel().setValueAt(classifiedClaims[j].claim_ID, i, 0); // ID
-                jTable1.getModel().setValueAt(classifiedClaims[j].claimCategory, i, 1);
-            
-            }
-        
         }
         
         this.ClaimID_Label.setVisible(false);
-        this.ClaimID_TextFIled.setVisible(false);
+        this.ClaimID_TextField.setVisible(false);
         this.Name_Label.setVisible(false);
         this.ToBeFilledInName_TextField.setVisible(false);
         this.ToBeCheckedName_TextField.setVisible(false);
@@ -62,19 +57,77 @@ public class FormPage extends javax.swing.JFrame {
         this.ToBeFilledInPlate_TextField.setVisible(false);
         this.ToBeCheckedPlate_TextField.setVisible(false);
         this.Agreement_Label.setVisible(false);
-        this.Agree_CheckBox.setVisible(false);
+        this.Yes_Checkbox.setVisible(false);
+        this.No_Checkbox.setVisible(false);
         this.SubmitForm_Button.setVisible(false);
         this.NotFilledInCorrectly_Button.setVisible(false);
         this.RegisterClaim_Button.setVisible(false);
+        this.AllFields_Label.setVisible(false);
+        
         
         
         LoginPage log = new LoginPage();
         
         if (log.userRole == "Claimant"){
+            this.NoFilledInForms_Label.setVisible(false);
+            this.Employee_Table.setVisible(false);
+            this.CheckForm_Button.setVisible(false);
+            if (NewCreatedForms>0){
+                this.NoCreatedForms_Label.setVisible(false);
+                this.FillInForm_Button.setVisible(true);
+                int j=classifiedFirst;
+                for (int i=0;i<NewCreatedForms;i++){
+                Claimant_Table.getModel().setValueAt(classifiedClaims[j].claim_ID, i, 0); // ID
+                Claimant_Table.getModel().setValueAt(classifiedClaims[j].claimCategory, i, 1);
+                j++;
+            
+                }
+                
+        
+            }
+            else {
+                this.Claimant_Table.setVisible(false);
+            
+            }
+        
+        }
+        else if ((log.userRole=="EmployeeOfCD")||(log.userRole=="ClaimHandlerA"))
+        {
+            this.NoCreatedForms_Label.setVisible(false);
+            this.Claimant_Table.setVisible(false);
+            this.FillInForm_Button.setVisible(false);
+            if (NewFilledInForms>0){
+                this.NoFilledInForms_Label.setVisible(false);
+                this.CheckForm_Button.setVisible(true);
+                int j=filledInFirst;
+                
+                for (int i=0;i<NewFilledInForms;i++){
+                 
+                    //TO DO -- na mpainoun ta claims twn opoiwn ta forms exoune ginei submit ston pinaka tou employee
+                    Employee_Table.getModel().setValueAt(filledInForms[j].formClaimID, i, 0);
+                    Employee_Table.getModel().setValueAt(filledInForms[j].formType, i, 1);
+                    j++;
+            
+                }
+        
+            }
+            else {
+                this.Employee_Table.setVisible(false);
+            
+            }
+            
+        
+        }
+        
+        
+       
+        
+      
+            
             
         
         
-        }
+        
         
     }
 
@@ -87,7 +140,7 @@ public class FormPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NoForms_Label = new javax.swing.JLabel();
+        NoCreatedForms_Label = new javax.swing.JLabel();
         ToBeFilledInName_TextField = new javax.swing.JTextField();
         ToBeFilledInSurname_TextField = new javax.swing.JTextField();
         ToBeFilledInLocation_TextField = new javax.swing.JTextField();
@@ -99,13 +152,12 @@ public class FormPage extends javax.swing.JFrame {
         Location_Label = new javax.swing.JLabel();
         Plate_Label = new javax.swing.JLabel();
         Agreement_Label = new javax.swing.JLabel();
-        Agree_CheckBox = new javax.swing.JCheckBox();
+        Yes_Checkbox = new javax.swing.JCheckBox();
         SubmitForm_Button = new javax.swing.JButton();
         BackToPage_Button = new javax.swing.JButton();
         NotFilledInCorrectly_Button = new javax.swing.JButton();
         RegisterClaim_Button = new javax.swing.JButton();
-        NewFormsCreated_Label = new javax.swing.JLabel();
-        ClaimID_TextFIled = new javax.swing.JTextField();
+        ClaimID_TextField = new javax.swing.JTextField();
         ClaimID_Label = new javax.swing.JLabel();
         ToBeCheckedName_TextField = new javax.swing.JTextField();
         ToBeCheckedSurname_TextField = new javax.swing.JTextField();
@@ -113,14 +165,20 @@ public class FormPage extends javax.swing.JFrame {
         ToBeCheckedLocation_TextField = new javax.swing.JTextField();
         ToBeCheckedPlate_TextField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Claimant_Table = new javax.swing.JTable();
         FillInForm_Button = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Employee_Table = new javax.swing.JTable();
+        CheckForm_Button = new javax.swing.JButton();
+        NoFilledInForms_Label = new javax.swing.JLabel();
+        No_Checkbox = new javax.swing.JCheckBox();
+        AllFields_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        NoForms_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        NoForms_Label.setForeground(new java.awt.Color(204, 0, 0));
-        NoForms_Label.setText("No forms created!");
+        NoCreatedForms_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        NoCreatedForms_Label.setForeground(new java.awt.Color(204, 0, 0));
+        NoCreatedForms_Label.setText("No forms created!");
 
         ToBeFilledInSurname_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,9 +216,14 @@ public class FormPage extends javax.swing.JFrame {
 
         Agreement_Label.setText("Do you agree with a 5% increase on your monthly installments?");
 
-        Agree_CheckBox.setText("Yes");
+        Yes_Checkbox.setText("Yes");
 
         SubmitForm_Button.setText("Submit");
+        SubmitForm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitForm_ButtonActionPerformed(evt);
+            }
+        });
 
         BackToPage_Button.setText("Back To Page");
         BackToPage_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -173,12 +236,9 @@ public class FormPage extends javax.swing.JFrame {
 
         RegisterClaim_Button.setText("Register Claim");
 
-        NewFormsCreated_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        NewFormsCreated_Label.setText("New forms created!");
-
-        ClaimID_TextFIled.addActionListener(new java.awt.event.ActionListener() {
+        ClaimID_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClaimID_TextFIledActionPerformed(evt);
+                ClaimID_TextFieldActionPerformed(evt);
             }
         });
 
@@ -197,7 +257,7 @@ public class FormPage extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Claimant_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -216,21 +276,60 @@ public class FormPage extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(Claimant_Table);
 
         FillInForm_Button.setText("Fill In Form");
+        FillInForm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FillInForm_ButtonActionPerformed(evt);
+            }
+        });
+
+        Employee_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Claim ID", "Category", "Select Claim"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Employee_Table);
+
+        CheckForm_Button.setText("Check Form");
+        CheckForm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckForm_ButtonActionPerformed(evt);
+            }
+        });
+
+        NoFilledInForms_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        NoFilledInForms_Label.setForeground(new java.awt.Color(204, 0, 0));
+        NoFilledInForms_Label.setText("No forms filled in!");
+
+        No_Checkbox.setText("No");
+
+        AllFields_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AllFields_Label.setForeground(new java.awt.Color(204, 0, 0));
+        AllFields_Label.setText("All fields must be filled in!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BackToPage_Button)
-                .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -241,71 +340,87 @@ public class FormPage extends javax.swing.JFrame {
                                 .addComponent(Date_Label, javax.swing.GroupLayout.Alignment.LEADING))
                             .addComponent(ClaimID_Label))
                         .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ToBeFilledInPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ToBeCheckedPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(ToBeFilledInLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ToBeCheckedLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(ToBeFilledInDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ToBeCheckedDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ClaimID_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(AllFields_Label))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(ClaimID_TextFIled, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)
-                        .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Plate_Label)
-                            .addComponent(Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(NotFilledInCorrectly_Button)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(RegisterClaim_Button))
-                                    .addComponent(Agreement_Label))
+                                    .addComponent(ToBeFilledInPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeFilledInLocation_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeFilledInDate_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ToBeCheckedDate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeCheckedLocation_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ToBeCheckedPlate_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ToBeCheckedSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(Plate_Label)
+                    .addComponent(Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NotFilledInCorrectly_Button)
+                                .addGap(18, 18, 18)
+                                .addComponent(RegisterClaim_Button))
+                            .addComponent(Agreement_Label))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SubmitForm_Button)
-                                    .addComponent(Agree_CheckBox)))
-                            .addComponent(NewFormsCreated_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(FillInForm_Button)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Yes_Checkbox)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(No_Checkbox))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BackToPage_Button))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FillInForm_Button)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NoCreatedForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(83, 83, 83)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CheckForm_Button)
+                            .addComponent(NoFilledInForms_Label, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(514, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(NewFormsCreated_Label)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FillInForm_Button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClaimID_TextFIled, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ClaimID_Label))
+                    .addComponent(NoCreatedForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NoFilledInForms_Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FillInForm_Button)
+                    .addComponent(CheckForm_Button))
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ClaimID_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClaimID_Label)
+                    .addComponent(AllFields_Label))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ToBeFilledInName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Name_Label)
-                    .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NoForms_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ToBeCheckedName_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ToBeFilledInSurname_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,16 +444,21 @@ public class FormPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Agreement_Label)
-                    .addComponent(Agree_CheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(Yes_Checkbox)
+                    .addComponent(No_Checkbox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SubmitForm_Button)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NotFilledInCorrectly_Button)
-                    .addComponent(RegisterClaim_Button))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BackToPage_Button)
-                .addGap(20, 20, 20))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NotFilledInCorrectly_Button)
+                            .addComponent(RegisterClaim_Button))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(BackToPage_Button)
+                        .addGap(110, 110, 110))))
         );
 
         pack();
@@ -362,11 +482,30 @@ public class FormPage extends javax.swing.JFrame {
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
         // TODO add your handling code here:
+        LoginPage log = new LoginPage();
+        
+        if (log.userRole == "Claimant"){
+            ClaimantPage claimantPage=new ClaimantPage();
+            claimantPage.setVisible(true);
+            this.dispose();
+        }
+        else if(log.userRole == "EmployeeOfCD")
+        {
+            EmployeeOfCDPage cdPage=new EmployeeOfCDPage();
+            cdPage.setVisible(true);
+            this.dispose();
+        }
+        else if(log.userRole == "ClaimHandlerA")
+        {
+            ClaimHandlerAPage chAPage=new ClaimHandlerAPage();
+            chAPage.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
-    private void ClaimID_TextFIledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimID_TextFIledActionPerformed
+    private void ClaimID_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimID_TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ClaimID_TextFIledActionPerformed
+    }//GEN-LAST:event_ClaimID_TextFieldActionPerformed
 
     private void ToBeCheckedName_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBeCheckedName_TextFieldActionPerformed
         // TODO add your handling code here:
@@ -375,6 +514,158 @@ public class FormPage extends javax.swing.JFrame {
     private void ToBeCheckedSurname_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBeCheckedSurname_TextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ToBeCheckedSurname_TextFieldActionPerformed
+
+    private void CheckForm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckForm_ButtonActionPerformed
+        // TODO add your handling code here:
+        for (int i=0;i<NewFilledInForms;i++){
+            if ((Boolean)this.Employee_Table.getModel().getValueAt(i, 2)==true)
+            {
+                this.ClaimID_Label.setVisible(true);
+                this.ClaimID_TextField.setVisible(true);
+                this.Name_Label.setVisible(true);
+                this.ToBeCheckedName_TextField.setVisible(true);
+                this.Surname_Label.setVisible(true);
+                this.ToBeCheckedSurname_TextField.setVisible(true);
+                this.Date_Label.setVisible(true);
+                this.ToBeCheckedDate_TextField.setVisible(true);
+                this.Location_Label.setVisible(true);
+                this.ToBeCheckedLocation_TextField.setVisible(true);
+                this.Plate_Label.setVisible(true);
+                this.ToBeCheckedPlate_TextField.setVisible(true);
+        
+                if((String)this.Employee_Table.getModel().getValueAt(i, 1)=="Complex"){
+                this.Agreement_Label.setVisible(true);
+                this.Yes_Checkbox.setVisible(true);
+                checkedForms[checkedFormsIndex].formType="Complex";
+                }
+                else if ((String)this.Employee_Table.getModel().getValueAt(i, 1)=="Simple")
+                {
+                    checkedForms[checkedFormsIndex].formType="Simple";
+                }
+        
+                this.NotFilledInCorrectly_Button.setVisible(true);
+                this.RegisterClaim_Button.setVisible(true);
+                
+                this.ClaimID_TextField.setText(Integer.toString((int)this.Employee_Table.getValueAt(i, 0)));
+                
+                for (int j=0;j<filledInFormsIndex;i++)
+                {
+                    if ((int)this.Employee_Table.getModel().getValueAt(i, 0)==filledInForms[j].formClaimID)
+                    {
+                        this.ToBeCheckedName_TextField.setText(filledInForms[j].formName);
+                        this.ToBeCheckedSurname_TextField.setText(filledInForms[j].formSurname);
+                        this.ToBeCheckedDate_TextField.setText(filledInForms[j].formDateOfAccident);
+                        this.ToBeCheckedLocation_TextField.setText(filledInForms[j].formLocationOfAccident);
+                        this.ToBeCheckedPlate_TextField.setText(filledInForms[j].formInsuredPersonPlate);
+                    
+                    }
+                }
+                
+            
+            }
+        
+        }
+        
+    }//GEN-LAST:event_CheckForm_ButtonActionPerformed
+
+    private void FillInForm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FillInForm_ButtonActionPerformed
+        
+        for (int i=0;i<NewCreatedForms;i++){
+            if ((Boolean)this.Claimant_Table.getModel().getValueAt(i, 2)==true)
+            {
+                this.ClaimID_Label.setVisible(true);
+                this.ClaimID_TextField.setVisible(true);
+                this.Name_Label.setVisible(true);
+                this.ToBeFilledInName_TextField.setVisible(true);
+                this.Surname_Label.setVisible(true);
+                this.ToBeFilledInSurname_TextField.setVisible(true);
+                this.Date_Label.setVisible(true);
+                this.ToBeFilledInDate_TextField.setVisible(true);
+                this.Location_Label.setVisible(true);
+                this.ToBeFilledInLocation_TextField.setVisible(true);
+                this.Plate_Label.setVisible(true);
+                this.ToBeFilledInPlate_TextField.setVisible(true);
+        
+                if((String)this.Claimant_Table.getModel().getValueAt(i, 1)=="Complex"){
+                this.Agreement_Label.setVisible(true);
+                this.Yes_Checkbox.setVisible(true);
+                filledInForms[filledInFormsIndex].formType="Complex";
+                }
+                else if ((String)this.Claimant_Table.getModel().getValueAt(i, 1)=="Simple")
+                {
+                    filledInForms[filledInFormsIndex].formType="Simple";
+                }
+        
+                this.SubmitForm_Button.setVisible(true);
+                
+                this.ClaimID_TextField.setText(Integer.toString((int)this.Claimant_Table.getValueAt(i, 0)));
+                
+            
+            }
+        
+        }
+        
+        
+    }//GEN-LAST:event_FillInForm_ButtonActionPerformed
+
+    private void SubmitForm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitForm_ButtonActionPerformed
+        // TODO add your handling code here:
+        if((this.ToBeFilledInName_TextField.getText()!=null) && (this.ToBeFilledInSurname_TextField.getText()!=null) && (this.ToBeFilledInDate_TextField.getText()!=null)&&
+                (this.ToBeFilledInLocation_TextField.getText()!=null)&&(this.ToBeFilledInPlate_TextField.getText()!=null))
+        {
+            this.AllFields_Label.setVisible(false); 
+            filledInForms[filledInFormsIndex].formClaimID=Integer.parseInt(this.ClaimID_TextField.getText());
+            filledInForms[filledInFormsIndex].formName=this.ToBeFilledInName_TextField.getText();
+            filledInForms[filledInFormsIndex].formSurname=this.ToBeFilledInSurname_TextField.getText();
+            filledInForms[filledInFormsIndex].formDateOfAccident=this.ToBeFilledInDate_TextField.getText();
+            filledInForms[filledInFormsIndex].formLocationOfAccident=this.ToBeFilledInLocation_TextField.getText();
+            filledInForms[filledInFormsIndex].formInsuredPersonPlate=this.ToBeFilledInPlate_TextField.getText();
+            if(filledInForms[filledInFormsIndex].formType=="Complex")
+            {
+                if(this.Yes_Checkbox.isSelected())
+                {
+                    filledInForms[filledInFormsIndex].formAgreementOnIncrease="Yes";
+                
+                }
+                else if(this.No_Checkbox.isSelected())
+                {
+                   filledInForms[filledInFormsIndex].formAgreementOnIncrease="No";
+            
+                }
+        
+            }
+            
+            
+            /*for (int i=0;i<NewCreatedForms;i++)
+            {
+                if((int)this.Claimant_Table.getValueAt(i, 0)==Integer.parseInt(this.ClaimID_TextField.getText()))
+                {
+                    for (int j=0;j<3;j++)
+                    {
+                        Claimant_Table.getModel().setValueAt(null, i, j); 
+                
+                    }
+                    NewCreatedForms--;
+                
+                }
+            
+            }*/
+            filledInFormsIndex++;
+            NewFilledInForms++;
+           
+        
+        
+        }
+        else
+        {
+           this.AllFields_Label.setVisible(true); 
+        
+        }
+
+
+
+
+    }//GEN-LAST:event_SubmitForm_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,17 +704,21 @@ public class FormPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Agree_CheckBox;
     private javax.swing.JLabel Agreement_Label;
+    private javax.swing.JLabel AllFields_Label;
     private javax.swing.JButton BackToPage_Button;
+    private javax.swing.JButton CheckForm_Button;
     private javax.swing.JLabel ClaimID_Label;
-    private javax.swing.JTextField ClaimID_TextFIled;
+    private javax.swing.JTextField ClaimID_TextField;
+    private javax.swing.JTable Claimant_Table;
     private javax.swing.JLabel Date_Label;
+    private javax.swing.JTable Employee_Table;
     private javax.swing.JButton FillInForm_Button;
     private javax.swing.JLabel Location_Label;
     private javax.swing.JLabel Name_Label;
-    private javax.swing.JLabel NewFormsCreated_Label;
-    private javax.swing.JLabel NoForms_Label;
+    private javax.swing.JLabel NoCreatedForms_Label;
+    private javax.swing.JLabel NoFilledInForms_Label;
+    private javax.swing.JCheckBox No_Checkbox;
     private javax.swing.JButton NotFilledInCorrectly_Button;
     private javax.swing.JLabel Plate_Label;
     private javax.swing.JButton RegisterClaim_Button;
@@ -439,7 +734,8 @@ public class FormPage extends javax.swing.JFrame {
     private javax.swing.JTextField ToBeFilledInName_TextField;
     private javax.swing.JTextField ToBeFilledInPlate_TextField;
     private javax.swing.JTextField ToBeFilledInSurname_TextField;
+    private javax.swing.JCheckBox Yes_Checkbox;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

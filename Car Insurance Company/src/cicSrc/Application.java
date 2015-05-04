@@ -73,6 +73,15 @@ public class Application {
     public static Claim[] registeredClaims = new Claim[16];
     public static int registeredIndex=0;
     
+    public static Form[] filledInForms=new Form[10];
+    public static int filledInFormsIndex=0;
+    public static int filledInFirst=0;
+    
+    public static Form[] checkedForms=new Form[10];
+    public static int checkedFormsIndex=0;
+    public static int checkedFirst=0;
+    
+    
     public static int ID_number=1;
     
     public static boolean[] Insured= {false, false, false, false};
@@ -157,6 +166,7 @@ public class Application {
             complexClaims[i]=new Claim();
             registeredClaims[i]=new Claim();
             pending[i]=new Claim();
+            filledInForms[i]=new Form();
         
         }
         

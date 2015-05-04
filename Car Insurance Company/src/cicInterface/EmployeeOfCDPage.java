@@ -47,7 +47,6 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
         ClaimHistory_MenuItem = new javax.swing.JMenuItem();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        CreateForm_MenuItem = new javax.swing.JMenuItem();
         CheckForm_MenuItem = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         Logout_MenuItem = new javax.swing.JMenuItem();
@@ -115,14 +114,6 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Form");
-
-        CreateForm_MenuItem.setText("Create Form");
-        CreateForm_MenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateForm_MenuItemActionPerformed(evt);
-            }
-        });
-        jMenu3.add(CreateForm_MenuItem);
 
         CheckForm_MenuItem.setText("Check Form");
         CheckForm_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -204,12 +195,6 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
                 this.dispose();
     }//GEN-LAST:event_PendingClaims_MenuItemActionPerformed
 
-    private void CreateForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateForm_MenuItemActionPerformed
-        FormPage formPage=new FormPage();
-                formPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_CreateForm_MenuItemActionPerformed
-
     private void CheckForm_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckForm_MenuItemActionPerformed
         FormPage formPage=new FormPage();
                 formPage.setVisible(true);
@@ -255,7 +240,6 @@ public class EmployeeOfCDPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem CheckForm_MenuItem;
     private javax.swing.JMenuItem CheckRecords_MenuItem;
     private javax.swing.JMenuItem ClaimHistory_MenuItem;
-    private javax.swing.JMenuItem CreateForm_MenuItem;
     private javax.swing.JMenuItem EmployeeCDInbox_MenuItem;
     private javax.swing.JMenuItem Logout_MenuItem;
     private javax.swing.JMenuItem NewClaims_MenuItem;
