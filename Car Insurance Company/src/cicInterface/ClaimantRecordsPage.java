@@ -84,7 +84,6 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         jLabel5.setVisible(false);
         jLabel6.setVisible(false);
         jLabel7.setVisible(false);
-        jButton2.setVisible(false);
         jButton3.setVisible(false);
         jButton4.setVisible(false);
         jButton5.setVisible(false);
