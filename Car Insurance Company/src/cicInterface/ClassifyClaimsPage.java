@@ -73,9 +73,11 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                      {
                           jTable1.getModel().setValueAt("Price of car unspecified!", i, 4);
                      }
-                     j++;    
+                   }  
+                
+               j++;    
             
-            }
+            
             }
                 
         }
