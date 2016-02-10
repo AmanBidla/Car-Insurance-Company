@@ -6,7 +6,7 @@
 package cicInterface;
 
 import cicSrc.Application;
-
+import static cicInterface.PendingClaimsPage.contactGarage;
 /**
  *
  * @author george
@@ -152,9 +152,23 @@ public class EmployeeCDOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_RecipientName_TextFieldActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
-        EmployeeOfCDPage employeeCDPage=new EmployeeOfCDPage();
-        employeeCDPage.setVisible(true);
-        this.dispose();
+        if (contactGarage==true)
+        {
+            contactGarage=false;
+            PendingClaimsPage pen= new PendingClaimsPage();
+            pen.setVisible(true);
+            this.dispose();
+        
+        }
+        else
+        {
+             EmployeeOfCDPage employeeCDPage=new EmployeeOfCDPage();
+             employeeCDPage.setVisible(true);
+             this.dispose();
+        
+        }    
+        
+       
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
 
     /**

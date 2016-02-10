@@ -16,6 +16,7 @@ import cicSrc.Application;
 import static cicSrc.Application.claimant1;
 import static cicSrc.Application.claimant2;
 import static cicSrc.Application.claimant3;
+import static cicInterface.PendingClaimsPage.checkInsurance;
 
 
 public class ClaimantRecordsPage extends javax.swing.JFrame {
@@ -30,7 +31,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         
         if (log.userRole == "Claimant")
         {
-            // Hide whatever is not visible to claimants
+        // Hide whatever is not visible to claimants
         SelectCustomerBox.setVisible(false);
         jButton1.setVisible(false);
         jButton3.setVisible(false);
@@ -233,7 +234,7 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jTextField2)
                             .addComponent(jTextField3)
                             .addComponent(jTextField4)
@@ -246,24 +247,22 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
                         .addComponent(SelectCustomerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5)
+                            .addComponent(jButton6)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton4)
-                                    .addComponent(jButton5)
-                                    .addComponent(jButton6)
                                     .addComponent(jButton7)
-                                    .addComponent(jButton8))))
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
-                        .addContainerGap())))
+                                    .addComponent(jButton8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,8 +304,8 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PriceOfCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jButton2)
-                    .addComponent(jButton8))
+                    .addComponent(jButton8)
+                    .addComponent(jButton2))
                 .addGap(16, 16, 16))
         );
 
@@ -363,7 +362,15 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        
         LoginPage login = new LoginPage();
-        if (login.userRole == "EmployeeOfCD")
+        if (checkInsurance==true)
+        {
+            checkInsurance=false;
+            PendingClaimsPage pen= new PendingClaimsPage();
+            pen.setVisible(true);
+            this.dispose();
+        }        
+        
+        else if (login.userRole == "EmployeeOfCD")
         {
             EmployeeOfCDPage e = new EmployeeOfCDPage();
             e.setVisible(true);

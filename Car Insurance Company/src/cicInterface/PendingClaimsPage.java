@@ -41,7 +41,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     public static boolean DmgHistoryChecked=false;
     public static boolean GaragePhoned=false;
     public static boolean ClaimMarked=false;
-    
+    public static boolean checkInsurance=false;
+    public static boolean contactGarage=false;
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
     
@@ -413,6 +414,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     private void ContactGarage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactGarage_ButtonActionPerformed
         // TODO add your handling code here:
         LoginPage login = new LoginPage();
+        contactGarage=true;
         if (login.userRole == "EmployeeOfCD")
         {
             EmployeeCDOutboxPage employeeOutbox = new EmployeeCDOutboxPage();
@@ -430,7 +432,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ContactGarage_ButtonActionPerformed
 
     private void CheckInsurance_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckInsurance_ButtonActionPerformed
-        
+       
+        checkInsurance=true;
         ClaimantRecordsPage claimantRecords=new ClaimantRecordsPage();
         claimantRecords.setVisible(true);
        

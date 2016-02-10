@@ -5,6 +5,7 @@
  */
 package cicInterface;
 
+import static cicInterface.PendingClaimsPage.contactGarage;
 import cicSrc.Application;
 
 /**
@@ -148,9 +149,20 @@ public class ClaimHandlerAOutboxPage extends javax.swing.JFrame {
     }//GEN-LAST:event_MessageToBeSent_TextAreaActionPerformed
 
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
+        if (contactGarage==true)
+        {
+            contactGarage=false;
+            PendingClaimsPage pen= new PendingClaimsPage();
+            pen.setVisible(true);
+            this.dispose();
         
-        ClaimHandlerAPage chAPage=new ClaimHandlerAPage();
-        chAPage.setVisible(true);
+        }
+        else 
+        {
+            ClaimHandlerAPage chAPage=new ClaimHandlerAPage();
+            chAPage.setVisible(true);
+        }
+       
 
         this.dispose();
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed
