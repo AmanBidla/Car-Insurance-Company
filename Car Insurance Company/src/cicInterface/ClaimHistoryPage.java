@@ -10,7 +10,7 @@ import static cicSrc.Application.claimant1;
 import static cicSrc.Application.claimant2;
 import static cicSrc.Application.claimant3;
 import static cicSrc.Application.registeredClaims;
-
+import static cicInterface.PendingClaimsPage.damageHistory;
 /**
  *
  * @author george
@@ -275,7 +275,13 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
     private void BackToPage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPage_ButtonActionPerformed
 
         LoginPage login = new LoginPage();
-        if (login.userRole == "EmployeeOfCD")
+        if (damageHistory==true){
+            PendingClaimsPage pen= new PendingClaimsPage();
+            pen.setVisible(true);
+            this.dispose();
+        
+        }
+        else if (login.userRole == "EmployeeOfCD")
         {
             EmployeeOfCDPage e = new EmployeeOfCDPage();
             e.setVisible(true);

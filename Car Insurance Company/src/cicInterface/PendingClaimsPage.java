@@ -43,6 +43,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
     public static boolean ClaimMarked=false;
     public static boolean checkInsurance=false;
     public static boolean contactGarage=false;
+    public static boolean damageHistory=false;
     //number of approved payments (is subject to change depending on the approved payments each time)
     public static int approved_payments = 0;
     
@@ -442,6 +443,7 @@ public class PendingClaimsPage extends javax.swing.JFrame {
 
     private void DamageHistory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageHistory_ButtonActionPerformed
        
+        damageHistory=true;
         ClaimHistoryPage claimHistory=new ClaimHistoryPage();
         claimHistory.setVisible(true);
     }//GEN-LAST:event_DamageHistory_ButtonActionPerformed
