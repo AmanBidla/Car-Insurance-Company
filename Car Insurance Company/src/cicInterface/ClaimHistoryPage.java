@@ -95,6 +95,23 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                     }
                 break;
                 default: 
+                    int m=0;
+                   for (int i=0;i<16;i++)
+                    {
+                        if((registeredClaims[i].claimantName == claimant3.name) && (registeredClaims[i].claimantSurname== claimant3.surname))
+                        {
+                                 
+                                     
+                     jTable1.getModel().setValueAt(registeredClaims[i].claim_ID, m, 0); // ID
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantName, m, 1); // Name
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, m, 2); // Surname
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, m, 3); // Location
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimDate, m, 4); // Date
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimCostOfDmg, m, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, m, 6); // Decision
+                                 m++;
+                        }
+                    }
                 break;
         }
     }
@@ -258,14 +275,22 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
             break;
             case "Claimant 4":
                 
-                    /* jTable1.getModel().setValueAt(, 0, 0); // ID
-                     jTable1.getModel().setValueAt(, 0, 1); // Name
-                     jTable1.getModel().setValueAt(, 0, 2); // Surname
-                     jTable1.getModel().setValueAt(, 0, 3); // Location
-                     jTable1.getModel().setValueAt(, 0, 4); // Date
-                     jTable1.getModel().setValueAt(, 0, 5); // Cost of Dmg
-                     jTable1.getModel().setValueAt(, 0, 6); // Decision
-                */
+                     int m=0;
+                    for (int i=0;i<16;i++)
+                    {
+                        if((registeredClaims[i].claimantName == claimant3.name) && (registeredClaims[i].claimantSurname== claimant3.surname))
+                        {
+                        
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claim_ID, m, 0); // ID
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantName, m, 1); // Name
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantSurname, m, 2); // Surname
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimantLocation, m, 3); // Location
+                     jTable1.getModel().setValueAt(registeredClaims[i].claimDate, m, 4); // Date
+                     jTable1.getModel().setValueAt((int)registeredClaims[i].claimCostOfDmg, m, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt((String)registeredClaims[i].claimDecision, m, 6); // Decision
+                              m++;   
+                        }
+                    }
              break;
             default: break;
         }
