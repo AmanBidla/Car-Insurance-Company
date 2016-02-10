@@ -50,5 +50,7 @@ public class informClaimantTest {
             //TODO
                 //check if the claimant was informed
             Claimant a, Claim b;
+            
+            assertEquals(claim.getClaimStatus(),"Reported");
         }
 }

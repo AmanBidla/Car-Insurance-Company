@@ -211,10 +211,9 @@ public class ClassifyClaimsPage extends javax.swing.JFrame {
                 NewCreatedForms++;
                 
                 
-            }
-            j++;
-           
+            }           
         }
+             j++;
         }
         unclassifiedFirst=j;
         ClaimsForClassification=0;
