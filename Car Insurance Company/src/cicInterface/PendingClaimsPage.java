@@ -79,8 +79,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             
             
             }
-            this.CheckInsurance_Button.setVisible(true);
-            this.InsuranceProceed_Button.setVisible(true);
+            //this.CheckInsurance_Button.setVisible(true);
+            //this.InsuranceProceed_Button.setVisible(true);
         
         }
         
