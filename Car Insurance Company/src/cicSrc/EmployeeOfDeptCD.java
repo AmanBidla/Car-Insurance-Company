@@ -88,10 +88,10 @@ public class EmployeeOfDeptCD extends User{
         public void classifyClaim(Claim a, Claimant b){
         if ((b.priceOfCar > 30000) || (a.claimCostOfDmg > 5000) || (b.AccidentCost.size() > 3))
         {
-        a.setClaimCategory("complex");
+        a.claimCategory="complex";
         }
         else{
-                 a.setClaimCategory("simple");
+                 a.claimCategory="simple";
                 }
         
         //here we can add a.setClaimStatus("classified");
@@ -123,13 +123,24 @@ public class EmployeeOfDeptCD extends User{
                      
         }
             
-            
-        
-        
         
         }
+
+    
+    public void setClaimDecision(Claim a,String claimDecision){
+        a.claimDecision = claimDecision;
         
-        
+    }
+    
+  
+    
+    public void setClaimStatus (Claim a,String claimStatus){
+        a.claimStatus= claimStatus;
+    
+    
+    }
+    
+
        
         
     }

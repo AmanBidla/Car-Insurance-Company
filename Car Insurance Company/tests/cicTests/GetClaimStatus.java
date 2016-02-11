@@ -5,7 +5,6 @@
  */
 package cicTests;
 
-import cicSrc.Claim;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,6 +13,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import cicSrc.Application;
+import static cicSrc.Application.employeeCD;
 
 /**
  *
@@ -46,7 +46,7 @@ public class GetClaimStatus {
     //
      @Test
          public void get_claim_status_test() {
-             Application.claim1.setClaimStatus("classified");
+             Application.claim1.claimStatus="classified";
              assertEquals(Application.claim1.getClaimStatus(),"classified");
          
          }

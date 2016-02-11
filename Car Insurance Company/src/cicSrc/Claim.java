@@ -43,33 +43,17 @@ public class Claim {
     
     
     }
-    
-    public void setClaimCategory(String claimCategory){
-        this.claimCategory = claimCategory;
-    }
-    public String getClaimCategory(){
-        return this.claimCategory;
-    }
-    
-    public void setClaimDecision(String claimDecision){
-        this.claimDecision = claimDecision;
-        
-    }
-    
-    public String getClaimDecision(){
-        return this.claimDecision;
-        
-    }
-    
-    public void setClaimStatus (String claimStatus){
-        this.claimStatus= claimStatus;
-    
-    
-    }
-    
-    public String getClaimStatus (){
+        public String getClaimStatus (){
         return this.claimStatus;
     
     }
+          public String getClaimDecision(){
+        return this.claimDecision;
         
+    }
+        public String getClaimCategory(){
+        return this.claimCategory;
+    }
+    
+    
 }

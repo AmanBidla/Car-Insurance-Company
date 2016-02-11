@@ -55,14 +55,14 @@ public class ReportClaim {
         int cost=3;
         
         Claim claim = new Claim(name,surname,location,date,cost);
-        claim.setClaimStatus("Reported");
+        claim.claimStatus="Reported";
         
         assertEquals(claim.claimantName,name);
         assertEquals(claim.claimantSurname,surname);
         assertEquals(claim.claimantLocation,location);
         assertEquals(claim.claimDate,date);
         assertEquals(claim.claimCostOfDmg,cost);
-        assertEquals(claim.getClaimStatus(),"Reported");
+        assertEquals(claim.claimStatus,"Reported");
         
     
     }
