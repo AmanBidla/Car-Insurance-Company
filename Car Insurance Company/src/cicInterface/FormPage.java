@@ -343,7 +343,7 @@ public class FormPage extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(ClaimID_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
+                                .addGap(18, 18, 18)
                                 .addComponent(AllFields_Label))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,6 +520,28 @@ public class FormPage extends javax.swing.JFrame {
         for (int i=0;i<NewFilledInForms;i++){
             if ((Boolean)this.Employee_Table.getModel().getValueAt(i, 2)==true)
             {
+                this.ClaimID_TextField.setText(Integer.toString((int)this.Employee_Table.getValueAt(i, 0)));
+                 for (int j=0;j<filledInFormsIndex;j++)
+                {
+                    if ((int)this.Employee_Table.getModel().getValueAt(i, 0)==filledInForms[j].formClaimID)
+                    {
+                        this.ToBeCheckedName_TextField.setText(filledInForms[j].formName);
+                        this.ToBeCheckedSurname_TextField.setText(filledInForms[j].formSurname);
+                        this.ToBeCheckedDate_TextField.setText(filledInForms[j].formDateOfAccident);
+                        this.ToBeCheckedLocation_TextField.setText(filledInForms[j].formLocationOfAccident);
+                        this.ToBeCheckedPlate_TextField.setText(filledInForms[j].formInsuredPersonPlate);
+                        if (filledInForms[j].formAgreementOnIncrease=="Yes")
+                        {
+                            this.Yes_Checkbox.setSelected(true);
+                        }
+                        else
+                        {
+                          this.No_Checkbox.setSelected(true);
+                        }
+                         
+                    }
+                }
+                 
                 this.ClaimID_Label.setVisible(true);
                 this.ClaimID_TextField.setVisible(true);
                 this.Name_Label.setVisible(true);
@@ -532,34 +554,24 @@ public class FormPage extends javax.swing.JFrame {
                 this.ToBeCheckedLocation_TextField.setVisible(true);
                 this.Plate_Label.setVisible(true);
                 this.ToBeCheckedPlate_TextField.setVisible(true);
+                this.NotFilledInCorrectly_Button.setVisible(true);
+                this.RegisterClaim_Button.setVisible(true);
         
-                if((String)this.Employee_Table.getModel().getValueAt(i, 1)=="Complex"){
-                this.Agreement_Label.setVisible(true);
-                this.Yes_Checkbox.setVisible(true);
-                checkedForms[checkedFormsIndex].formType="Complex";
+                if((String)this.Employee_Table.getModel().getValueAt(i, 1)=="Complex")
+                {
+                  this.Agreement_Label.setVisible(true);
+                  this.Yes_Checkbox.setVisible(true);
+                  this.No_Checkbox.setVisible(true);
+                  checkedForms[checkedFormsIndex].formType="Complex";
                 }
                 else if ((String)this.Employee_Table.getModel().getValueAt(i, 1)=="Simple")
                 {
                     checkedForms[checkedFormsIndex].formType="Simple";
                 }
         
-                this.NotFilledInCorrectly_Button.setVisible(true);
-                this.RegisterClaim_Button.setVisible(true);
-                
                 this.ClaimID_TextField.setText(Integer.toString((int)this.Employee_Table.getValueAt(i, 0)));
                 
-                for (int j=0;j<filledInFormsIndex;i++)
-                {
-                    if ((int)this.Employee_Table.getModel().getValueAt(i, 0)==filledInForms[j].formClaimID)
-                    {
-                        this.ToBeCheckedName_TextField.setText(filledInForms[j].formName);
-                        this.ToBeCheckedSurname_TextField.setText(filledInForms[j].formSurname);
-                        this.ToBeCheckedDate_TextField.setText(filledInForms[j].formDateOfAccident);
-                        this.ToBeCheckedLocation_TextField.setText(filledInForms[j].formLocationOfAccident);
-                        this.ToBeCheckedPlate_TextField.setText(filledInForms[j].formInsuredPersonPlate);
-                    
-                    }
-                }
+               
                 
             
             }
@@ -589,6 +601,7 @@ public class FormPage extends javax.swing.JFrame {
                 if((String)this.Claimant_Table.getModel().getValueAt(i, 1)=="Complex"){
                 this.Agreement_Label.setVisible(true);
                 this.Yes_Checkbox.setVisible(true);
+                this.No_Checkbox.setVisible(true);
                 filledInForms[filledInFormsIndex].formType="Complex";
                 }
                 else if ((String)this.Claimant_Table.getModel().getValueAt(i, 1)=="Simple")
