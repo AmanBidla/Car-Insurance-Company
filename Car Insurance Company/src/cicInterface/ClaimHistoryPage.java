@@ -32,6 +32,8 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
         else if (login.userRole == "Claimant")//if it is a claimant
         {   
             //hide all the buttons serving the selection of a claimant
+            jTable1.setVisible(true);
+            BackToPage_Button.setVisible(true);
             SelectCustomerBox.setVisible(false);
             Proceed_Button.setVisible(false);
             Select_Claimant.setVisible(false);
@@ -39,7 +41,7 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
             switch(login.username){ 
                 case "IamCharlie":
                     int j=0;
-                    for (int i=0;i<16;i++)
+                    for (int i=0;i<10;i++)
                     {
                         if((registeredClaims[i].claimantName == claimant1.name) && (registeredClaims[i].claimantSurname== claimant1.surname))
                         {
@@ -54,6 +56,18 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                      jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, j, 6); // Decision
                                  j++;
                         }
+                        //testing 
+                      /*  else
+                        {
+                     jTable1.getModel().setValueAt("", j, 0); // ID
+                     jTable1.getModel().setValueAt("", j, 1); // Name
+                     jTable1.getModel().setValueAt("", j, 2); // Surname
+                     jTable1.getModel().setValueAt("", j, 3); // Location
+                     jTable1.getModel().setValueAt("", j, 4); // Date
+                     jTable1.getModel().setValueAt(0, j, 5); // Cost of Dmg
+                     jTable1.getModel().setValueAt("", j, 6); // Decision
+                                 j++;
+                        } */
                     }
                 break;
                 case "IamCharles":
@@ -111,6 +125,7 @@ public class ClaimHistoryPage extends javax.swing.JFrame {
                      jTable1.getModel().setValueAt(registeredClaims[i].claimDecision, m, 6); // Decision
                                  m++;
                         }
+                        
                     }
                 break;
         }
