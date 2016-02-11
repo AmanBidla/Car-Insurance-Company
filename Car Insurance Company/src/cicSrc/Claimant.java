@@ -40,6 +40,7 @@ public class Claimant extends User{
 		this.password = password;
                 this.plateNumber = plate;
                 this.expiringDateOfInsurance=expDateOfIns;
+                this.role = "Claimant";
     }
     
     

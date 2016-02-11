@@ -36,7 +36,7 @@ public class ClaimantPage extends javax.swing.JFrame {
         Claim_Menu = new javax.swing.JMenu();
         ReportClaim_MenuItem = new javax.swing.JMenuItem();
         PendingClaims_MenuItem = new javax.swing.JMenuItem();
-        ClaimHistory = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Form_Menu = new javax.swing.JMenu();
         FillInForm_MenuItem = new javax.swing.JMenuItem();
         Logged_Menu = new javax.swing.JMenu();
@@ -104,13 +104,14 @@ public class ClaimantPage extends javax.swing.JFrame {
         });
         Claim_Menu.add(PendingClaims_MenuItem);
 
-        ClaimHistory.setText("Claim History");
-        ClaimHistory.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Claim History");
+        jMenuItem1.setToolTipText("");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClaimHistoryActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        Claim_Menu.add(ClaimHistory);
+        Claim_Menu.add(jMenuItem1);
 
         jMenuBar1.add(Claim_Menu);
 
@@ -201,12 +202,6 @@ public class ClaimantPage extends javax.swing.JFrame {
                 this.dispose();
     }//GEN-LAST:event_Logout_MenuItemActionPerformed
 
-    private void ClaimHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClaimHistoryActionPerformed
-        ClaimHistoryPage claimHistoryPage=new ClaimHistoryPage();
-                claimHistoryPage.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_ClaimHistoryActionPerformed
-
     private void CustomerInbox_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerInbox_MenuItemActionPerformed
         ClaimantInboxPage customerInboxPage=new ClaimantInboxPage();
                 customerInboxPage.setVisible(true);
@@ -218,6 +213,13 @@ public class ClaimantPage extends javax.swing.JFrame {
                 customerOutboxPage.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_Outbox_MenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+               ClaimHistoryPage claimHistoryPage=new ClaimHistoryPage();
+                claimHistoryPage.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,7 +258,6 @@ public class ClaimantPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem CheckRecords_MenuItem;
-    private javax.swing.JMenuItem ClaimHistory;
     private javax.swing.JMenu Claim_Menu;
     private javax.swing.JMenuItem CustomerInbox_MenuItem;
     private javax.swing.JMenuItem FillInForm_MenuItem;
@@ -269,5 +270,6 @@ public class ClaimantPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem ReportClaim_MenuItem;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
