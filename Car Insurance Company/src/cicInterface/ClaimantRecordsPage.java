@@ -327,6 +327,13 @@ public class ClaimantRecordsPage extends javax.swing.JFrame {
         CostOfInsuranceTextField.setVisible(true);
         PriceOfCarTextField.setVisible(true);
         jButton2.setVisible(true);
+        jButton3.setVisible(true);
+        jButton4.setVisible(true);
+        jButton5.setVisible(true);
+        jButton6.setVisible(true);
+        jButton7.setVisible(true);
+        jButton8.setVisible(true);
+               
         
         String claimant =(String)this.SelectCustomerBox.getSelectedItem();
         switch (claimant){
