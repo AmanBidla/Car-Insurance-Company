@@ -462,6 +462,8 @@ public class PendingClaimsPage extends javax.swing.JFrame {
                 Application.NotInsured[i]=true;
                 pending[i].claimStatus = "Rejected!";
                 this.pendingClaims_Table.getModel().setValueAt(true,i,8);
+                Application.Negative[i]=true;
+                pending[i].claimDecision= "negative";
                 this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
             }
 
@@ -612,14 +614,14 @@ public class PendingClaimsPage extends javax.swing.JFrame {
             else if((Boolean)this.pendingClaims_Table.getModel().getValueAt(i, 8)==true){
                 
                 if (Application.PhoneGarage[i]==true){
-                   GaragePhoned=true; 
+                  GaragePhoned=true; 
                    pending[i].claimStatus = "Rejected!";
                    pending[i].claimDecision= "negative";
                    this.pendingClaims_Table.getModel().setValueAt((String)pending[i].claimStatus,i,9);
                    Application.Negative[i]=true;
                 }
                 
-                if(GaragePhoned==false){
+                if((GaragePhoned==false)&&(pending[i].claimDecision!="negative")){
                     this.Decision_Label.setVisible(true);
                 
                 }
