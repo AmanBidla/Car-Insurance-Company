@@ -7,6 +7,7 @@ package cicInterface;
 
 import cicSrc.Application;
 import static cicInterface.PendingClaimsPage.contactGarage;
+import static cicInterface.FormPage.incorrect;
 /**
  *
  * @author george
@@ -166,7 +167,15 @@ public class EmployeeCDOutboxPage extends javax.swing.JFrame {
              employeeCDPage.setVisible(true);
              this.dispose();
         
-        }    
+        }
+        
+        if (incorrect==true)
+        {
+            incorrect=false;
+            FormPage form = new FormPage();
+            form.setVisible(true);
+            this.dispose();
+        }
         
        
     }//GEN-LAST:event_BackToPage_ButtonActionPerformed

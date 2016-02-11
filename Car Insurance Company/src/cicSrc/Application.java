@@ -81,6 +81,10 @@ public class Application {
     public static int checkedFormsIndex=0;
     public static int checkedFirst=0;
     
+    public static Form[] incorrectForms=new Form[10];
+    public static int incorrectFormsIndex=0;
+    public static int incorrectFirst=0;
+    
     
     public static int ID_number=1;
     
