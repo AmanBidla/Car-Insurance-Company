@@ -93,6 +93,8 @@ public class Application {
     public static boolean[] Positive={false, false, false, false};
     public static boolean[] Negative={false, false, false, false};
     
+    public static Claim[] paid = new Claim[10];
+    public static int paidIndex=0;
  
     
     

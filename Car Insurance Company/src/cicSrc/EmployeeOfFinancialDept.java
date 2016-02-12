@@ -1,8 +1,12 @@
 package cicSrc;
 
 
+import static cicSrc.Application.claim1;
+import static cicSrc.Application.claimant1;
 import java.util.ArrayList;
 import java.util.List;
+import cicSrc.Claim;
+import cicSrc.Records;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -41,4 +45,13 @@ public class EmployeeOfFinancialDept extends User {
         c.Date.add(b.AccidentDate.get(b.AccidentDate.size() - 1));
         
     }
+    
+    public void setRecord(Claimant b, Claim a){
+        
+        b.AccidentDate.add(new String(a.claimDate));
+        b.AccidentLocation.add(new String(a.claimantLocation));
+        b.AccidentCost.add(a.amount_of_payment);
+        
+    }
 }
+
