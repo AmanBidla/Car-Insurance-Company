@@ -177,5 +177,18 @@ public class EmployeeOfDeptCD extends User{
         public void setPlateNumber(Claimant a, String plate){
          a.plateNumber = plate;
       }
+        
+        public String getDateHistory(Claimant a){
+            return a.AccidentDate.get(a.AccidentDate.size()-1);
+        }
+        
+        public String getLocationHistory(Claimant a){
+            return a.AccidentLocation.get(a.AccidentDate.size()-1);
+        }
+        
+        public int getCostHistory(Claimant a){
+            int id= Integer.parseInt(a.AccidentCost.get(a.AccidentCost.size()-1).toString());
+            return id;
+        }
     }
 

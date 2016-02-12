@@ -5,6 +5,9 @@
  */
 package cicTests;
 
+import cicSrc.Application;
+import static cicSrc.Application.claim1;
+import static cicSrc.Application.claimant1;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -31,6 +34,7 @@ public class CheckDmgHistory {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -40,6 +44,11 @@ public class CheckDmgHistory {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    // @Test
-    // public void hello() {}
+    @Test
+     public void checkDmgPreviousHistory() {
+        
+         assertEquals(Application.employeeCD.getDateHistory(Application.claimant1), "2014/12/11");
+         assertEquals(Application.employeeCD.getLocationHistory(Application.claimant1),"Kungsgatan 17,Stockholm");
+         assertEquals(Application.employeeCD.getCostHistory(Application.claimant1), claim1.amount_of_payment);
+     }
 }
