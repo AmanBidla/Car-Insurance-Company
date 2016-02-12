@@ -28,7 +28,7 @@ public class ClaimHandlerA extends EmployeeOfDeptCD{
         if (checkInsurance(b) == true){a.claimStatus="claimantInsured";}
         else {a.claimStatus="rejected";}
         
-        if ((a.claimStatus.equals("accepted")) && (checkDmgHistory(b) == true) && (phoneGarage(b,c) == true))
+        if ((a.claimStatus.equals("claimantInsured")) && (a.claimCostOfDmg<5000) && (phoneGarage(b,c) == true))
         {
         a.claimDecision="positive";
         //here we can add a.setClaimStatus("accepted");

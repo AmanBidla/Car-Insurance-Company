@@ -52,7 +52,7 @@ public class Mark_Claim {
         public void mark_claim_as_positive_or_negative_test(){
             
             Application.claimHandlerA.mark_claim(Application.claim1,Application.claimant1,Application.garage1);
-            assertEquals(Application.claim1.getClaimDecision(), "positive");
+            assertEquals(Application.claim1.claimDecision, "positive");
                     
                 
         
