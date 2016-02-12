@@ -6,7 +6,8 @@ package cicTests;
  * and open the template in the editor.
  */
 
-import cicSrc.Records;
+import cicSrc.Application;
+import cicSrc.Claim;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -33,6 +34,7 @@ public class KeepRecordsOfPAyments {
     
     @Before
     public void setUp() {
+        Application.initialize();
     }
     
     @After
@@ -43,22 +45,13 @@ public class KeepRecordsOfPAyments {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-        public void keep_records_of_payments(Records a){
-             for(String s:a.Name){
-            assertEquals(s,"04/03/2015");
-         }
-         
-          for(String s:a.Surname){
-            assertEquals(s,"20:55");
-         }
-          
-           for(String s:a.Date){
-            assertEquals(s,"Stockholm");
-         }
-           
-           for(int s=0; s < a.AmountOfPayment.size(); s++)
-             {
-            System.out.println(a.AmountOfPayment.get(s));
-         }
+        public void keep_records_of_payments(){
+            //Claim a = new Claim();
+           // a.claim_ID = 5;
+            
+             Application.financialDeptEmployee.setRecord(Application.claimant1,Application.claim1);
+            assertEquals(Application.claimant1.AccidentCost.get(1),Application.claim1.amount_of_payment);
+            assertEquals(Application.claimant1.AccidentLocation.get(1),Application.claim1.claimantLocation);
+            
         }
 }

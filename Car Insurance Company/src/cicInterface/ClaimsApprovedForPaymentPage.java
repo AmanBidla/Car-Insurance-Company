@@ -7,8 +7,8 @@ package cicInterface;
 
 import static cicInterface.PendingClaimsPage.approved_payments;
 import cicSrc.Claim;
-import static cicSrc.Claim.paid;
-import static cicSrc.Claim.paidIndex;
+import static cicSrc.Application.*;
+
 
 /**
  *

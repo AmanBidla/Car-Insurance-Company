@@ -5,10 +5,8 @@
  */
 package cicInterface;
 
-import static cicSrc.Application.claimant1;
-import static cicSrc.Claim.paid;
+import static cicSrc.Application.*;
 import static cicSrc.Application.registeredClaims;
-import static cicSrc.Claim.paidIndex;
 
 
 /**
