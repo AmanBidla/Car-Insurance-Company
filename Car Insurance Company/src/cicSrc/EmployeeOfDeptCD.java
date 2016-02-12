@@ -133,6 +133,24 @@ public class EmployeeOfDeptCD extends User{
             
         
         }
+        
+        public void registerForm(Form f){
+            if (f.formStatus=="Filled in correctly")
+            {
+                f.formStatus="Registered";
+            
+            }    
+        
+        }
+        
+        public void registerClaim(Claim c){
+            if ((c.claimStatus=="Rejected")|| (c.claimStatus=="Approved for payment") )
+            {
+                c.claimStatus="Registered";
+            
+            }    
+        
+        }
 
     
     public void setClaimDecision(Claim a,String claimDecision){
