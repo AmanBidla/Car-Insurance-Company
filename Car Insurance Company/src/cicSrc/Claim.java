@@ -55,7 +55,5 @@ public class Claim {
         return this.claimCategory;
     }
     
-      public int getClaimCostOfDmg(){
-        return this.claimCostOfDmg;
-    }
+    
 }

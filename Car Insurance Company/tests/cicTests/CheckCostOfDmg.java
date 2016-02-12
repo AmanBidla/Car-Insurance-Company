@@ -45,7 +45,7 @@ public class CheckCostOfDmg {
      @Test
      public void checkCostOfDmg() {
          
-         assertEquals(Application.claim2.getClaimCostOfDmg(),6000);
+         assertEquals(Application.employeeCD.checkCostOfDmg(Application.claim2),6000);
      
      
      }

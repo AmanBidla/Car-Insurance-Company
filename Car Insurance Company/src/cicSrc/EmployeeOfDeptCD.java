@@ -71,6 +71,10 @@ public class EmployeeOfDeptCD extends User{
             a.getDmgHistory();
             return true;
     }
+        
+      public int checkCostOfDmg(Claim c){
+        return c.claimCostOfDmg;
+    }
     
         public void informClaimant(Claimant a){
             if (checkInsurance(a)== true)
