@@ -20,6 +20,8 @@ import cicSrc.Records;
  */
 public class EmployeeOfFinancialDept extends User {
     
+    public static String FDreceivedMessage;
+    
     public EmployeeOfFinancialDept(){}
     
     public EmployeeOfFinancialDept(String name, String surname, String username, String password){
@@ -53,5 +55,19 @@ public class EmployeeOfFinancialDept extends User {
         b.AccidentCost.add(a.amount_of_payment);
         
     }
+    
+     public String readMsg(){
+         
+      if (Application.MessageFromCDEmployee>0){
+           
+          FDreceivedMessage=EmployeeOfDeptCD.CDSentMessage;
+            Application.MessageFromCDEmployee--;
+            Application.MessageToFinanceDeptEmployee--;
+
+        }
+        
+      return FDreceivedMessage;
+    
+     }     
 }
 

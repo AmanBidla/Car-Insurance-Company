@@ -10,10 +10,12 @@ package cicSrc;
  *
  * @author Ioannis Papakostas
  */
+import static cicSrc.Claimant.CLReceivedMessage;
 import java.util.*;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+
 public class EmployeeOfDeptCD extends User{
     
         //scanner for the update method 
@@ -23,6 +25,10 @@ public class EmployeeOfDeptCD extends User{
         // new instance of Date class
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
+        
+        public static String CDSentMessage;
+        public static String CDReceivedMessage;
+    
     
         public EmployeeOfDeptCD(){}
         
@@ -151,6 +157,43 @@ public class EmployeeOfDeptCD extends User{
             }    
         
         }
+        
+        public String readMsg(){
+         
+      if (Application.MessageFromClaimant>0){
+           
+          CDReceivedMessage=Claimant.CLSentMessage;
+            Application.MessageFromClaimant--;
+            Application.MessageToCDEmployee--;
+
+        }
+        else if(Application.MessageFromGarage>0) {
+            CDReceivedMessage=GarageOwner.GOSentMessage;
+            Application.MessageFromGarage--;
+            Application.MessageToCDEmployee--;
+        } 
+      return CDReceivedMessage;
+    
+     }
+        
+        public void sendMSg(String recipientRole,String msg){
+            CDSentMessage=msg;
+          switch (recipientRole){
+            case "Claimant":Application.MessageToClaimant++;
+            Application.MessageFromCDEmployee++;
+            break;
+            case "Garage Owner":Application.MessageToGarage++;
+            Application.MessageFromCDEmployee++;
+            break;
+            case "FinanceDept Employee":Application.MessageToFinanceDeptEmployee++;
+            Application.MessageFromCDEmployee++;
+            default: break;
+
+        }
+    
+        
+        }
+        
 
     
     public void setClaimDecision(Claim a,String claimDecision){

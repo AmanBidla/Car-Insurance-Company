@@ -6,8 +6,6 @@
 package cicTests;
 
 import cicSrc.Application;
-import cicSrc.Claim;
-import cicSrc.Claimant;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,11 +15,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ioannis Papakostas
+ * @author george
  */
-public class informClaimantTest {
+public class ClaimantSendMsgToCDEmployee {
     
-    public informClaimantTest() {
+    public ClaimantSendMsgToCDEmployee() {
     }
     
     @BeforeClass
@@ -45,12 +43,12 @@ public class informClaimantTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-        public void inform_claimant_test() {
-            
-            //TODO
-                //check if the claimant was informed
-           // Claimant a, Claim b;
-            
-            
-        }
+    public void claimantToCDEmployee() {
+        
+            String msg="Hey dude!";
+            String recipientRole="Employee of CD";
+            Application.claimant1.sendMSg(recipientRole, msg);
+            assertEquals(Application.employeeCD.readMsg(),msg);
+    
+    }
 }

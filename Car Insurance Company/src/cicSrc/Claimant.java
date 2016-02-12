@@ -10,6 +10,11 @@ package cicSrc;
  *
  * @author Ioannis Papakostas
  */
+import cicInterface.EmployeeCDOutboxPage;
+import cicInterface.GarageOutboxPage;
+import cicSrc.EmployeeOfDeptCD;
+import static cicSrc.EmployeeOfDeptCD.CDSentMessage;
+import cicSrc.GarageOwner;
 import java.util.ArrayList;
 import java.util.*;
 
@@ -20,6 +25,8 @@ public class Claimant extends User{
     public String expiringDateOfInsurance;
     public String plateNumber;
     public int priceOfCar;
+    public static String CLReceivedMessage;
+    public static String CLSentMessage;
     
     //Accident History
     public List<String> AccidentDate = new ArrayList<String>();
@@ -120,11 +127,40 @@ public class Claimant extends User{
             
             form.formStatus = "Filled in-Needs to be checked!";
     }
+     
+     public String readMsg(){
+         
+      if (Application.MessageFromCDEmployee>0){
+           
+          CLReceivedMessage=EmployeeOfDeptCD.CDSentMessage;
+            Application.MessageFromCDEmployee--;
+            Application.MessageToClaimant--;
+
+        }
+        else if(Application.MessageFromGarage>0) {
+            CLReceivedMessage=GarageOwner.GOSentMessage;
+            Application.MessageFromGarage--;
+            Application.MessageToClaimant--;
+        } 
+      return CLReceivedMessage;
     
+     }
+     
+     public void sendMSg(String recipientRole,String msg){
+            CLSentMessage=msg;
+          switch (recipientRole){
+            case "Employee of CD":Application.MessageToCDEmployee++;
+            Application.MessageFromClaimant++;
+            break;
+            case "Garage Owner":Application.MessageToGarage++;
+            Application.MessageFromClaimant++;
+            break;
+            default: break;
+
+        }
             
             
-            
-            
+     }      
             
             
         
