@@ -44,7 +44,7 @@ public class Check_Price_of_Car_Test {
     //
      @Test
      public void checkPriceCar() {
-     assertEquals(Application.claimant1.getPriceOfCar(),32000);
+     assertEquals(Application.employeeCD.getPriceOfCar(Application.claimant1),32000);
      
      }
 }

@@ -144,7 +144,10 @@ public class EmployeeOfDeptCD extends User{
     
     }
     
-
+     public int getPriceOfCar(Claimant a){
+         return a.priceOfCar;
+     }
+     
        
         
     }
