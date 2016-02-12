@@ -30,4 +30,40 @@ public class Form {
     
     }
     
+    public String getFormName(){
+        return this.formName;
+    
+    
+    }
+    
+    public String getFormSurname(){
+        return this.formSurname;
+    
+    
+    }
+    
+    public String getFormDateOfAccident(){
+        return this.formDateOfAccident;
+    
+    
+    }
+    
+    public String getFormLocationOfAccident(){
+        return this.formLocationOfAccident;
+    
+    
+    }
+    
+    public String getFormInsuredPersonPlate(){
+        return this.formInsuredPersonPlate;
+    
+    
+    }
+    
+    public String getFormAgreementOnIncrease(){
+        return this.formAgreementOnIncrease;
+    
+    
+    }
+    
 }

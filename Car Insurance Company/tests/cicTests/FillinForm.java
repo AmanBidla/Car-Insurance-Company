@@ -49,33 +49,17 @@ public class FillinForm {
     public void fillinForm_test() {
         
         
-        
-        if ((Application.form1.formStatus.equals("Created!") || Application.form1.formStatus.equals("Not filled correctly!"))&& Application.form1.formType.equals("Simple Form")){
             Application.form1.formName= Application.claimant1.name;
             Application.form1.formSurname=Application.claimant1.surname;
             Application.form1.formDateOfAccident=Application.claim1.claimDate;
             Application.form1.formLocationOfAccident=Application.claim1.claimantLocation;
             Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
             
-            
-            Application.form1.formStatus = "Filled in-Needs to be checked!";
-            
-        }
-        else if ((Application.form1.formStatus.equals("Created!") || Application.form1.formStatus.equals("Not filled correctly!"))&& Application.form1.formType.equals("Complex Form")){
-            Application.form1.formName= Application.claimant1.name;
-            Application.form1.formSurname=Application.claimant1.surname;
-            Application.form1.formDateOfAccident=Application.claim1.claimDate;
-            Application.form1.formLocationOfAccident=Application.claim1.claimantLocation;
-            Application.form1.formInsuredPersonPlate = Application.claimant1.plateNumber;
-            
-            Application.form1.formAgreementOnIncrease = "Agree";
-            
-            Application.form1.formStatus = "Filled in-Needs to be checked!";
-            
-        
-         }
-        
-         assertEquals(Application.form1.formStatus, "Filled in-Needs to be checked!");
+            assertEquals(Application.form1.getFormName(),Application.form1.formName);
+            assertEquals(Application.form1.getFormSurname(),Application.form1.formSurname);
+            assertEquals(Application.form1.getFormDateOfAccident(),Application.form1.formDateOfAccident);
+            assertEquals(Application.form1.getFormLocationOfAccident(),Application.form1.formLocationOfAccident);
+            assertEquals(Application.form1.getFormInsuredPersonPlate(),Application.form1.formInsuredPersonPlate);
     
     
     
