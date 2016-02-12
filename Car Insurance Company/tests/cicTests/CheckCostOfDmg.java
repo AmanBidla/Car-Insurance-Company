@@ -15,11 +15,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ioannis Papakostas
+ * @author george
  */
-public class Check_Price_of_Car_Test {
+public class CheckCostOfDmg {
     
-    public Check_Price_of_Car_Test() {
+    public CheckCostOfDmg() {
     }
     
     @BeforeClass
@@ -43,8 +43,10 @@ public class Check_Price_of_Car_Test {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void checkPriceCar() {
-     assertEquals(Application.claimant1.getPriceOfCar(),32000);
+     public void checkCostOfDmg() {
+         
+         assertEquals(Application.claim2.getClaimCostOfDmg(),6000);
+     
      
      }
 }
