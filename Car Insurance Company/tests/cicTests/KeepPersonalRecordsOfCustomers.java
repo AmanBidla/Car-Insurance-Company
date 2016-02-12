@@ -46,15 +46,15 @@ public class KeepPersonalRecordsOfCustomers {
     //
      @Test
         public void keep_personal_records_of_customers_test() {
-            Application.claimant1.costOfInsurance = 347;
-            Application.claimant1.priceOfCar = 20000;
-            Application.claimant1.plateNumber = "IEA 5839";
-            Application.claimant1.expiringDateOfInsurance = "13/08/2016";
+                        
+            Application.employeeCD.setPriceOfCar(Application.claimant1,20000);
+            Application.employeeCD.setExpiringDateOfInsurance(Application.claimant1,"13/08/2016" );
+            Application.employeeCD.setPlateNumber(Application.claimant1,"IEA 5839");
+            Application.employeeCD.setCostOfInsurance(Application.claimant1,347);
             
-            System.out.println(Application.claimant1.getExpiringDateOfInsurance());
-            System.out.println(Application.claimant1.getCostOfInsurance());
-            System.out.println(Application.claimant1.getPlateNumber());
-            System.out.println(Application.claimant1.getPriceOfCar());
-            Application.claimant1.getDmgHistory();
+            assertEquals(Application.claimant1.getExpiringDateOfInsurance(),"13/08/2016" );
+            assertEquals(Application.claimant1.getCostOfInsurance(),347);
+            assertEquals(Application.claimant1.getPlateNumber(),"IEA 5839");
+            assertEquals(Application.claimant1.getPriceOfCar(),20000);
         }
 }

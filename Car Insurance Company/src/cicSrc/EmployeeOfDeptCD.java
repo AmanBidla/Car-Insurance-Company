@@ -148,7 +148,30 @@ public class EmployeeOfDeptCD extends User{
          return a.priceOfCar;
      }
      
+         public String getExpiringDateOfInsurance(Claimant a){
+         return a.expiringDateOfInsurance;
+            
+         }
+     public int getCostOfInsurance(Claimant a) {
+            return a.costOfInsurance;
+         }
+     public String getPlateNumber(Claimant a){
+         return a.plateNumber;
+      }
        
-        
+         public void setPriceOfCar(Claimant a, int k){
+         a.priceOfCar=k;
+     }
+     
+         public void setExpiringDateOfInsurance(Claimant a, String date){
+         a.expiringDateOfInsurance=date;
+            
+         }
+        public void setCostOfInsurance(Claimant a, int cost) {
+          a.costOfInsurance=cost;
+         }
+        public void setPlateNumber(Claimant a, String plate){
+         a.plateNumber = plate;
+      }
     }
 
