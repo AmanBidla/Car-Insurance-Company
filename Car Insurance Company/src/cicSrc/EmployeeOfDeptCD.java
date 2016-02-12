@@ -101,18 +101,22 @@ public class EmployeeOfDeptCD extends User{
         //here we can add a.setClaimStatus("classified");
         }
         
-        public void createForm(Claim a){
-            if (a.claimCategory.equals("Simple")){
+        public Form createForm(Claim a){
+            
             Form form1 = new Form();
+            if (a.claimCategory.equals("Simple")){
             form1.formStatus ="Created";
             form1.formType ="Simple Form";
+            return form1;
             }
             else if (a.claimCategory.equals("Complex")){
-            Form form1 = new Form();
+           
             form1.formStatus ="Created";
             form1.formType= "Complex Form";
-                    
+                  
             }
+            return form1;
+            
         }
         public void checkForm(Claim a,Claimant c,Form f){
             boolean val;
