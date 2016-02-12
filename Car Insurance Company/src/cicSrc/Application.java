@@ -210,9 +210,11 @@ public class Application {
 
         //claimant records
         claimant1.AccidentDate.add(new String("2014/12/11"));
+        claimant1.AccidentTime.add(new String("18:55"));
+        claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
         claimant1.AccidentDamage.add(new String("right wing"));
         claimant1.AccidentCost.add(claim1.amount_of_payment);
-        claimant1.AccidentLocation.add(new String("Kungsgatan 17,Stockholm"));
+        
 
         
         //EmployeeOfFinancialDept
@@ -224,7 +226,7 @@ public class Application {
 
         
 
-        claimant1.AccidentTime.add(new String("18:55"));
+       
 
         
         //garage owner creation
