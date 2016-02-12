@@ -96,66 +96,39 @@ public class Claimant extends User{
          
     }
      
-    public void fillinForm(Form form) {
+    public void fillinSimpleForm(Form form, String name,String surname,String date,String location,String plate) {
         
-        
-        
-        if ((form.formStatus.equals("Created!") || form.formStatus.equals("Not filled correctly!"))&& form.formType.equals("Simple Form")){
             
-            System.out.println("Name");
-            Scanner name=new Scanner(System.in);
-            form.formName= name.next();
-            
-            System.out.println("Surname");
-            Scanner surname=new Scanner(System.in);
-            form.formSurname=surname.next();
-            
-            System.out.println("Date of Accident");
-            Scanner date=new Scanner(System.in);
-            form.formDateOfAccident=date.next();
-            
-            System.out.println("Location");
-            Scanner location=new Scanner(System.in);
-            form.formLocationOfAccident=location.next();
-            
-            System.out.println("Your plate number");
-            Scanner plate=new Scanner(System.in);
-            form.formInsuredPersonPlate = plate.next();
+            form.formName=name;
+            form.formSurname=surname;
+            form.formDateOfAccident=date;
+            form.formLocationOfAccident=location;
+            form.formInsuredPersonPlate=plate;
             
             form.formStatus = "Filled in-Needs to be checked!";
-            
-        }
-        else if ((Application.form1.formStatus.equals("Created!") || Application.form1.formStatus.equals("Not filled correctly!"))&& Application.form1.formType.equals("Complex Form")){
-            
-            System.out.println("Name");
-            Scanner name=new Scanner(System.in);
-            form.formName= name.next();
-            
-            System.out.println("Surname");
-            Scanner surname=new Scanner(System.in);
-            form.formSurname=surname.next();
-            
-            System.out.println("Date of Accident");
-            Scanner date=new Scanner(System.in);
-            form.formDateOfAccident=date.next();
-            
-            System.out.println("Location");
-            Scanner location=new Scanner(System.in);
-            form.formLocationOfAccident=location.next();
-            
-            System.out.println("Your plate number");
-            Scanner plate=new Scanner(System.in);
-            form.formInsuredPersonPlate = plate.next();
-           
-            System.out.println("Do you agree with a 5% increase in your monthly instalments?");
-            Scanner answer=new Scanner(System.in);
-            form.formAgreementOnIncrease = answer.next();
-            
-            
-            form.formStatus = "Filled in-Needs to be checked!";
-            
-        
-         }
     }
+    
+     public void fillinComplexForm(Form form, String name,String surname,String date,String location,String plate,String answer) {
+        
+            
+            form.formName=name;
+            form.formSurname=surname;
+            form.formDateOfAccident=date;
+            form.formLocationOfAccident=location;
+            form.formInsuredPersonPlate=plate;
+            form.formAgreementOnIncrease=answer;
+            
+            form.formStatus = "Filled in-Needs to be checked!";
+    }
+    
+            
+            
+            
+            
+            
+            
+        
+        
+    
 
 }
