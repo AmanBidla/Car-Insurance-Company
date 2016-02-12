@@ -6,8 +6,6 @@
 package cicTests;
 
 import cicSrc.Application;
-import cicSrc.Claim;
-import cicSrc.Claimant;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Ioannis Papakostas
  */
-public class informClaimantTest {
+public class Check_Price_of_Car_Test {
     
-    public informClaimantTest() {
+    public Check_Price_of_Car_Test() {
     }
     
     @BeforeClass
@@ -34,7 +32,6 @@ public class informClaimantTest {
     
     @Before
     public void setUp() {
-        Application.initialize();
     }
     
     @After
@@ -44,13 +41,9 @@ public class informClaimantTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    @Test
-        public void inform_claimant_test() {
-            
-            //TODO
-                //check if the claimant was informed
-           // Claimant a, Claim b;
-            
-            
-        }
+     @Test
+     public void checkPriceCar() {
+     assertEquals(Application.claimant1.getPriceOfCar(),32000);
+     
+     }
 }
